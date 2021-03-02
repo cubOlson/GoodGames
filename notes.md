@@ -14,7 +14,6 @@ Features and MVPs
   -each product has dropdown with "Want to play" "Currently playing" and "Played" 
     -if user selects the "played option" they are prompted to rate and review
 
-
 # Product page
   -Photos or videos demoing the product
   -1 to 2 paragraph description of the game
@@ -25,7 +24,7 @@ Features and MVPs
   *includes LFG nav bar for discord links
 
 # User story - New User
-  -As a new user I would arrive visit the website to find a new action RPG
+  -As a new user I would visit the website to find a new action RPG
   -from the home page I see a list of best Action RPG games and click the link
   -the link brings me to a page with the top 20 Action RPG games filtered and ranked
   -I hover over the 2nd card and a summary pops up.
@@ -37,12 +36,13 @@ Features and MVPs
   -They select the game they want to leave a review for which brings them to the game's product page
   -The user scrolls down to the comment section and selects a rating out of 5 starts and writes into the provided text box if they're logged in, or prompts user to log in or register if not.
 
-# possible issues
+# possible issues...
   -A registered user harasses a previous user for writing an unfavorable review on their favorite game. 
-  
   -registered user selects played on all games and votes 1 star or 5 stars ambiguously
 
-  INDEX pug (framework)
+# general layout...
+    INDEX pug (framework)
+
     Navbars
       top navbar (everywhere)
         -logo & header (branding / link to home)
@@ -63,15 +63,15 @@ Features and MVPs
     -
 
 
-    ideas 
+# off the top 
 
-    --What will the home page look like?
+    -What will the home page look like for a logged in user?
     
-    The home page would display a Navbar at the top of the page containing button links to their games library, their discussions, the home page via the GG logo as well as profile dropdown containing links to their profile settings, a help page and a sign out button. 
+    --The home page could possibly display a Navbar at the top of the page containing links to the user's games library, their discussions, as well as profile dropdown containing links to their profile settings, a help page and a sign out button. 
 
-    --The left navbar could show the game you're currently playing, a current event hosted by the website, a wishlist and the user's bookshelves. Alternatively we could display a list of categories.
+    --The left navbar could show some combination of cards/links to: the game you're currently playing, a current event hosted by the website, a wishlist and the user's game library, a list of categories.
 
-    --The main content of the home page would be a grid of cards for each category and each card would have a picture of the top rated game for that category. Alternatively this area could display a grid of upcoming titles or featured weekly / monthly titles. 
-    These titles would each have a select with the played, currently playing and want to play options. If the user selects the played option a stars div will appear allowing the user to rate the game.
+    --The main content of the home page could be a grid of cards for each category and each card could have a picture of the top rated game for that category. These titles could each have a select with the played, currently playing and want to play options. If the user selects the played option a stars div will appear allowing the user to rate the game.
+    *Alternatively this area could highlight this week's new releases, newest game news, upcoming releases or featur a few weekly & monthly titles, in which case we could utilize the left navbar as a list of category links.
        
-    --The right navbar on GoodReads shows adds as well as Amazon/Kindle links to purchase a book. As a stretch goal we could try to implement an LFG navbar that links to relevant discord servers.
+    --The right navbar on GoodReads shows unregistered users adds as well as Amazon/Kindle links to purchase a book. It is empty for logged in users. As a stretch goal we could try to implement an LFG navbar that links to relevant discord servers.
