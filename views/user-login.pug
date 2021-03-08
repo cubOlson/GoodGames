@@ -1,0 +1,16 @@
+extends layout
+
+block content 
+    form(action="/users/login", method="post")
+        div 
+            input(type="hidden", name="_csrf", value=csrfToken)
+        div 
+            label(for="email") Email 
+            input(type="email", name="email")
+        div 
+            label(for="password") Password 
+            input(type="password", name="password")
+        button(type="submit",) Login 
+        div 
+            a(href="http://") Need an account? Sign up here!
+    

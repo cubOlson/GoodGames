@@ -1,0 +1,31 @@
+extends layout
+
+block content 
+    form(action="/users/signup", method="post")
+        div 
+            input(type="hidden", name="_csrf", value=csrfToken)
+        div 
+            label(for="firstName") First Name
+            input(type="text", name="firstName")
+        div 
+            label(for="lastName") Last Name
+            input(type="text", name="lastName")
+        div 
+            label(for="username") Username
+            input(type="text", name="username")
+        div 
+            label(for="phone") Phone
+            input(type="tel", name="phone")
+        div 
+            label(for="email") Email 
+            input(type="email", name="email")
+        div 
+            label(for="password") Password 
+            input(type="password", name="password")
+        div 
+            label(for="confirmPassword") Confirm Password 
+            input(type="password", name="confirmPassword")
+        button(type="submit",) Sign Up  
+        div 
+            a(href="http://") Already have an account? Login here!
+    
