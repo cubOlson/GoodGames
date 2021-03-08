@@ -47,6 +47,17 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'gameId'
     }
     Game.belongsToMany(models.Platform, columnMapping);
+
+    //Many:Many Game <> User
+    const columnMapping2 = {
+      through: 'UserGame',
+      otherKey: 'userId',
+      foreignKey: 'gameId'
+    }
+    Game.belongsToMany(models.User, columnMapping2)
+
+    //One:Many Game <> Review
+    Game.hasMany(models.Review, {foreignKey: 'gameId'})
   };
 
 
