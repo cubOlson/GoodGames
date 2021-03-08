@@ -1,0 +1,5 @@
+DB_USERNAME=goodgames_app
+DB_PASSWORD=goodgames_password
+DB_DATABASE=goodgames_development
+DB_HOST=localhost
+PORT=8080
