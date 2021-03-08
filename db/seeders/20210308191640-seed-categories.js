@@ -9,11 +9,11 @@ module.exports = {
       Example:
       */
    return queryInterface.bulkInsert('Categories', [
-     ('Action & Adventure')
-     ('Role Playing & MMO')
-     ('Strategy & RTS')
-     ('Sports & Racing')
-     ('Casual & Simulation')
+     {category: 'Action & Adventure', createdAt: new Date(), updatedAt: new Date()},
+     {category: 'Role Playing & MMO', createdAt: new Date(), updatedAt: new Date()},
+     {category: 'Strategy & RTS', createdAt: new Date(), updatedAt: new Date()},
+     {category: 'Sports & Racing', createdAt: new Date(), updatedAt: new Date()},
+     {category: 'Casual & Simulation', createdAt: new Date(), updatedAt: new Date()},
    ], {});
   },
 
