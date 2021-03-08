@@ -9,6 +9,19 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
+// const csrf = require("csrf");
+// const bcrypt = require("bcryptjs")
+// // const cookieParser = require('cookie-parser');
+// const {check, validationResult} = require('express-validator');
+
+// const csrfProtection = csrf({ cookie: true })
+
+// const asyncHandler = (handler) => (req, res, next) => {
+//     return handler(req, res, next).catch(next)
+// }
+
+// //-------------
+
 const app = express();
 
 // view engine setup
@@ -20,20 +33,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// set up session middleware
-const store = new SequelizeStore({ db: sequelize });
+// // set up session middleware
+// const store = new SequelizeStore({ db: sequelize });
 
-app.use(
-  session({
-    secret: 'superSecret',
-    store,
-    saveUninitialized: false,
-    resave: false,
-  })
-);
+// app.use(
+//   session({
+//     secret: 'superSecret',
+//     store,
+//     saveUninitialized: false,
+//     resave: false,
+//   })
+// );
 
-// create Session table if it doesn't already exist
-store.sync();
+// // create Session table if it doesn't already exist
+// store.sync();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

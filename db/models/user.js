@@ -4,27 +4,27 @@ module.exports = (sequelize, DataTypes) => {
     username: {
         allowNull: false,
         unique: true,
-        type: Sequelize.STRING(50)
+        type: DataTypes.STRING(50)
       },
       hashedPassword: {
         allowNull: false,
-        type: Sequelize.STRING.BINARY
+        type: DataTypes.STRING.BINARY
       },
       email: {
         allowNull: false,
         unique: true,
-        type: Sequelize.STRING(150)
+        type: DataTypes.STRING(150)
       },
       phone: {
-        type: Sequelize.STRING(50)
+        type: DataTypes.STRING(50)
       },
       firstName: {
         allowNull: false,
-        type: Sequelize.STRING(50)
+        type: DataTypes.STRING(50)
       },
       lastName: {
         allowNull: false,
-        type: Sequelize.STRING(50)
+        type: DataTypes.STRING(50)
       },
   }, {});
   User.associate = function(models) {

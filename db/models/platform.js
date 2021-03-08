@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     platform: {
         allowNull: false,
         unique: true,
-        type: Sequelize.STRING(50)
+        type: DataTypes.STRING(50)
       },
   }, {});
   Platform.associate = function(models) {
