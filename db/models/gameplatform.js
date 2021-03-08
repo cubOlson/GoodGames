@@ -4,12 +4,12 @@ module.exports = (sequelize, DataTypes) => {
     gameId: {
         allowNull: false,
         references: { model: 'Games'},
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
       platformId: {
         allowNull: false,
         references: { model: 'Platforms'},
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
   }, {});
   GamePlatform.associate = function(models) {

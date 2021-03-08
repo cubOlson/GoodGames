@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     category: {
         allowNull: false,
         unique: true,
-        type: Sequelize.STRING(50)
+        type: DataTypes.STRING(50)
       },
   }, {});
   Category.associate = function(models) {

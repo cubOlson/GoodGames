@@ -4,24 +4,24 @@ module.exports = (sequelize, DataTypes) => {
     gameId: {
       allowNull: false,
       references: {model: 'Games'},
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     userId: {
       allowNull: false,
       references: {model: 'Users'},
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     title: {
       allowNull: false,
-      type: Sequelize.STRING(150)
+      type: DataTypes.STRING(150)
     },
     content: {
       allowNull: false,
-      type: Sequelize.TEXT
+      type: DataTypes.TEXT
     },
     liked: {
       allowNull: false,
-      type: Sequelize.BOOLEAN
+      type: DataTypes.BOOLEAN
     },
   }, {});
   Review.associate = function(models) {

@@ -4,36 +4,36 @@ module.exports = (sequelize, DataTypes) => {
     title: {
         allowNull: false,
         unique: true,
-        type: Sequelize.STRING(150)
+        type: DataTypes.STRING(150)
       },
       image: {
         allowNull: false,
-        type: Sequelize.STRING(255)
+        type: DataTypes.STRING(255)
       },
       likesCount: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
       releaseDate: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DataTypes.DATE
       },
       developer: {
         allowNull: false,
-        type: Sequelize.STRING(150)
+        type: DataTypes.STRING(150)
       },
       summary: {
         allowNull: false,
-        type: Sequelize.TEXT
+        type: DataTypes.TEXT
       },
       purchase: {
         allowNull: false,
-        type: Sequelize.STRING(255)
+        type: DataTypes.STRING(255)
       },
       categoryId: {
         allowNull: false,
         references: { model: 'Categories' },
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
   }, {});
   Game.associate = function(models) {

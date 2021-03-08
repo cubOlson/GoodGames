@@ -4,25 +4,25 @@ module.exports = (sequelize, DataTypes) => {
     gameId: {
       allowNull: false,
       references: {model: 'Games'},
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     userId: {
       allowNull: false,
       references: {model: 'Users'},
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     status: {
       allowNull: false,
-      type: Sequelize.STRING(50)
+      type: DataTypes.STRING(50)
     },
     reviewed: {
       allowNull: false,
-      default: false, 
-      type: Sequelize.BOOLEAN
+      default: false,
+      type: DataTypes.BOOLEAN
     },
   }, {});
   UserGame.associate = function(models) {
-    
+
   };
   return UserGame;
 };
