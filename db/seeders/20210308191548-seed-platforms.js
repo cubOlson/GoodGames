@@ -9,12 +9,12 @@ module.exports = {
       Example:
       */
    return queryInterface.bulkInsert('Platforms', [
-     ('PC')
-     ('Playstation 4')
-     ('Playstation 5')
-     ('Xbox One')
-     ('Xbox Series X')
-     ('Switch')
+     {platform: 'PC', createdAt: new Date()},
+     {platform: 'Playstation 4', createdAt: new Date()},
+     {platform: 'Playstation 5', createdAt: new Date()},
+     {platform: 'Xbox One', createdAt: new Date()},
+     {platform: 'Xbox Series X', createdAt: new Date()},
+     {platform: 'Switch', createdAt: new Date()},
    ], {});
   },
 
