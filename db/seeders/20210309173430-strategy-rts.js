@@ -36,7 +36,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          title: "",
+          title: "Minecraft",
           image:
             "",
           likesCount: 0,
