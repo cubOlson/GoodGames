@@ -27,7 +27,7 @@ router.get(
 );
 
 router.post('/signup', csrfProtection, asyncHandler( async(req, res, next) => {
-  
+
   const {
     username,
     firstName,
@@ -75,5 +75,12 @@ router.post('/login', csrfProtection, asyncHandler(async(req, res) => {
 
   // res.render('user-login', { title: 'Login', email, csrfToken: req.csrfToken() });
 }));
+
+router.post('/logout', async(req, res) => {
+  logoutUser(req, res);
+  res.redirect('/')
+});
+
+// NEED TO FIGURE OUT HOW TO MANUALLY REFRESH PAGE AFTER LOG IN / OUT
 
 module.exports = router;

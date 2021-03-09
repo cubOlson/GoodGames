@@ -13,8 +13,8 @@ html
             li:a(href=`/users/${user.id}/library`) MyGames
             li:a(href=`/users/${user.id}/reviews`) MyReviews
             li:a(href=`/users/${user.id}/profile`) MyProfile
-            button
-              a(href="/users/logout") Log Out
+            form(action='/users/logout' method='post')
+              button(type='submit') Log Out
     else
       div
         nav
