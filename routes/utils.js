@@ -1,15 +1,18 @@
 const csrf = require("csurf");
 const bcrypt = require("bcryptjs")
-// const cookieParser = require('cookie-parser');
 const {check, validationResult} = require('express-validator');
-
 const csrfProtection = csrf({ cookie: true })
+
+const sanityCheck = (req, res, next) => {
+    console.log(`I made it!!!`)
+    next();
+}
 
 const asyncHandler = (handler) => (req, res, next) => {
     return handler(req, res, next).catch(next)
 }
 
-// email password validation
+// email password validation for user login
 const loginValidation = [
     check('email')
         .exists({checkFalsy: true})
@@ -19,7 +22,7 @@ const loginValidation = [
         .withMessage('Please provide a valid password.'),
 ]
 
-// registration validation
+// registration validation for new user sign up
 const registerValidation = [
     check('firstName')
         .exists({checkFalsy: true})
@@ -36,13 +39,15 @@ const registerValidation = [
     check('password')
         .exists({checkFalsy: true})
         .withMessage('Please provide a valid password.')
-        .isLength({ min: 4}),
-        // .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{4,}$/, "i")
-        // .withMessage('Password must have one digit, one lower-case, one upper-case, and one number.'),
-        // must have one digit, one lower-case, one upper-case, one number ... min 4 chars
+        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/, 'g')
+        .withMessage('Password must have one digit, one lower-case, one upper-case, and one special character.'),
     check('confirmPassword')
-        .matches('password')
-        .withMessage('Passwords must match.'),
+        .custom((value, { req }) => {
+            if (value !== req.body.password) {
+                throw new Error('Confirm Password does not match Password');
+            }
+            return true;
+        }),
 ]
 
 module.exports = {
@@ -53,4 +58,5 @@ module.exports = {
     validationResult,
     loginValidation,
     registerValidation,
+    sanityCheck,
 }
