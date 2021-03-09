@@ -30,6 +30,7 @@ const restoreUser = async(req, res, next) => {
     console.log(req.session);
     if (req.session.auth) {
         const { userId } = req.session.auth;
+        console.log(req.session.auth)
         try {
             const user = await db.User.findByPk(userId);
             if (user) {
