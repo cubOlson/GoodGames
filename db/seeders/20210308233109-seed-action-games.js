@@ -236,7 +236,7 @@ module.exports = {
           image:
             "https://www.mobygames.com/images/covers/l/296397-diablo-iii-reaper-of-souls-ultimate-evil-edition-playstation-4-front-cover.jpg",
           likesCount: 0,
-          releaseDate: "",
+          releaseDate: "May 15, 2012",
           developer: "Blizzard Entertainment",
           summary:
             "The Black Soulstone essence is screaming for vengeance and release. Before the artifact can be sealed away forever, Malthael, the Angel of Death manifests in the mortal realms with a deadly new purpose. And so begins the end of all things.",
