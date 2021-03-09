@@ -156,7 +156,7 @@ module.exports = {
       {
         title: "Hyper Light Drifter",
         image:
-          "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0c861c79-6b2c-475b-8e03-ed4818c70d92/ddnaz1y-989d409c-0d3b-4279-9ea4-43d07c06d09a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMGM4NjFjNzktNmIyYy00NzViLThlMDMtZWQ0ODE4YzcwZDkyXC9kZG5hejF5LTk4OWQ0MDljLTBkM2ItNDI3OS05ZWE0LTQzZDA3YzA2ZDA5YS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.sa2Pqg4b0HtwPr3XK8KjVkMbZ_CGZK4aC-zJmM00TCo",
+          "https://www.mobygames.com/images/covers/l/354283-hyper-light-drifter-playstation-4-front-cover.jpg",
         likesCount: 0,
         releaseDate: "March 31, 2016",
         developer: "Heart Machine LLC",
