@@ -69,7 +69,7 @@ router.post('/login', csrfProtection, asyncHandler(async(req, res) => {
   //if passwords match, log in the user, redirect to root
     if (passwordMatch) {
       loginUser(req, res, user);
-      return res.redirect('/');
+      return
   }
 }
 
@@ -78,9 +78,7 @@ router.post('/login', csrfProtection, asyncHandler(async(req, res) => {
 
 router.post('/logout', async(req, res) => {
   logoutUser(req, res);
-  res.redirect('/')
+  return
 });
-
-// NEED TO FIGURE OUT HOW TO MANUALLY REFRESH PAGE AFTER LOG IN / OUT
 
 module.exports = router;

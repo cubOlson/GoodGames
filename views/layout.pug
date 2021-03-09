@@ -14,13 +14,13 @@ html
             li:a(href=`/users/${user.id}/reviews`) MyReviews
             li:a(href=`/users/${user.id}/profile`) MyProfile
             form(action='/users/logout' method='post')
-              button(type='submit') Log Out
+              button(type='submit' id='logout-button') Log Out
     else
       div
         nav
           ul
             button
-              a(href="/users/login") Log In
+              a(href="/users/login" id="login-button") Log In
             button
               a(href="/users/signup") Sign Up
     block content
