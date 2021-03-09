@@ -8,7 +8,7 @@ module.exports = {
 
       Example:
       */
-    return queryInterface.bulkInsert("People",
+    return queryInterface.bulkInsert("Games",
       [
         //{title, image, likesCount, releaseDate, developer, summary, purchase, categoryId}
         {
@@ -314,6 +314,6 @@ module.exports = {
 
       Example:
       */
-   return queryInterface.bulkDelete('People', null, {});
+   return queryInterface.bulkDelete('Games', null, {});
   },
 };
