@@ -5,10 +5,13 @@ const { asyncHandler } = require('./utils');
 
 /* GET home page. */
 router.get('/', asyncHandler(async (req, res, next) => {
-  const { userId } = req.session.auth
-  const user = await User.findByPk(userId);
 
-  res.render('index', { title: 'a/A Express Skeleton Home', user });
+  if(req.session.auth) {
+    const { userId } = req.session.auth
+    const user = await User.findByPk(userId);
+    res.render('index', { title: 'a/A Express Skeleton Home', user });
+  }
+  res.render('index', { title: 'a/A Express Skeleton Home'})
 }));
 
 module.exports = router;
