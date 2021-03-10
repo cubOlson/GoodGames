@@ -98,6 +98,15 @@ padding: 10px;
     border-radius: 14px;
     text-align: center;
     padding: 2px 20px;
+    margin-right: 20px;
+}
 
-
+.navBar__search {
+    border: 1px solid #F9934C;
+    background: white;
+    color: #FB953B;
+    border-radius: 14px;
+    text-align: center;
+    padding: 2px 20px 2px 2px;
+    margin-right: 20px;
 }
