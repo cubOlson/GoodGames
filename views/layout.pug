@@ -13,30 +13,30 @@ html
         div.navBar__left
           img.logo(src="/images/ggLogo.gif")
           div.searchBar
-            form(action="/games", method="post") 
-              input(type="search", name="searchBar") 
+            form.navBar__search--style(action="/games", method="post")
+              input.navBar__search(type="search", name="searchBar")
               label(for="searchBar") Search
         div.navBar__right
-          div 
+          button.navBar__button
             a(href=`/users/${user.id}/library`) MyGames
-          div
+          button.navBar__button
             a(href=`/users/${user.id}/reviews`) MyReviews
-          div
+          button.navBar__button
             a(href=`/users/${user.id}/profile`) MyProfile
           form(action='/users/logout' method='post')
-            button.logoutButton(type='submit' id='logout-button') Log Out
+            button.navBar__button(type='submit') Log Out
     else
       div.navBar
         div.navBar__left
           img.logo(src="/images/ggLogo.gif")
           div.searchBar
-            form(action="/games", method="post") 
-              input(type="search", name="searchBar") 
+            form.navBar__search--style(action="/games", method="post")
+              input.navBar__search(type="search", name="searchBar")
               label(for="searchBar") Search
         div.navBar__right
           ul
-            button
-              a(href="/users/login" id="login-button") Log In
-            button
+            button.navBar__button
+              a(href="/users/login") Log In
+            button.navBar__button
               a(href="/users/signup") Sign Up
     block content
