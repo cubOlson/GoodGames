@@ -1,11 +1,23 @@
+/* colors for the page */
+:root {
+    --darkpink: #bf0f70;
+    --pink: #d91193;
+    --blue: #1c0373;
+    --yellow: #f2ce1b;
+    --orange: #f2ae72;
+}
+
+
 .navBar {
 display: flex;
 justify-content: space-between;
-background-color: purple;
+background: linear-gradient(var(--blue), var(--darkpink));
 padding: 10px;
 
 }
 
+
+/* Contains the Logo as well as the Search Bar */
 .logo {
     max-width: 40px;
     margin-right: 10px;
@@ -17,17 +29,72 @@ padding: 10px;
     align-items: center;
 }
 
+.search-input {
+    border: none;
+    border-radius: 14px 14px;
+    text-align: center;
+    padding: 5px;
+}
+/* .search-button {
+    border-radius: 0 14px 14px 0;
+}
+.search-button-icon {
+    width: 1em;
+} */
+
+
+/* Contains the "My Games", "My Reviews", "My Profile", and Logout when logged in */
+/* Contains the Login and Signup buttons when logged out */
 .navBar__right {
-    width: 30%;
+    width: 35%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+}
+.right__attribute {
+    text-decoration: none;
+    color: var(--orange);
 }
 
-.navBar__button {
-    border: 1px solid #F9934C;
+.right-child {
+    padding: 0 10px 0 10px;
+}
+
+.right-login-signup {
+    text-decoration: none;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    border-radius: 14px;
+    text-align: center;
+    padding: 2px 20px;
+}
+
+/* SVGS for the 3 categories */
+.gamepad {
+    width: 1.5rem;
+    float: left;
+    padding-top: 2px;
+    padding-right: 5px ;
+}
+.comment-box {
+    width: 1.3rem;
+    float: left;
+    padding-top: 2px;
+    padding-right: 5px ;
+}
+.profile-button {
+    width: 1.3rem;
+    float: left;
+    padding-top: 2px;
+    padding-right: 5px ;
+}
+
+/* Logout Button */
+.logoutButton {
+    border: 1px solid var(--orange);
     background: none;
-    color: #FB953B;
+    color: var(--orange);
     border-radius: 14px;
     text-align: center;
     padding: 2px 20px;
@@ -37,16 +104,6 @@ padding: 10px;
 .navBar__search {
     border: 1px solid #F9934C;
     background: white;
-    color: #FB953B;
-    border-radius: 14px;
-    text-align: center;
-    padding: 2px 20px 2px 2px;
-    margin-right: 20px;
-}
-
-.navBar__search--style {
-    border: 1px solid #F9934C;
-    background: none;
     color: #FB953B;
     border-radius: 14px;
     text-align: center;
