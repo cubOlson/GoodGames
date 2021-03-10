@@ -11,13 +11,14 @@
     margin: 10px;
 }
 .gamecard__image  {
-    background-position: center;
-    background-size: cover;
-    width: 220px;
-    height: 240px;
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
     z-index: 0;
 }
 .gamecard__text-container {
+    position: relative;
     height: 96px;
     width: 220px;
     background: rgba(191,15,113,0.72);
