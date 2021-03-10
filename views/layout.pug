@@ -4,20 +4,36 @@ html
       block head
         title="Good Games"
         link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel='stylesheet' href='/stylesheets/navBar.css')
+        link(rel='preconnect' href='https://fonts.gstatic.com')
+        link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
   body
     if user
-      div
-        nav
-          img(src="/logoHere")
-          ul
-            li:a(href=`/users/${user.id}/library`) MyGames
-            li:a(href=`/users/${user.id}/reviews`) MyReviews
-            li:a(href=`/users/${user.id}/profile`) MyProfile
-            form(action='/users/logout' method='post')
-              button(type='submit' id='logout-button') Log Out
+      div.navBar
+        div.navBar__left
+          img.logo(src="/images/ggLogo.gif")
+          div.searchBar
+            form(action="/games", method="post") 
+              input(type="search", name="searchBar") 
+              label(for="searchBar") Search
+        div.navBar__right
+          div 
+            a(href=`/users/${user.id}/library`) MyGames
+          div
+            a(href=`/users/${user.id}/reviews`) MyReviews
+          div
+            a(href=`/users/${user.id}/profile`) MyProfile
+          form(action='/users/logout' method='post')
+            button.logoutButton(type='submit' id='logout-button') Log Out
     else
-      div
-        nav
+      div.navBar
+        div.navBar__left
+          img.logo(src="/images/ggLogo.gif")
+          div.searchBar
+            form(action="/games", method="post") 
+              input(type="search", name="searchBar") 
+              label(for="searchBar") Search
+        div.navBar__right
           ul
             button
               a(href="/users/login" id="login-button") Log In

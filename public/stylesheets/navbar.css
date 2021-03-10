@@ -1,0 +1,36 @@
+.navBar {
+display: flex;
+justify-content: space-between;
+background-color: purple;
+padding: 10px;
+
+}
+
+.logo {
+    max-width: 40px;
+    margin-right: 10px;
+}
+
+.navBar__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navBar__right {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logoutButton {
+    border: 1px solid #F9934C;
+    background: none;
+    color: #FB953B;
+    border-radius: 14px;
+    text-align: center;
+    padding: 2px 20px;
+
+
+}
