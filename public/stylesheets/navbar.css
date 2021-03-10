@@ -1,11 +1,13 @@
 .navBar {
 display: flex;
 justify-content: space-between;
-background-color: purple;
+background: linear-gradient(#210373, #5F0871);
 padding: 10px;
 
 }
 
+
+/* Contains the Logo as well as the Search Bar */
 .logo {
     max-width: 40px;
     margin-right: 10px;
@@ -17,13 +19,41 @@ padding: 10px;
     align-items: center;
 }
 
+
+/* Contains the "My Games", "My Reviews", "My Profile", and Logout */
 .navBar__right {
-    width: 30%;
+    width: 35%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+}
+.right__attribute {
+    text-decoration: none;
+    color: #FB953B;
 }
 
+/* SVGS for the 3 categories */
+.gamepad {
+    width: 1.5rem;
+    float: left;
+    padding-top: 2px;
+    padding-right: 5px ;
+}
+.comment-box {
+    width: 1.3rem;
+    float: left;
+    padding-top: 2px;
+    padding-right: 5px ;
+}
+.profile-button {
+    width: 1.3rem;
+    float: left;
+    padding-top: 2px;
+    padding-right: 5px ;
+}
+
+/* Logout Button */
 .logoutButton {
     border: 1px solid #F9934C;
     background: none;
