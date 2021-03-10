@@ -46,7 +46,7 @@ padding: 10px;
 /* Contains the "My Games", "My Reviews", "My Profile", and Logout when logged in */
 /* Contains the Login and Signup buttons when logged out */
 .navBar__right {
-    width: 35%;
+    width: 50%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -101,7 +101,7 @@ padding: 10px;
     margin-right: 20px;
 }
 
-.navBar__search {
+/* .navBar__search {
     border: 1px solid #F9934C;
     background: white;
     color: #FB953B;
@@ -109,4 +109,4 @@ padding: 10px;
     text-align: center;
     padding: 2px 20px 2px 2px;
     margin-right: 20px;
-}
+} */

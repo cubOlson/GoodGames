@@ -1,7 +1,7 @@
 /* Style for the login page */
 .login-form {
     /* background: linear-gradient(to bottom right, var(--blue), var(--darkpink)); */
-    background-color: rgb(92, 91, 91);
+    background: linear-gradient(var(--darkpink), var(--blue));
     border: black solid 1px;
     box-shadow: 5px 10px 8px #14161a;
     /* color:  var(--orange); */
@@ -16,7 +16,7 @@
 /* Style for the singup form */
 .signup-form {
     /* background: linear-gradient(to bottom right, var(--blue), var(--darkpink)); */
-    background-color: rgb(92, 91, 91);
+    background: linear-gradient(var(--darkpink), var(--blue));
     border: black solid 1px;
     box-shadow: 5px 10px 8px #14161a;
     /* color:  var(--orange); */
