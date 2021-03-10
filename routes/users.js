@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { loginUser, logoutUser } = require("../auth");
-const { User } = require("../db/models/");
+const { User, UserGame, Game } = require("../db/models/");
 const {  asyncHandler,  csrfProtection,  bcrypt,  check,  validationResult,  loginValidation,  registerValidation, sanityCheck } = require("./utils");
 
 /* GET */
@@ -15,8 +15,21 @@ router.get( "/signup", csrfProtection, asyncHandler(async (req, res) => {
     res.render("user-signup", { csrfToken: req.csrfToken(), title: "Sign Up" });
 }));
 
-router.get("/:id/library", asyncHandler(async (req, res) => {
-
+// Load the user's library
+router.get("/:id/mygames", asyncHandler(async (req, res) => {
+  const userId = parseInt(req.params.id, 10)
+  const user = await User.findByPk(userId)
+  const myLibrary = await UserGame.findAll({where: {userId}})
+  console.log('myLibrary ->',myLibrary)
+  let myGames = await Promise.all(myLibrary.map(async (item) => {
+    const gameId = item.gameId
+    const game = await Game.findByPk(gameId)
+    return game
+  }))
+  console.log('myGames ->', myGames)
+  // let gameList = await Promise.all(...myGames)
+  // console.log('gameList ->', gameList)
+  res.render('my-games', {user, myGames, title: 'My Games'})
 }))
 
 /* POST */
