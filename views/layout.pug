@@ -14,8 +14,9 @@ html
           img.logo(src="/images/ggLogo.gif")
           div.searchBar
             form(action="/games", method="post")
-              input(type="search", name="searchBar" placeholder="Search")
-              button(type="submit")
+              input(type="search", name="searchBar" placeholder="Search" class="search-input")
+              //- button(type="submit" class="search-button")
+              //-   img(src="/Magnify-glass.png" class="search-button-icon")
         div.navBar__right
           div
             a(href=`/users/${user.id}/library` class="right__attribute") My Games

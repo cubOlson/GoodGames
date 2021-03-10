@@ -19,6 +19,19 @@ padding: 10px;
     align-items: center;
 }
 
+.search-input {
+    border: none;
+    border-radius: 14px 14px;
+    text-align: center;
+    padding: 5px;
+}
+/* .search-button {
+    border-radius: 0 14px 14px 0;
+}
+.search-button-icon {
+    width: 1em;
+} */
+
 
 /* Contains the "My Games", "My Reviews", "My Profile", and Logout */
 .navBar__right {
