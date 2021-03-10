@@ -4,19 +4,24 @@ const { loginUser, logoutUser } = require("../auth");
 const { User } = require("../db/models/");
 const {  asyncHandler,  csrfProtection,  bcrypt,  check,  validationResult,  loginValidation,  registerValidation, sanityCheck } = require("./utils");
 
+/* GET */
 // Load user login page
-router.get("/login", csrfProtection, asyncHandler(async (req, res, next) => {
+router.get("/login", csrfProtection, asyncHandler(async (req, res) => {
     res.render("user-login", { csrfToken: req.csrfToken(), title: "Login" });
   }));
 
 // Load user registration sign up page
-router.get( "/signup", csrfProtection, asyncHandler(async (req, res, next) => {
+router.get( "/signup", csrfProtection, asyncHandler(async (req, res) => {
     res.render("user-signup", { csrfToken: req.csrfToken(), title: "Sign Up" });
-  }));
+}));
 
+router.get("/:id/library", asyncHandler(async (req, res) => {
 
+}))
+
+/* POST */
 // Register new user
-router.post("/signup", csrfProtection, registerValidation, asyncHandler(async (req, res, next) => {
+router.post("/signup", csrfProtection, registerValidation, asyncHandler(async (req, res) => {
     const { username, firstName, lastName, phone, email, password } = req.body;
     const validationErrors = validationResult(req);
 
