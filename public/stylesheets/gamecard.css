@@ -1,4 +1,4 @@
-.gamecard__container 
+.gamecard__container
 {
     display: block;
     width: 220px;
@@ -6,6 +6,9 @@
     box-shadow: 0 1px 13px 4px rgba(27,3,115,0.30);
     border-radius: 13px;
     overflow: hidden;
+
+    /* added 10px margin on all sides of game card to provide buffer with container */
+    margin: 10px;
 }
 .gamecard__image  {
     background-position: center;
@@ -16,7 +19,7 @@
 }
 .gamecard__text-container {
     height: 96px;
-    width: 220px; 
+    width: 220px;
     background: rgba(191,15,113,0.72);
     margin-top: -96px;
     overflow: hidden;

@@ -23,10 +23,13 @@
 
 .highest-games, .action-games, .strategy-games, .casual-games, .racing-games, .mmo-games {
     color: black;
-    padding-right: 30px;
     border: 1px solid var(--orange);
     background: linear-gradient(var(--orange), var(--yellow));
     width: fit-content;
+
+    /* Added display flex here with space around to get cards to float in container correctly */
+    display: flex;
+    justify-content: space-around;
 }
 .games {
     text-decoration: none;

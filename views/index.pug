@@ -1,4 +1,4 @@
-extends layout 
+extends layout
 
 append head
   //- add page specific styles by appending to the head
@@ -7,47 +7,128 @@ append head
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
 
-block content 
-  each game in games 
-    div.gamecard__container 
-      //- Image
-      img.gamecard__image(src=game.image)
-      //- Overlay Text
-      div.gamecard__text-container
-        .gamecard__game-title= game.title
-        //- Placeholder for div mini form
-        .gamecard__dropdown-container 
-          .gamecard__dropdown-form 
-        //- Rating Box using likesCount  
-        .gamecard__rating-box
-          .gamecard__rating= game.likesCount
+block content
+    //- //- each game in games
+    //- div.gamecard__container
+    //-   //- Image
+    //-   img.gamecard__image(src=game.image)
+    //-   //- Overlay Text
+    //-   div.gamecard__text-container
+    //-     .gamecard__game-title= game.title
+    //-     //- Placeholder for div mini form
+    //-     .gamecard__dropdown-container
+    //-       .gamecard__dropdown-form
+    //-     //- Rating Box using likesCount
+    //-     .gamecard__rating-box
+    //-       .gamecard__rating= game.likesCount
 
 
 
-  div.header-container
-    img(src="/GGHeaderSketch.png" class="header")
-    h1.header-context GoodGames
-  div.games-container
-    div.highest-games
-      h1 Highest Rated Games
+    div.header-container
+      img(src="/GGHeaderSketch.png" class="header")
+      h1.header-context GoodGames
 
-    div.action-games
+    div.games-container
+
+      h1.main-category Highest Rated Games
+      div.highest-games
+            - for(var n = 0; n < 3; n++)
+              div.gamecard__container
+                //- Image
+                img.gamecard__image(src=popularGames[n].image)
+                //- Overlay Text
+                div.gamecard__text-container
+                  .gamecard__game-title= popularGames[n].title
+                  //- Placeholder for div mini form
+                  .gamecard__dropdown-container
+                    .gamecard__dropdown-form
+                  //- Rating Box using likesCount
+                  .gamecard__rating-box
+                    .gamecard__rating= popularGames[n].likesCount
+
       a.games(href="/categories/1")
         h1 Action & Adventure Games
+      div.action-games
+            - for(var n = 0; n < 3; n++)
+              div.gamecard__container
+                //- Image
+                img.gamecard__image(src=actionGames[n].image)
+                //- Overlay Text
+                div.gamecard__text-container
+                  .gamecard__game-title= actionGames[n].title
+                  //- Placeholder for div mini form
+                  .gamecard__dropdown-container
+                    .gamecard__dropdown-form
+                  //- Rating Box using likesCount
+                  .gamecard__rating-box
+                    .gamecard__rating= actionGames[n].likesCount
 
-    div.strategy-games
       a.games(href="/categories/3")
         h1 Strategy & RTS Games
+      div.strategy-games
+            - for(var n = 0; n < 3; n++)
+              div.gamecard__container
+                //- Image
+                img.gamecard__image(src=strategyGames[n].image)
+                //- Overlay Text
+                div.gamecard__text-container
+                  .gamecard__game-title= strategyGames[n].title
+                  //- Placeholder for div mini form
+                  .gamecard__dropdown-container
+                    .gamecard__dropdown-form
+                  //- Rating Box using likesCount
+                  .gamecard__rating-box
+                    .gamecard__rating= strategyGames[n].likesCount
 
-    div.casual-games
       a.games(href="/categories/5")
         h1 Casual & Simulation Games
+      div.casual-games
+            - for(var n = 0; n < 3; n++)
+              div.gamecard__container
+                //- Image
+                img.gamecard__image(src=casualGames[n].image)
+                //- Overlay Text
+                div.gamecard__text-container
+                  .gamecard__game-title= casualGames[n].title
+                  //- Placeholder for div mini form
+                  .gamecard__dropdown-container
+                    .gamecard__dropdown-form
+                  //- Rating Box using likesCount
+                  .gamecard__rating-box
+                    .gamecard__rating= casualGames[n].likesCount
 
-    div.racing-games
-      a.games(href="/categories/4")
-        h1 Sports & Racing Games
+      //- COMMENTING OUT SPORTS DUE TO MISSING SEED DATA FOR NOW
 
-    div.mmo-games
+      //- a.games(href="/categories/4")
+      //-   h1 Sports & Racing Games
+      //- div.racing-games
+      //-       - for(var n = 0; n < 3; n++)
+      //-         div.gamecard__container
+      //-           //- Image
+      //-           img.gamecard__image(src=sportsGames[n].image)
+      //-           //- Overlay Text
+      //-           div.gamecard__text-container
+      //-             .gamecard__game-title= sportsGames[n].title
+      //-             //- Placeholder for div mini form
+      //-             .gamecard__dropdown-container
+      //-               .gamecard__dropdown-form
+      //-             //- Rating Box using likesCount
+      //-             .gamecard__rating-box
+      //-               .gamecard__rating= sportsGames[n].likesCount
 
       a.games(href="/categories/2")
         h1 MMO & RPG Games
+      div.mmo-games
+       - for(var n = 0; n < 3; n++)
+              div.gamecard__container
+                //- Image
+                img.gamecard__image(src=mmoGames[n].image)
+                //- Overlay Text
+                div.gamecard__text-container
+                  .gamecard__game-title= mmoGames[n].title
+                  //- Placeholder for div mini form
+                  .gamecard__dropdown-container
+                    .gamecard__dropdown-form
+                  //- Rating Box using likesCount
+                  .gamecard__rating-box
+                    .gamecard__rating= mmoGames[n].likesCount
