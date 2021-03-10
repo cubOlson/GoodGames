@@ -1,0 +1,72 @@
+/* Style for the login page */
+.login-form {
+    /* background: linear-gradient(to bottom right, var(--blue), var(--darkpink)); */
+    background-color: rgb(92, 91, 91);
+    border: black solid 1px;
+    box-shadow: 5px 10px 8px #14161a;
+    /* color:  var(--orange); */
+    color: white;
+    text-align: center;
+    margin: 30px auto 30px auto;
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Style for the singup form */
+.signup-form {
+    /* background: linear-gradient(to bottom right, var(--blue), var(--darkpink)); */
+    background-color: rgb(92, 91, 91);
+    border: black solid 1px;
+    box-shadow: 5px 10px 8px #14161a;
+    /* color:  var(--orange); */
+    color: white;
+    text-align: center;
+    margin: 30px auto 30px auto;
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Styling for the label and inputs */
+.form-group {
+    font-size: 20px;
+    padding: 7px;
+}
+.form-control {
+    border: 1px solid;
+    border-radius: 10px 10px;
+    box-sizing: border-box;
+    border-style: none;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    background-color: #e7d3f3;
+    font-size: 20px;
+    width: 100%;
+}
+
+/* Styling for the button and the anchor tag */
+.login-signup-button {
+    background-color: var(--orange);
+    color: black;
+    padding: 10px;
+    border-radius: 5px 5px;
+    margin: 0 10px 0 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+.login-signup-button:hover {
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+.need-have-account {
+    margin-top: 10px;
+}
+
+
+/* Error Handling */
+.errors {
+    color: red;
+    font-weight: bold;
+}
