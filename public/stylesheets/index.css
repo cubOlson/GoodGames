@@ -23,8 +23,12 @@
 
 .highest-games, .action-games, .strategy-games, .casual-games, .racing-games, .mmo-games {
     color: black;
-    padding-right: 50px;
+    padding-right: 30px;
     border: 1px solid var(--orange);
     background: linear-gradient(var(--orange), var(--yellow));
     width: fit-content;
+}
+.games {
+    text-decoration: none;
+
 }
