@@ -1,21 +1,25 @@
 extends layout
 
-block content
-    if errors
-        div
-            each error in errors
-                div: p= error
+append head
+  link(rel="stylesheet" href="/stylesheets/login-signup.css")
 
-    form(action="/users/login", method="post")
-        div
-            input(type="hidden", name="_csrf", value=csrfToken)
-        div
-            label(for="email") Email
-            input(type="email", name="email")
-        div
-            label(for="password") Password
-            input(type="password", name="password")
-        button(type="submit") Login
-        br
-        div
-            a(href="/users/signup") Need an account? Sign up here!
+block content
+    div.login-form
+        if errors
+            div
+                each error in errors
+                    div.errors: p= error
+
+        form(action="/users/login", method="post")
+            div
+                input(type="hidden", name="_csrf", value=csrfToken)
+            div
+                label(for="email" class="form-group") Email
+                input(type="email", name="email" class="form-control")
+            div
+                label(for="password" class="form-group") Password
+                input(type="password", name="password" class="form-control")
+            button(type="submit" class="login-signup-button") Login
+            br
+            div.need-have-account
+                a(href="/users/signup") Need an account? Sign up here!

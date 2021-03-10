@@ -1,3 +1,30 @@
-h1 {
-    color: #555555;
+.header-container {
+    position: relative;
+    text-align: center;
+}
+.header {
+    width: 100%;
+    max-height: 500px;
+    opacity: 40%;
+}
+.header-context {
+    /* transform-origin: center; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 50px;
+}
+
+.games-container {
+
+}
+
+.highest-games, .action-games, .strategy-games, .casual-games, .racing-games, .mmo-games {
+    color: black;
+    padding-right: 50px;
+    border: 1px solid var(--orange);
+    background: linear-gradient(var(--orange), var(--yellow));
+    width: fit-content;
 }
