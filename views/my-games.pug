@@ -1,27 +1,28 @@
-extends layout 
-block content 
-  h1 Sweet collection, dude. 
+extends layout
+block content
+  h1= title
   br
   div
-    ul 
-      each game in myGames 
-        li=game.title
+    ul
+      each game in myGames
+        li
+          a(href=`/games/${game.id}`)= game.title
 
 
 
 
   //-     include: [{
-  //-     model: Product,
-  //-     as: 'products',
-  //-     required: false,
-  //-     // Pass in the Product attributes that you want to retrieve
-  //-     attributes: ['id', 'name'],
-  //-     through: {
-  //-       // This block of code allows you to retrieve the properties of the join table
-  //-       model: ProductOrder,
-  //-       as: 'productOrders',
-  //-       attributes: ['qty'],
-  //-     }
+  //-       model: Product,
+  //-       as: 'products',
+  //-       required: false,
+  //-       // Pass in the Product attributes that you want to retrieve
+  //-       attributes: ['id', 'name'],
+  //-       through: {
+  //-         // This block of code allows you to retrieve the properties of the join table
+  //-         model: ProductOrder,
+  //-         as: 'productOrders',
+  //-         attributes: ['qty'],
+  //-       }
   //-   }]
 
 
