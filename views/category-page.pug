@@ -1,21 +1,27 @@
-extends layout 
-block content 
-  h1= title 
-  div 
-    ul 
-      each game in games 
-        li
-          a(href=`/games/${game.id}`)=game.title
-  br
-  h1 Category Links
-  div 
-    div
-      a(href='http://localhost:8080/categories/1') Action & Adventure
-    div
-      a(href='http://localhost:8080/categories/2') RPG & MMO
-    div
-      a(href='http://localhost:8080/categories/3') Strategy & RTS
-    div
-      a(href='http://localhost:8080/categories/4') Sports & Racing
-    div
-      a(href='http://localhost:8080/categories/5') Casual & Simulation
+extends layout
+
+append head
+  link(rel="stylesheet" href="/stylesheets/categories.css")
+
+block content
+  h1.category-header= title
+  div.category-container
+    div.selected-category
+      ul
+        each game in games
+          li.category-games
+            a(href=`/games/${game.id}`): img(src=`${game.image}`, alt="" class="fit")
+            a(href=`/games/${game.id}` class="game-anchor")=game.title
+    div.categories-on-right
+      h1 Category Links
+      div
+        div.other-categories
+          a(href='/categories/1') Action & Adventure
+        div.other-categories
+          a(href='/categories/2') RPG & MMO
+        div.other-categories
+          a(href='/categories/3') Strategy & RTS
+        div.other-categories
+          a(href='/categories/4') Sports & Racing
+        div.other-categories
+          a(href='/categories/5') Casual & Simulation

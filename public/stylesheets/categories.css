@@ -1,0 +1,51 @@
+/* Title for the page */
+.category-header {
+    text-align: center;
+    color: white;
+    padding: 20px 0 20px 0;
+    font-size: 50px;
+    background: linear-gradient(rgba(191, 15, 112, 0.6), rgba(191, 15, 112,0));
+}
+/* Contains the games for the categories as well as the categories */
+.category-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* all the games */
+.selected-category {
+    margin-left: 10px;
+    width: 75%;
+}
+.category-games {
+    display: inline-block;
+    margin: 5px 10px 5px 10px;
+    list-style: none;
+    color: white;
+    vertical-align: top;
+    text-align: center;
+    width: 120px;
+}
+.game-anchor {
+    text-decoration: none;
+}
+.fit {
+    width: 120px;
+    height: 150px;
+}
+
+/* The other categories */
+.categories-on-right {
+    color: white;
+    margin: 5px 20px 5px 15px;
+    background-color: var(--blue);
+    padding: 30px;
+    height: 300px;
+    /* width: 800px; */
+}
+.other-categories {
+    margin: 20px 0 20px 0;
+}
+.other-categories a {
+    text-decoration: none;
+}
