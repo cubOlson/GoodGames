@@ -18,19 +18,20 @@ router.get( "/signup", csrfProtection, asyncHandler(async (req, res) => {
 // Load the user's library
 router.get("/:id/mygames", asyncHandler(async (req, res) => {
   const userId = parseInt(req.params.id, 10)
-  const user = await User.findByPk(userId)
-  const myLibrary = await UserGame.findAll({where: {userId}})
-  console.log('myLibrary ->',myLibrary)
-  let myGames = await Promise.all(myLibrary.map(async (item) => {
-    const gameId = item.gameId
-    const game = await Game.findByPk(gameId)
-    return game
-  }))
-  console.log('myGames ->', myGames)
-  // let gameList = await Promise.all(...myGames)
-  // console.log('gameList ->', gameList)
+  const user = await User.findByPk(userId, { include: Game })
+  const myGames = user.Games
   res.render('my-games', {user, myGames, title: 'My Games'})
 }))
+
+// Load a list of the users reviewed games
+router.get("/:id/myreviews", asyncHandler(async (req, res) => {
+  const userId = parseInt(req.params.id, 10)
+  const user = await User.findByPk(userId, { include: Game })
+  const myGames = user.Games.filter(game => game.UserGame.reviewed === true)
+  res.render('my-games', {user, myGames, title: 'My Reviewed Games'})
+}))
+
+
 
 /* POST */
 // Register new user
