@@ -68,8 +68,51 @@
 
 /* Contains the written reviews and the posted reviews */
 .write-reviews {
+    width: 1000px;
+    margin: 5px auto 5px auto;
+    text-align: center;
+    color: white;
 
 }
-.posted-reviews {
 
+/* styling for the form */
+.formDiv {
+    border: 1px solid white;
+    padding: 10px 50px;
+}
+.review-label {
+    font-size: 20px;
+    padding: 7px;
+}
+.review-input {
+    border: 1px solid;
+    border-radius: 10px 10px;
+    box-sizing: border-box;
+    border-style: none;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    background-color: #e7d3f3;
+    font-size: 20px;
+    width: 100%;
+}
+.review-button {
+    background-color: var(--pink);
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px;
+    margin: 0 10px 0 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+.review-button:hover {
+    cursor: pointer;
+    background: linear-gradient(var(--blue), var(--darkpink));
+}
+
+/* styling for the posted comments */
+.posted-reviews {
+    border: 1px solid white;
+    text-align: left;
+    padding: 10px;
 }

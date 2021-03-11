@@ -39,18 +39,18 @@ block content
               div.other-categories
                 a(href='/categories/5') Casual & Simulation
   div.write-reviews
-    div
-      if true
+    if true
+      div.formDiv
         form(action=`/api/games/${game.id}/review` method='post')
           input(type='hidden' name='_csrf' value= csrfToken )
           div
-            label(for='title') Title
-            input(type='text' name='title')
+            label.review-label(for='title') Title
+            input.review-input(type='text' name='title')
           div
-            label(for='content') Review
-            textarea(name='content')
-          button(type='submit') Add Review
+            label.review-label(for='content') Review
+            textarea.review-input(name='content')
+          button.review-button(type='submit') Add Review
       //- each review in reviews
-        div
-          h3 review title here
-          p review text here
+      div.posted-reviews
+        h3 review title here
+        p review text here
