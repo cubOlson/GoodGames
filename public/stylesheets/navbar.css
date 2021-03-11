@@ -23,13 +23,10 @@ height: 71px;
     background-color: rgba(0, 0, 0, 0.973);
 }
 
-
-
 .bg {
     background-image:url('../images/wp4041942.jpg');
     background-position: center;
-background-size: cover;
-
+    background-size: cover;
 }
 
 /* .navWrap {

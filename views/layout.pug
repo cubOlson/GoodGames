@@ -10,7 +10,6 @@ html
         link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
 
   body
-    - var rootPath = `http://localhost:8080`;
     header.bg
       .page-wrap
         //- AUTHENTICATED AUTHENTICATED AUTHENTICATED AUTHENTICATED AUTHENTICATED
@@ -25,14 +24,15 @@ html
                   input(type="search", name="searchBar" placeholder="Search" class="search-input")
             //- Right Half of Nav Bar
             div.navBar__right
-
-              a.navlinkbox(href=`${rootPath}/users/${user.id}/mygames`)
-                .fas.fa-gamepad.navlink
-                .navlink My Games
+              div.right-child
+                a(href=`/users/${user.id}/mygames`) My Games
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gamepad" class="gamepad" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <path fill="currentColor" d="M480.07 96H160a160 160 0 1 0 114.24 272h91.52A160 160 0 1 0 480.07 96zM248 268a12 12 0 0 1-12 12h-52v52a12 12 0 0 1-12 12h-24a12 12 0 0 1-12-12v-52H84a12 12 0 0 1-12-12v-24a12 12 0 0 1 12-12h52v-52a12 12 0 0 1 12-12h24a12 12 0 0 1 12 12v52h52a12 12 0 0 1 12 12zm216 76a40 40 0 1 1 40-40 40 40 0 0 1-40 40zm64-96a40 40 0 1 1 40-40 40 40 0 0 1-40 40z"></path>
+                  </svg>
 
 
               div.navlink
-                a(href=`${rootPath}/users/${user.id}/myreviews`) My Reviews
+                a(href=`/users/${user.id}/myreviews` class="right__attribute") My Reviews
                   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="comment-alt" class="comment-box" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                   <path fill="currentColor" d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 9.8 11.2 15.5 19.1 9.7L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"></path>
                   </svg>
@@ -41,7 +41,7 @@ html
               //-   a(href=`${rootPath}/users/${user.id}/myreviews` class="right__attribute") My Reviews
 
               div.navlink
-                a(href=`${rootPath}/users/${user.id}/myprofile` class="right__attribute") My Profile
+                a(href=`/users/${user.id}/myprofile` class="right__attribute") My Profile
                   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-astronaut" class="profile-button" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                   <path fill="currentColor" d="M64 224h13.5c24.7 56.5 80.9 96 146.5 96s121.8-39.5 146.5-96H384c8.8 0 16-7.2 16-16v-96c0-8.8-7.2-16-16-16h-13.5C345.8 39.5 289.6 0 224 0S102.2 39.5 77.5 96H64c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16zm40-88c0-22.1 21.5-40 48-40h144c26.5 0 48 17.9 48 40v24c0 53-43 96-96 96h-48c-53 0-96-43-96-96v-24zm72 72l12-36 36-12-36-12-12-36-12 36-36 12 36 12 12 36zm151.6 113.4C297.7 340.7 262.2 352 224 352s-73.7-11.3-103.6-30.6C52.9 328.5 0 385 0 454.4v9.6c0 26.5 21.5 48 48 48h80v-64c0-17.7 14.3-32 32-32h128c17.7 0 32 14.3 32 32v64h80c26.5 0 48-21.5 48-48v-9.6c0-69.4-52.9-125.9-120.4-133zM272 448c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm-96 0c-8.8 0-16 7.2-16 16v48h32v-48c0-8.8-7.2-16-16-16z"></path>
                   </svg>
