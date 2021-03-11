@@ -76,15 +76,16 @@ block content
                 - playStatus=gameStatuses[casualGames[n].title]
               +gameCard(casualGames, n, domain, playStatus)
 
-          //- Sports Games
+        //- Sports Games
+        div
           a.games(href="/categories/4")
-            h1 Sports & Racing Games
-          div.gameCards
-            - for(var n = 0; n < 4; n++)
-                - var playStatus = 'Not Played'
-                if (gameStatuses[sportsGames[n].title] !== undefined)
-                  - playStatus=gameStatuses[sportsGames[n].title]
-                +gameCard(sportsGames, n, domain, playStatus)
+            h1.casual-games Sports & Racing Games
+        div.gameCards
+          - for(var n = 0; n < 4; n++)
+              - var playStatus = 'Not Played'
+              if (gameStatuses[sportsGames[n].title] !== undefined)
+                - playStatus=gameStatuses[sportsGames[n].title]
+              +gameCard(sportsGames, n, domain, playStatus)
 
         //- MMO Games
         div
