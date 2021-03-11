@@ -41,7 +41,7 @@ block content
   div.write-reviews
     if true
       div.formDiv
-        form(action=`/api/games/${game.id}/review` method='post')
+        form(action=`/games/${game.id}/review` method='post')
           input(type='hidden' name='_csrf' value= csrfToken )
           div
             label.review-label(for='title') Title
@@ -49,6 +49,8 @@ block content
           div
             label.review-label(for='content') Review
             textarea.review-input(name='content')
+          div   
+            input(type='checkbox' name='liked' value='true')
           button.review-button(type='submit') Add Review
       //- each review in reviews
       div.posted-reviews
