@@ -7,7 +7,7 @@ append head
 block content
   h1.title #{title}
 
-  form(action="/users/signup", method="post").login-form
+  form(action="/users/signup", method="put").login-form
             div
                 input(type="hidden", name="_csrf", value=csrfToken)
             div
