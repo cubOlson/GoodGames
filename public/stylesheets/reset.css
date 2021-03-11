@@ -14,41 +14,20 @@ body {
   font: 14px ;
   font-family: "Montserrat",sans-serif;
   background-color: rgb(37, 37, 37);
+  /* height: 100vh; */
 }
 
 a {
   color: #00B7FF;
   /* Added no text decoration here... can take off everywhere else in document */
   text-decoration: none;
-  
-}
 
-button {
-  background-color:none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  color: var(--orange);
-  justify-content: space-between;
-  align-items: center;
-  font-family: Montserrat;
-  /* font-size: 1.1em; */
-  font-weight: 400;
-  transition:  all 0.1s ease-in-out;
-  -moz-transition:  all 0.1s ease-in-out;
-  -webkit-transition: all 0.1s ease-in-out;
 }
 
 button:focus {
     outline: none;
 }
 
-button:hover {
-    background-color: none;
-    color: white;
-    /* transform: scale(1.1); */
-    font-weight: 400;
-}
 
 * {
   box-sizing: border-box;

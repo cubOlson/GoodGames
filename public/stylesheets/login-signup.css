@@ -59,6 +59,7 @@
 .login-signup-button:hover {
     background-color: var(--yellow);
     cursor: pointer;
+    color: white;
 }
 .need-have-account {
     margin-top: 10px;
