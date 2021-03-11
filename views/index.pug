@@ -36,11 +36,11 @@ block content
           - for(var n = 0; n < 3; n++)
               div.gamecard__container
                 //- Image
-                a(href=`${domain}/games/${popularGames[n].id}`)
-                  img.gamecard__image(src=popularGames[n].image)
+                //- a(href=`${domain}/games/${popularGames[n].id}`)
+                img.gamecard__image(src=popularGames[n].image)
                 //- Overlay Text
                 div.gamecard__text-container
-                  .gamecard__game-title= popularGames[n].title
+                  a(href=`${domain}/games/${popularGames[n].id}`): .gamecard__game-title= popularGames[n].title
                   //- Placeholder for div mini form
                   .gamecard__dropdown-container
                     .gamecard__dropdown-form
