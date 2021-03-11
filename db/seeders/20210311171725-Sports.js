@@ -2,15 +2,9 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-     /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
 
-      Example:
-      */
       return queryInterface.bulkInsert("Games",
       [
-        //{title, image, likesCount, releaseDate, developer, summary, purchase, categoryId}
         {
           title: "Forza Horizon 4",
           image: "https://www.mobygames.com/images/covers/s/518449-forza-horizon-4-windows-apps-front-cover.jpg",
@@ -172,132 +166,132 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          title: "Assassin's Creed: Valhalla",
+          title: "Madden NFL 2001",
           image:
-            "https://britgamer.s3.eu-west-1.amazonaws.com/styles/544_square_top/s3/2020-04/assassins-creed-valhalla-cover.jpg?itok=3aGe4E3H",
+            "https://www.mobygames.com/images/covers/s/86765-madden-nfl-2001-windows-front-cover.jpg",
           likesCount: 0,
-          releaseDate: "November 10, 2020",
-          developer: "Ubisoft",
+          releaseDate: "August 25, 2000",
+          developer: "Electronic Arts, Inc.",
           summary:
-            "England in the age of the Vikings is a fractured nation of petty lords and warring kingdoms. Beneath the chaos lies a rich and untamed land waiting for a new conqueror. Will it be you?",
+            "The best-selling PC football game is back to dominate with legendary Madden gameplay and the deepest feature set available. Think you got game? Take your skills online against the best through EA SPORTS-sponsored tournaments. Check the online ranking to see how good you really are. The exclusive NFL coaches club license brings in real coaches complete with their own signature styles and plays to add even more strategy to your game.",
           purchase:
-            "https://www.amazon.com/s?k=assassins+creed+valhalla&crid=3VDKLL01753ZJ&sprefix=assassins%2Caps%2C229&ref=nb_sb_ss_midas-iss-sm_1_9",
-          categoryId: "1",
+            "https://www.amazon.com/Madden-NFL-2001-Sony-PlayStation-2/dp/B00004U5VN/ref=sr_1_1?dchild=1&keywords=Madden+NFL+2001&link_code=qs&qid=1615488783&s=videogames&sr=1-1",
+          categoryId: "4",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          title: "Super Smash Bros. Ultimate",
+          title: "Madden NFL 2000",
           image:
-            "https://www.mobygames.com/images/covers/l/548925-super-smash-bros-ultimate-nintendo-switch-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/s/22061-madden-nfl-2000-playstation-front-cover.jpg",
           likesCount: 0,
-          releaseDate: "December 7, 2018",
-          developer: "Nintendo",
-          summary: `Super Smash Bros. Ultimate for the Nintendo Switch brings back every fighter in the history of the series, adds newcomers and over 100 stages, and introduces a new adventure mode called "World of Light"`,
+          releaseDate: "August 17, 1999",
+          developer: "EA Tiburon",
+          summary: `John Madden brings the best football back to PC, bigger than ever! All 31 NFL teams (including the new Cleveland Browns), all-star and classic teams, player-specific animations, and much more. Graphics are better than ever. Improved running and rush interface gives you the ultimate control over strategy and execution. Even a franchise mode to keep you busy for a while.`,
           purchase:
-            "https://www.amazon.com/s?k=super+smash+bros+ultimate&crid=1YR6QQXQTPW1F&sprefix=super+smash+bros+u%2Caps%2C222&ref=nb_sb_ss_midas-iss-sm_2_18",
-          categoryId: "1",
+            "https://www.amazon.com/Madden-NFL-2000-PC/dp/B00000K3DA%3FSubscriptionId%3D1Z2BQGSC90VEF3V2QJ82%26tag%3Dmobygames%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00000K3DA",
+          categoryId: "4",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          title: "Legend of Zelda: Breath of the Wild",
+          title: "Major League Baseball 2006",
           image:
-            "https://d1x7zurbps6occ.cloudfront.net/product/xlarge/635177-176831.jpg",
+            "https://www.mobygames.com/images/covers/s/139405-major-league-baseball-2k6-psp-front-cover.jpg",
           likesCount: 0,
-          releaseDate: "March 3, 2017",
-          developer: "Nintendo",
+          releaseDate: "April 18, 2006",
+          developer: "Kush Games, Inc.",
           summary:
-            "After a century of hibernation, Link reawakens to once again save a ruined Hyrule from a great evil.",
+            "Major League Baseball 2K6 is a version of its console counterparts, similar in style, but with different amenities. It still features the same rosters and the three year report as well that the console versions have, but has different animations, designed for the PSP, as well as the same game mechanics as the consoles as well.",
           purchase:
-            "https://www.amazon.com/s?k=legend+of+zelda+breath+of+the+wild",
-          categoryId: "1",
+            "https://www.amazon.com/Major-League-Baseball-2K6-PlayStation-2/dp/B000E260KI/ref=sr_1_1?dchild=1&keywords=Major+League+Baseball+2K6&link_code=qs&qid=1615489354&s=videogames&sr=1-1",
+          categoryId: "4",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          title: "Witcher 3: Wild Hunt",
+          title: "Major League Baseball 2005",
           image:
-            "https://www.mobygames.com/images/covers/l/392214-the-witcher-3-wild-hunt-xbox-one-front-cover.png",
+            "https://www.mobygames.com/images/covers/s/176365-major-league-baseball-2k5-playstation-2-front-cover.jpg",
           likesCount: 0,
-          releaseDate: "May 19, 2015",
-          developer: "CD Projekt Red",
+          releaseDate: "February 24, 2005",
+          developer: "Kush Games, Inc.",
           summary:
-            "A monster hunter for hire embarks on an epic journey to find his former apprentice before The Wild Hunt can capture her and bring about the destruction of the world.",
+            "MLB 2K5 is the first in the series of 2K games, taking over from it's Sega predecessor, ESPN Major League Baseball. This one has been completely revamped with brand new control schemes and a new graphics engine. It features brand new animations and added a great deal of detail to the players, stadiums, weather and even cut scenes.",
           purchase:
-            "https://www.amazon.com/s?k=witcher+3+wild+hunt&ref=nb_sb_noss_2",
-          categoryId: "1",
+            "https://www.amazon.com/MLB-2K5-PlayStation-2/dp/B0002IQCL6%3FSubscriptionId%3D1Z2BQGSC90VEF3V2QJ82%26tag%3Dmobygames%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0002IQCL6",
+          categoryId: "4",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          title: "Diablo 3",
+          title: "MLB 2004",
           image:
-            "https://www.mobygames.com/images/covers/l/296397-diablo-iii-reaper-of-souls-ultimate-evil-edition-playstation-4-front-cover.jpg",
+            "https://www.amazon.com/Playstation-2-MLB-2004/dp/B00008DHNS",
           likesCount: 0,
-          releaseDate: "May 15, 2012",
-          developer: "Blizzard Entertainment",
+          releaseDate: "Aril 15, 2003",
+          developer: "Sony Computer Entertainment America, Inc.",
           summary:
-            "The Black Soulstone essence is screaming for vengeance and release. Before the artifact can be sealed away forever, Malthael, the Angel of Death manifests in the mortal realms with a deadly new purpose. And so begins the end of all things.",
-          purchase: "https://www.amazon.com/s?k=diablo+3&ref=nb_sb_noss_1",
-          categoryId: "1",
+            "MLB 2004 is the game of baseball brought home. This game strives for realism with total control batting, pitching, and fielding, as well as having every player's head accurately recreated with the use of a 3D scanner.",
+          purchase: "https://www.amazon.com/Playstation-2-MLB-2004/dp/B00008DHNS",
+          categoryId: "4",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          title: "Hollow Knight",
+          title: "NBA 08",
           image:
-            "https://www.mobygames.com/images/covers/l/416462-hollow-knight-limited-edition-linux-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/s/139419-nba-08-psp-front-cover.jpg",
           likesCount: 0,
-          releaseDate: "February 24, 2017",
-          developer: "Team Cherry",
+          releaseDate: "October 02, 2007",
+          developer: "SCE Studios San Diego",
           summary:
-            "This is the story of a knight, in a quest to uncover the secrets of the long-abandoned kingdom of the Hallownest insects, whose depths attract the adventurous and brave with the promise of treasure or the answer to ancient mysteries.",
-          purchase: "https://www.amazon.com/s?k=hollow+knight&ref=nb_sb_noss_1",
-          categoryId: "1",
+            "This version is different from the PS2 and PS3 versions. This one does not feature the Life Mode like the PS2, but has a Conquest Mode where the player can earn money through games, upgrading attributes and even team upgrades as well as buying items for their home city.",
+          purchase: "https://www.amazon.com/NBA-08-Playstation-3/dp/B000V4TXN0/ref=sr_1_1?dchild=1&keywords=NBA+08&link_code=qs&qid=1615495011&s=videogames&sr=1-1",
+          categoryId: "4",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          title: "Mortal Kombat 11",
-          image: "https://www.amazon.com/s?k=mortal+kombat+11&ref=nb_sb_noss_1",
+          title: "NBA 07",
+          image: "https://www.mobygames.com/images/covers/s/154019-nba-07-playstation-3-front-cover.jpg",
           likesCount: 0,
-          releaseDate: "April 23, 2019",
-          developer: "NetherRealm Studios",
+          releaseDate: "November 17, 2006",
+          developer: "SCE Studios San Diego",
           summary:
-            "When a time lord starts merging past with the present, versions of heroes from both Mortal Kombat timelines must unite to right past wrongs and save the world.",
+            "NBA 07 is the second game in the NBA: Featuring the Life series, and one of the launch games of the PlayStation 3. In addition to the traditional Season Mode, featuring all current NBA teams and players, there is an NBA Replay mode, which allows players to replay highlights from the 2006 season. Also featured is "Games of the Week" where users can relay highlights from the current 2007 season by downloading new games on a weekly basis.",
           purchase:
-            "https://www.amazon.com/s?k=street+fighter+v&ref=nb_sb_noss_1",
-          categoryId: "1",
+            "https://www.amazon.com/NBA-07-Playstation-3/dp/B000JLP02S",
+          categoryId: "4",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          title: "Tekken 7",
+          title: "NBA 06",
           image:
-            "https://www.mobygames.com/images/covers/l/506864-tekken-7-ultimate-edition-playstation-4-front-cover.png",
+            "https://www.mobygames.com/images/covers/s/139418-nba-06-psp-front-cover.jpg",
           likesCount: 0,
-          releaseDate: "June 2, 2017",
-          developer: "Bandai Namco Entertainment",
+          releaseDate: "October 04, 2005",
+          developer: "SCE Studios San Diego",
           summary:
-            "After the events of Tekken 6, though Azazel was destroyed by Jin Kazama, the war between the Mishima Zaibatsu and G Corporation continues to ravage the world leading up to the final battle between Heihachi Mishima and his son, Kazuya.",
+            "While the same series as it's console cousin, this one has a few notably differences. While it does feature the gameplay options of Exhibition, Practice, Season, Playoffs, Minigames and Wireless mode. The most notably difference is the lack of The Life mode that its PS2 counterpart features. There are also completely different minigames which are the Playstation Skills Challenge, the 3-Point Shoot-out as well as classic schoolyard games such as HORSE, Paint and Dodgeball. Players can also unlock jerseys and Upper Deck trading cards by completing these mini-games.",
           purchase:
-            "https://www.amazon.com/s?k=tekken+8+ps4&crid=YLAU319QRM92&sprefix=tekken+8%2Caps%2C214&ref=nb_sb_ss_ts-doa-p_1_8",
-          categoryId: "1",
+            "https://www.amazon.com/NBA-Live-06-PlayStation-2/dp/B000930DMI/ref=sr_1_1?dchild=1&keywords=NBA+06&link_code=qs&qid=1615495221&s=videogames&sr=1-1",
+          categoryId: "4",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          title: "Sekiro: Shadows Die Twice",
+          title: "Sports Party",
           image:
-            "https://www.mobygames.com/images/covers/l/547413-sekiro-shadows-die-twice-xbox-one-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/s/562361-sports-party-nintendo-switch-front-cover.jpg",
           likesCount: 0,
-          releaseDate: "March 22, 2019",
-          developer: "FromSoftware",
+          releaseDate: "October 30, 2018",
+          developer: "Magic Pockets SAS",
           summary:
-            "Set in a reimagining of 1500s Sengoku era Japan. You play an unnamed shinobi, tasked with protecting a young lord of mystical lineage.",
-          purchase: "https://www.amazon.com/s?k=sekiro&ref=nb_sb_noss_1",
-          categoryId: "1",
+            "Sports Party brings the sun, sea, and sports right to your fingertips! Whether at home or on the go, challenge your family and friends to Frisbee, Jet Ski, Basketball, Golf, Skateboarding, and Beach Tennis to claim victory!",
+          purchase: "https://www.bestbuy.com/site/sports-party-nintendo-switch/6301963.p?skuId=6301963",
+          categoryId: "4",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -307,12 +301,7 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
 
-      Example:
-      */
    return queryInterface.bulkDelete('Games', null, {});
   },
 };
