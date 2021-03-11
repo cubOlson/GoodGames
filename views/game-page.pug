@@ -1,9 +1,56 @@
-extends layout 
-block content 
-  h1= title
-  div   
-    img(src=`${game.image}`, alt="")
-  div 
-    p This is where content goes 
-  div 
-    p this is where reviews will go
+extends layout
+
+append head
+  link(rel="stylesheet" href="/stylesheets/gamePage.css")
+
+block content
+  div.game-page-container
+    div.game-image
+      img(src=`${game.image}`, alt="")
+    div.middleBox
+      div.game-title-cat
+        h1= title
+        br
+        h2= game.Category.category
+      div.game-sum
+        p= game.summary
+    div.sideCard
+      div.game-info
+        h4= game.developer
+        br
+        h4= game.releaseDate
+        br
+        a(href=`${game.purchase}`) Purchase Now
+      div.game-rating
+        h2 Ratings
+        br
+        h3= game.likesCount
+      div.categories-on-right
+            h3 Category Links
+            div
+              div.other-categories
+                a(href='/categories/1') Action & Adventure
+              div.other-categories
+                a(href='/categories/2') RPG & MMO
+              div.other-categories
+                a(href='/categories/3') Strategy & RTS
+              div.other-categories
+                a(href='/categories/4') Sports & Racing
+              div.other-categories
+                a(href='/categories/5') Casual & Simulation
+  div.write-reviews
+    if true
+      div.formDiv
+        form(action=`/api/games/${game.id}/review` method='post')
+          input(type='hidden' name='_csrf' value= csrfToken )
+          div
+            label.review-label(for='title') Title
+            input.review-input(type='text' name='title')
+          div
+            label.review-label(for='content') Review
+            textarea.review-input(name='content')
+          button.review-button(type='submit') Add Review
+      //- each review in reviews
+      div.posted-reviews
+        h3 review title here
+        p review text here

@@ -1,0 +1,118 @@
+/* The main div that wraps everything */
+.game-page-container {
+    margin: 10px auto 10px auto;
+    width: 1000px;
+    display: flex;
+    color: white;
+}
+
+/* Contains the Image */
+.game-image {
+    width: 350px;
+}
+.game-image img{
+    width: 350px;
+    height: 550px;
+    margin-right: 5px;
+}
+
+/* Contains the Title, Category, and Summary */
+.middleBox {
+    width: 450px;
+}
+.game-title-cat {
+    border: 1px solid white;
+    margin: 0 5px 5px 5px;
+    text-align: center;
+    padding: 10px;
+}
+.game-sum {
+    border: 1px solid white;
+    margin: 5px;
+    text-align: center;
+    padding: 10px;
+}
+.game-sum p {
+    line-height: 2;
+    text-align: left;
+}
+
+/* Contains the Developer, Date, PurchaseLink, Ratings, and Category sidebar */
+.sideCard {
+    width: 200px;
+}
+.game-info {
+    border: 1px solid white;
+    margin: 0 0 5px 5px;
+    padding: 10px;
+}
+.game-rating {
+    border: 1px solid white;
+    margin: 5px 0 5px 5px;
+    text-align: center;
+    padding: 10px;
+
+}
+.categories-on-right {
+    border: 1px solid white;
+    margin: 5px 0 5px 5px;
+    padding: 10px;
+
+}
+.other-categories {
+    margin: 20px 0 20px 0;
+}
+.other-categories a {
+    text-decoration: none;
+}
+
+/* Contains the written reviews and the posted reviews */
+.write-reviews {
+    width: 1000px;
+    margin: 5px auto 5px auto;
+    text-align: center;
+    color: white;
+
+}
+
+/* styling for the form */
+.formDiv {
+    border: 1px solid white;
+    padding: 10px 50px;
+}
+.review-label {
+    font-size: 20px;
+    padding: 7px;
+}
+.review-input {
+    border: 1px solid;
+    border-radius: 10px 10px;
+    box-sizing: border-box;
+    border-style: none;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    background-color: #e7d3f3;
+    font-size: 20px;
+    width: 100%;
+}
+.review-button {
+    background-color: var(--pink);
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px;
+    margin: 0 10px 0 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+.review-button:hover {
+    cursor: pointer;
+    background: linear-gradient(var(--blue), var(--darkpink));
+}
+
+/* styling for the posted comments */
+.posted-reviews {
+    border: 1px solid white;
+    text-align: left;
+    padding: 10px;
+}

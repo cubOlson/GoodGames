@@ -1,14 +1,25 @@
 extends layout
 
 append head
-  link(rel="stylesheet" href="/stylesheets/login-signup.css")
-  link(rel="stylesheet" href="/stylesheets/reset.css")
+  link(rel="stylesheet" href="/stylesheets/myGames-myReviews.css")
+  link(rel="stylesheet" href="/stylesheets/gamecard.css")
 
 block content
   h1.title #{title}
   br
-  div
-    ul
-      each game in myGames
-        li
-          a(href=`/games/${game.id}`)= game.title
+  div.gamesContainer
+    each game in myGames
+        div.gameCards
+            div.gamecard__container
+              //- Image
+              a(href=`/games/${game.id}`)
+                img.gamecard__image(src=game.image)
+              //- Overlay Text
+              div.gamecard__text-container
+                .gamecard__game-title=game.title
+                //- Placeholder for div mini form
+                .gamecard__dropdown-container
+                  .gamecard__dropdown-form
+                //- Rating Box using likesCount
+                .gamecard__rating-box
+                  .gamecard__rating= game.likesCount
