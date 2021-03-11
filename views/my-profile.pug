@@ -1,0 +1,33 @@
+extends layout
+
+append head
+  link(rel="stylesheet" href="/stylesheets/login-signup.css")
+  link(rel="stylesheet" href="/stylesheets/reset.css")
+
+block content
+  h1.title #{title}
+
+  form(action="/users/signup", method="post").login-form
+            div
+                input(type="hidden", name="_csrf", value=csrfToken)
+            div
+                label(for="firstName" class="form-group") First Name
+                input(type="text", name="firstName" class="form-control" value=user.firstName)
+            div
+                label(for="lastName" class="form-group") Last Name
+                input(type="text", name="lastName" class="form-control" value=user.lastName)
+            div
+                label(for="username" class="form-group") Username
+                input(type="text", name="username" class="form-control" value=user.username)
+            div
+                label(for="phone" class="form-group") Phone
+                input(type="tel", name="phone" class="form-control" value=user.phone)
+            div
+                label(for="email" class="form-group") Email
+                input(type="email", name="email" class="form-control" value=user.email)
+            div
+                label(for="password" class="form-group") Password
+                input(type="password", name="password" class="form-control")
+
+            button(type="submit" class="login-signup-button") Update Profile
+  button(type="submit" class="login-signup-button") Delete Account?

@@ -1,31 +1,14 @@
 extends layout
+
+append head
+  link(rel="stylesheet" href="/stylesheets/login-signup.css")
+  link(rel="stylesheet" href="/stylesheets/reset.css")
+
 block content
-  h1= title
+  h1.title #{title}
   br
   div
     ul
       each game in myGames
         li
           a(href=`/games/${game.id}`)= game.title
-
-
-
-
-  //-     include: [{
-  //-       model: Product,
-  //-       as: 'products',
-  //-       required: false,
-  //-       // Pass in the Product attributes that you want to retrieve
-  //-       attributes: ['id', 'name'],
-  //-       through: {
-  //-         // This block of code allows you to retrieve the properties of the join table
-  //-         model: ProductOrder,
-  //-         as: 'productOrders',
-  //-         attributes: ['qty'],
-  //-       }
-  //-   }]
-
-
-  //-     const myGames = await UserGame.findAll({
-  //-   where: {userId}, include: {[User]}
-  //- })
