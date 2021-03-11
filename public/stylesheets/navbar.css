@@ -134,6 +134,19 @@ z-index: 3;
 
 
 .footer {
-    position: absolute;
-    bottom: 0px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(rgba(191, 15, 112, 0), rgba(191, 15, 112,0.6));
+    padding: 10px;
+}
+.footerChild {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.github {
+    width: 1.5rem;
+    float: left;
+    padding-top: 2px;
+    padding-right: 5px ;
 }
