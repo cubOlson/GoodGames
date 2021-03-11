@@ -3,8 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-      return queryInterface.bulkInsert("Games",
-      [
+      return queryInterface.bulkInsert("Games", [
         {
           title: "Forza Horizon 4",
           image: "https://www.mobygames.com/images/covers/s/518449-forza-horizon-4-windows-apps-front-cover.jpg",
@@ -259,7 +258,7 @@ module.exports = {
           releaseDate: "November 17, 2006",
           developer: "SCE Studios San Diego",
           summary:
-            "NBA 07 is the second game in the NBA: Featuring the Life series, and one of the launch games of the PlayStation 3. In addition to the traditional Season Mode, featuring all current NBA teams and players, there is an NBA Replay mode, which allows players to replay highlights from the 2006 season. Also featured is "Games of the Week" where users can relay highlights from the current 2007 season by downloading new games on a weekly basis.",
+            "NBA 07 is the second game in the NBA: Featuring the Life series, and one of the launch games of the PlayStation 3. In addition to the traditional Season Mode, featuring all current NBA teams and players, there is an NBA Replay mode, which allows players to replay highlights from the 2006 season. Also featured is Games of the Week where users can relay highlights from the current 2007 season by downloading new games on a weekly basis.",
           purchase:
             "https://www.amazon.com/NBA-07-Playstation-3/dp/B000JLP02S",
           categoryId: "4",
