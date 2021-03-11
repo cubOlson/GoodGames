@@ -8,7 +8,7 @@
     overflow: hidden;
 
     /* added 10px margin on all sides of game card to provide buffer with container */
-    margin: 10px;
+    margin: 20px;
 }
 .gamecard__image  {
     position: relative;
