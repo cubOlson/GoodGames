@@ -44,9 +44,14 @@ block content
                   //- Placeholder for div mini form
                   .gamecard__dropdown-container
                     .gamecard__dropdown-form
-                  //- Rating Box using likesCount
-                  .gamecard__rating-box
-                    .gamecard__rating= popularGames[n].likesCount
+                      form(action="/user/reviews", method="post") 
+                        select(name="played") (type="select", name="")
+                          option(value="1") Want to Play
+                          option(value="2") Playing
+                          option(value="3") Played
+                    //- Rating Box using likesCount
+                    .gamecard__rating-box
+                      .gamecard__rating= popularGames[n].likesCount
 
         div
           a.games(href="/categories/1")
