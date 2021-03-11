@@ -84,6 +84,14 @@ router.post("/login", csrfProtection, loginValidation, asyncHandler( async(req, 
     }
 }));
 
+/* PUT */
+router.put('/signup', asyncHandler( async( (req, res) => {
+  const { userId } = req.session.auth
+  const { firstName, lastName, username, phone, email, password } = req.body
+  const user = await User.findByPk(userId)
+  
+})))
+
 //Logout user
 router.post("/logout", async (req, res) => {
   return logoutUser(req, res);
