@@ -1,9 +1,12 @@
+/* The main div that wraps everything */
 .game-page-container {
     margin: 10px auto 10px auto;
     width: 1000px;
     display: flex;
     color: white;
 }
+
+/* Contains the Image */
 .game-image {
     width: 350px;
 }
@@ -12,6 +15,8 @@
     height: 550px;
     margin-right: 5px;
 }
+
+/* Contains the Title, Category, and Summary */
 .middleBox {
     width: 450px;
 }
@@ -27,6 +32,12 @@
     text-align: center;
     padding: 10px;
 }
+.game-sum p {
+    line-height: 2;
+    text-align: left;
+}
+
+/* Contains the Developer, Date, PurchaseLink, Ratings, and Category sidebar */
 .sideCard {
     width: 200px;
 }
@@ -48,6 +59,14 @@
     padding: 10px;
 
 }
+.other-categories {
+    margin: 20px 0 20px 0;
+}
+.other-categories a {
+    text-decoration: none;
+}
+
+/* Contains the written reviews and the posted reviews */
 .write-reviews {
 
 }
