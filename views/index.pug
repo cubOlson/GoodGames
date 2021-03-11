@@ -20,9 +20,8 @@ block content
     //-       .gamecard__dropdown-form
     //-     //- Rating Box using likesCount
     //-     .gamecard__rating-box
-    //-       .gamecard__rating= game.likesCount
-
-
+    //-      .gamecard__rating= game.likesCount
+    - var domain = `http://localhost:8080`
 
     div.header-container
       img(src="/GGHeaderSketch.png" class="header")
@@ -30,12 +29,15 @@ block content
 
     div.games-container
 
-      h1.main-category Highest Rated Games
-      div.highest-games
-            - for(var n = 0; n < 3; n++)
+      div.games
+        div
+          h1.highest-games Highest Rated Games
+        div.gameCards
+          - for(var n = 0; n < 3; n++)
               div.gamecard__container
                 //- Image
-                img.gamecard__image(src=popularGames[n].image)
+                a(href=`${domain}/games/${popularGames[n].id}`)
+                  img.gamecard__image(src=popularGames[n].image)
                 //- Overlay Text
                 div.gamecard__text-container
                   .gamecard__game-title= popularGames[n].title
@@ -46,89 +48,111 @@ block content
                   .gamecard__rating-box
                     .gamecard__rating= popularGames[n].likesCount
 
-      a.games(href="/categories/1")
-        h1 Action & Adventure Games
-      div.action-games
-            - for(var n = 0; n < 3; n++)
-              div.gamecard__container
-                //- Image
+        div
+          a.games(href="/categories/1")
+            h1.action-games Action & Adventure Games
+        div.gameCards
+          - for(var n = 0; n < 3; n++)
+            div.gamecard__container
+              //- Image
+              a(href=`${domain}/games/${actionGames[n].id}`)
                 img.gamecard__image(src=actionGames[n].image)
-                //- Overlay Text
-                div.gamecard__text-container
-                  .gamecard__game-title= actionGames[n].title
-                  //- Placeholder for div mini form
-                  .gamecard__dropdown-container
-                    .gamecard__dropdown-form
-                  //- Rating Box using likesCount
-                  .gamecard__rating-box
-                    .gamecard__rating= actionGames[n].likesCount
+              //- Overlay Text
+              div.gamecard__text-container
+                .gamecard__game-title= actionGames[n].title
+                //- Placeholder for div mini form
+                .gamecard__dropdown-container
+                  .gamecard__dropdown-form
+                //- Rating Box using likesCount
+                .gamecard__rating-box
+                  .gamecard__rating= actionGames[n].likesCount
 
-      a.games(href="/categories/3")
-        h1 Strategy & RTS Games
-      div.strategy-games
-            - for(var n = 0; n < 3; n++)
-              div.gamecard__container
-                //- Image
+        div
+          a.games(href="/categories/3")
+            h1.strategy-games Strategy & RTS Games
+        div.gameCards
+          - for(var n = 0; n < 3; n++)
+            div.gamecard__container
+              //- Image
+              a(href=`${domain}/games/${strategyGames[n].id}`)
                 img.gamecard__image(src=strategyGames[n].image)
-                //- Overlay Text
-                div.gamecard__text-container
-                  .gamecard__game-title= strategyGames[n].title
-                  //- Placeholder for div mini form
-                  .gamecard__dropdown-container
-                    .gamecard__dropdown-form
-                  //- Rating Box using likesCount
-                  .gamecard__rating-box
-                    .gamecard__rating= strategyGames[n].likesCount
+              //- Overlay Text
+              div.gamecard__text-container
+                .gamecard__game-title= strategyGames[n].title
+                //- Placeholder for div mini form
+                .gamecard__dropdown-container
+                  .gamecard__dropdown-form
+                //- Rating Box using likesCount
+                .gamecard__rating-box
+                  .gamecard__rating= strategyGames[n].likesCount
 
-      a.games(href="/categories/5")
-        h1 Casual & Simulation Games
-      div.casual-games
-            - for(var n = 0; n < 3; n++)
-              div.gamecard__container
-                //- Image
+        div
+          a.games(href="/categories/5")
+            h1.casual-games Casual & Simulation Games
+        div.gameCards
+          - for(var n = 0; n < 3; n++)
+            div.gamecard__container
+              //- Image
+              a(href=`${domain}/games/${casualGames[n].id}`)
                 img.gamecard__image(src=casualGames[n].image)
-                //- Overlay Text
-                div.gamecard__text-container
-                  .gamecard__game-title= casualGames[n].title
-                  //- Placeholder for div mini form
-                  .gamecard__dropdown-container
-                    .gamecard__dropdown-form
-                  //- Rating Box using likesCount
-                  .gamecard__rating-box
-                    .gamecard__rating= casualGames[n].likesCount
+              //- Overlay Text
+              div.gamecard__text-container
+                .gamecard__game-title= casualGames[n].title
+                //- Placeholder for div mini form
+                .gamecard__dropdown-container
+                  .gamecard__dropdown-form
+                //- Rating Box using likesCount
+                .gamecard__rating-box
+                  .gamecard__rating= casualGames[n].likesCount
 
-      //- COMMENTING OUT SPORTS DUE TO MISSING SEED DATA FOR NOW
+        //- COMMENTING OUT SPORTS DUE TO MISSING SEED DATA FOR NOW
 
-      //- a.games(href="/categories/4")
-      //-   h1 Sports & Racing Games
-      //- div.racing-games
-      //-       - for(var n = 0; n < 3; n++)
-      //-         div.gamecard__container
-      //-           //- Image
-      //-           img.gamecard__image(src=sportsGames[n].image)
-      //-           //- Overlay Text
-      //-           div.gamecard__text-container
-      //-             .gamecard__game-title= sportsGames[n].title
-      //-             //- Placeholder for div mini form
-      //-             .gamecard__dropdown-container
-      //-               .gamecard__dropdown-form
-      //-             //- Rating Box using likesCount
-      //-             .gamecard__rating-box
-      //-               .gamecard__rating= sportsGames[n].likesCount
+        //- a.games(href="/categories/4")
+        //-   h1 Sports & Racing Games
+        //- div.racing-games
+        //-       - for(var n = 0; n < 3; n++)
+        //-         div.gamecard__container
+        //-           //- Image
+        //-           img.gamecard__image(src=sportsGames[n].image)
+        //-           //- Overlay Text
+        //-           div.gamecard__text-container
+        //-             .gamecard__game-title= sportsGames[n].title
+        //-             //- Placeholder for div mini form
+        //-             .gamecard__dropdown-container
+        //-               .gamecard__dropdown-form
+        //-             //- Rating Box using likesCount
+        //-             .gamecard__rating-box
+        //-               .gamecard__rating= sportsGames[n].likesCount
 
-      a.games(href="/categories/2")
-        h1 MMO & RPG Games
-      div.mmo-games
-       - for(var n = 0; n < 3; n++)
-              div.gamecard__container
-                //- Image
+        div
+          a.games(href="/categories/2")
+            h1.mmo-games MMO & RPG Games
+        div.gameCards
+          - for(var n = 0; n < 3; n++)
+            div.gamecard__container
+              //- Image
+              a(href=`${domain}/games/${mmoGames[n].id}`)
                 img.gamecard__image(src=mmoGames[n].image)
-                //- Overlay Text
-                div.gamecard__text-container
-                  .gamecard__game-title= mmoGames[n].title
-                  //- Placeholder for div mini form
-                  .gamecard__dropdown-container
-                    .gamecard__dropdown-form
-                  //- Rating Box using likesCount
-                  .gamecard__rating-box
-                    .gamecard__rating= mmoGames[n].likesCount
+              //- Overlay Text
+              div.gamecard__text-container
+                .gamecard__game-title= mmoGames[n].title
+                //- Placeholder for div mini form
+                .gamecard__dropdown-container
+                  .gamecard__dropdown-form
+                //- Rating Box using likesCount
+                .gamecard__rating-box
+                  .gamecard__rating= mmoGames[n].likesCount
+
+      div.categories
+        h1 Category Links
+        div
+          div.other-categories
+            a(href='/categories/1') Action & Adventure
+          div.other-categories
+            a(href='/categories/2') RPG & MMO
+          div.other-categories
+            a(href='/categories/3') Strategy & RTS
+          div.other-categories
+            a(href='/categories/4') Sports & Racing
+          div.other-categories
+            a(href='/categories/5') Casual & Simulation

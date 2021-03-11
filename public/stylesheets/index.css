@@ -17,21 +17,41 @@
     font-size: 50px;
 }
 
+/* Main div for all the games, categores, and category box */
 .games-container {
-
+    display: flex;
+    justify-content: space-between;
 }
 
+/* Category box on the right */
+.categories {
+    color: white;
+    margin: 5px 20px 5px 15px;
+    background-color: var(--blue);
+    padding: 30px;
+    height: 300px;
+    border-radius: 10px;
+}
+.other-categories {
+    margin: 20px 0 20px 0;
+}
+.other-categories a {
+    text-decoration: none;
+}
+
+/* Div that displays them inline horizontally */
+.gameCards {
+    display: flex;
+}
+
+/* Styling for the H1 tags */
 .highest-games, .action-games, .strategy-games, .casual-games, .racing-games, .mmo-games {
     color: black;
     border: 1px solid var(--orange);
     background: linear-gradient(var(--orange), var(--yellow));
     width: fit-content;
-
-    /* Added display flex here with space around to get cards to float in container correctly */
-    display: flex;
-    justify-content: space-around;
+    padding-right: 20px;
 }
 .games {
     text-decoration: none;
-
 }
