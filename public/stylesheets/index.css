@@ -47,13 +47,142 @@
 }
 
 /* Styling for the H1 tags */
-.highest-games, .action-games, .strategy-games, .casual-games, .racing-games, .mmo-games {
-    color: black;
-    border: 1px solid var(--orange);
-    background: linear-gradient(var(--orange), var(--yellow));
-    width: fit-content;
-    padding-right: 20px;
+.highest-games {
+    position: relative;
+    color: white;
+    background: #8d0552;
+    width: 400px;
+    margin-top: 10px;
+    padding: 8px;
+    padding-left: 20px;
+    height: 55px
 }
+
+.highest-games:before {
+content:"";
+position: absolute;
+right: -40px;
+bottom: 0;
+width: 0;
+height: 0px;
+border-left: 40px solid #8d0552;
+border-top: 55px solid transparent;
+
+
+}/* Styling for the H1 tags */
+.action-games{
+ position: relative;
+    color: white;
+    background: #1c0373;
+    width: 470px;
+    margin-top: 10px;
+    padding: 8px;
+    padding-left: 20px;
+    height: 55px;
+    /* width: 450px; */
+}
+    .action-games:before {
+content:"";
+position: absolute;
+right: -40px;
+bottom: 0;
+/* width: 0; */
+height: 0px;
+border-left: 40px solid #1c0373;
+border-top: 55px solid transparent;
+}/* Styling for the H1 tags */
+ .strategy-games{
+    position: relative;
+    color: white;
+    background: #f2ae72;
+    width: 400px;
+    margin-top: 10px;
+    padding: 8px;
+    padding-left: 20px;
+    height: 55px;
+    text-shadow: 0px 1px 4px #02020279;
+
+ }
+
+ .strategy-games:before {
+content:"";
+position: absolute;
+right: -40px;
+bottom: 0;
+width: 0;
+height: 0px;
+border-left: 40px solid #f2ae72;
+border-top: 55px solid transparent;
+
+
+}/* Styling for the H1 tags */
+.casual-games{
+position: relative;
+    color: black;
+    background: #f2ce1b;
+    width: 490px;
+    margin-top: 10px;
+    padding: 8px;
+    padding-left: 20px;
+    height: 55px
+}
+ .casual-games:before {
+content:"";
+position: absolute;
+right: -40px;
+bottom: 0;
+width: 0;
+height: 0px;
+border-left: 40px solid #f2ce1b;
+border-top: 55px solid transparent;
+ }
+/* Styling for the H1 tags */
+.racing-games{
+    position: relative;
+    color: white;
+    background: #8d0552;
+    width: 400px;
+    margin-top: 10px;
+    padding: 8px;
+    padding-left: 20px;
+    height: 55px
+}
+.racing-games:before {
+content:"";
+position: absolute;
+right: -40px;
+bottom: 0;
+width: 0;
+height: 0px;
+border-left: 40px solid #8d0552;
+border-top: 55px solid transparent;
+
+
+}
+
+
+/* Styling for the H1 tags */
+.mmo-games {
+ position: relative;
+    color: white;
+    background: #1c0373;
+    width: 380px;
+    margin-top: 10px;
+    padding: 8px;
+    padding-left: 20px;
+    height: 55px;
+}
+    .mmo-games:before {
+content:"";
+position: absolute;
+right: -40px;
+bottom: 0;
+/* width: 0; */
+height: 0px;
+border-left: 40px solid #1c0373;
+border-top: 55px solid transparent;
+}
+
 .games {
     text-decoration: none;
 }
