@@ -1,5 +1,21 @@
 extends layout
 
+mixin gameCard(gamesArray, indexPos, domain, playStatus)
+    div.gamecard__container
+      img.gamecard__image(src=gamesArray[indexPos].image)
+      div.gamecard__text-container
+        a(href=`${domain}/games/${gamesArray[indexPos].id}`): .gamecard__game-title= gamesArray[indexPos].title
+        .gamecard__dropdown-container
+          .gamecard__dropdown-form
+            form(action="/users/signup", method="get")
+              select(name="played" onchange='this.form.submit()' value=playStatus)
+                option(value='Not played' selected=playStatus==='Not Played' ? true : false) Not Played
+                option(value='Want to Play' selected=playStatus==='Want to Play' ? true : false) Want to Play
+                option(value="Playing" selected=playStatus==='Playing' ? true : false) Playing
+                option(value="Played" selected=playStatus==='Played' ? true : false) Played
+          .gamecard__rating-box
+              .gamecard__rating= gamesArray[indexPos].likesCount
+
 append head
   //- add page specific styles by appending to the head
   link(rel="stylesheet" href="/stylesheets/index.css")
@@ -8,19 +24,6 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-    //- //- each game in games
-    //- div.gamecard__container
-    //-   //- Image
-    //-   img.gamecard__image(src=game.image)
-    //-   //- Overlay Text
-    //-   div.gamecard__text-container
-    //-     .gamecard__game-title= game.title
-    //-     //- Placeholder for div mini form
-    //-     .gamecard__dropdown-container
-    //-       .gamecard__dropdown-form
-    //-     //- Rating Box using likesCount
-    //-     .gamecard__rating-box
-    //-      .gamecard__rating= game.likesCount
     - var domain = `http://localhost:8080`
 
     div.header-container
@@ -29,22 +32,24 @@ block content
 
     div.games-container
 
+      //- Popular Games
       div.games
         div
           h1.highest-games Highest Rated Games
         div.gameCards
+
           - for(var n = 0; n < 3; n++)
               div.gamecard__container
                 //- Image
-                //- a(href=`${domain}/games/${popularGames[n].id}`)
-                img.gamecard__image(src=popularGames[n].image)
+                a(href=`${domain}/games/${popularGames[n].id}`)
+                  img.gamecard__image(src=popularGames[n].image)
                 //- Overlay Text
                 div.gamecard__text-container
-                  a(href=`${domain}/games/${popularGames[n].id}`): .gamecard__game-title= popularGames[n].title
+                  .gamecard__game-title= popularGames[n].title
                   //- Placeholder for div mini form
                   .gamecard__dropdown-container
                     .gamecard__dropdown-form
-                      form(action="/user/reviews", method="post") 
+                      form(action="/user/reviews", method="post")
                         select(name="played") (type="select", name="")
                           option(value="1") Want to Play
                           option(value="2") Playing
@@ -53,100 +58,68 @@ block content
                     .gamecard__rating-box
                       .gamecard__rating= popularGames[n].likesCount
 
+          - for(var n = 0; n < 4; n++)
+              - var playStatus = 'Not Played'
+              if (gameStatuses[popularGames[n].title] !== undefined)
+                - playStatus=gameStatuses[popularGames[n].title]
+              +gameCard(popularGames, n, domain, playStatus)
+
+
+        //- Action Games
         div
           a.games(href="/categories/1")
             h1.action-games Action & Adventure Games
         div.gameCards
-          - for(var n = 0; n < 3; n++)
-            div.gamecard__container
-              //- Image
-              a(href=`${domain}/games/${actionGames[n].id}`)
-                img.gamecard__image(src=actionGames[n].image)
-              //- Overlay Text
-              div.gamecard__text-container
-                .gamecard__game-title= actionGames[n].title
-                //- Placeholder for div mini form
-                .gamecard__dropdown-container
-                  .gamecard__dropdown-form
-                //- Rating Box using likesCount
-                .gamecard__rating-box
-                  .gamecard__rating= actionGames[n].likesCount
+          - for(var n = 0; n < 4; n++)
+              - var playStatus = 'Not Played'
+              if (gameStatuses[actionGames[n].title] !== undefined)
+                - playStatus=gameStatuses[actionGames[n].title]
+              +gameCard(actionGames, n, domain, playStatus)
 
+        //- Strategy Games
         div
           a.games(href="/categories/3")
             h1.strategy-games Strategy & RTS Games
         div.gameCards
-          - for(var n = 0; n < 3; n++)
-            div.gamecard__container
-              //- Image
-              a(href=`${domain}/games/${strategyGames[n].id}`)
-                img.gamecard__image(src=strategyGames[n].image)
-              //- Overlay Text
-              div.gamecard__text-container
-                .gamecard__game-title= strategyGames[n].title
-                //- Placeholder for div mini form
-                .gamecard__dropdown-container
-                  .gamecard__dropdown-form
-                //- Rating Box using likesCount
-                .gamecard__rating-box
-                  .gamecard__rating= strategyGames[n].likesCount
+          - for(var n = 0; n < 4; n++)
+              - var playStatus = 'Not Played'
+              if (gameStatuses[strategyGames[n].title] !== undefined)
+                - playStatus=gameStatuses[strategyGames[n].title]
+              +gameCard(strategyGames, n, domain, playStatus)
 
+        //- Casual Games
         div
           a.games(href="/categories/5")
             h1.casual-games Casual & Simulation Games
         div.gameCards
-          - for(var n = 0; n < 3; n++)
-            div.gamecard__container
-              //- Image
-              a(href=`${domain}/games/${casualGames[n].id}`)
-                img.gamecard__image(src=casualGames[n].image)
-              //- Overlay Text
-              div.gamecard__text-container
-                .gamecard__game-title= casualGames[n].title
-                //- Placeholder for div mini form
-                .gamecard__dropdown-container
-                  .gamecard__dropdown-form
-                //- Rating Box using likesCount
-                .gamecard__rating-box
-                  .gamecard__rating= casualGames[n].likesCount
+          - for(var n = 0; n < 4; n++)
+              - var playStatus = 'Not Played'
+              if (gameStatuses[casualGames[n].title] !== undefined)
+                - playStatus=gameStatuses[casualGames[n].title]
+              +gameCard(casualGames, n, domain, playStatus)
 
-        //- COMMENTING OUT SPORTS DUE TO MISSING SEED DATA FOR NOW
+        //- Sports Games
+        div
+          a.games(href="/categories/4")
+            h1.casual-games Sports & Racing Games
+        div.gameCards
+          - for(var n = 0; n < 4; n++)
+              - var playStatus = 'Not Played'
+              if (gameStatuses[sportsGames[n].title] !== undefined)
+                - playStatus=gameStatuses[sportsGames[n].title]
+              +gameCard(sportsGames, n, domain, playStatus)
 
-        //- a.games(href="/categories/4")
-        //-   h1 Sports & Racing Games
-        //- div.racing-games
-        //-       - for(var n = 0; n < 3; n++)
-        //-         div.gamecard__container
-        //-           //- Image
-        //-           img.gamecard__image(src=sportsGames[n].image)
-        //-           //- Overlay Text
-        //-           div.gamecard__text-container
-        //-             .gamecard__game-title= sportsGames[n].title
-        //-             //- Placeholder for div mini form
-        //-             .gamecard__dropdown-container
-        //-               .gamecard__dropdown-form
-        //-             //- Rating Box using likesCount
-        //-             .gamecard__rating-box
-        //-               .gamecard__rating= sportsGames[n].likesCount
-
+        //- MMO Games
         div
           a.games(href="/categories/2")
             h1.mmo-games MMO & RPG Games
         div.gameCards
-          - for(var n = 0; n < 3; n++)
-            div.gamecard__container
-              //- Image
-              a(href=`${domain}/games/${mmoGames[n].id}`)
-                img.gamecard__image(src=mmoGames[n].image)
-              //- Overlay Text
-              div.gamecard__text-container
-                .gamecard__game-title= mmoGames[n].title
-                //- Placeholder for div mini form
-                .gamecard__dropdown-container
-                  .gamecard__dropdown-form
-                //- Rating Box using likesCount
-                .gamecard__rating-box
-                  .gamecard__rating= mmoGames[n].likesCount
+          - for(var n = 0; n < 4; n++)
+              - var playStatus = 'Not Played'
+              if (gameStatuses[mmoGames[n].title] !== undefined)
+                - playStatus=gameStatuses[mmoGames[n].title]
+              +gameCard(casualGames, n, domain, playStatus)
+
 
       div.categories
         h1 Category Links
