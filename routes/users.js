@@ -31,10 +31,16 @@ router.get("/:id/myreviews", asyncHandler(async (req, res) => {
   res.render('my-games', {user, myGames, title: 'My Reviewed Games'})
 }))
 
-router.get('/:id/myprofile', asyncHandler(async(req, res) => {
-  const userId = parseInt(req.params.id, 10);
-  const user = await User.findByPk(userId);
-  res.render('my-profile', { user, title: 'My Profile' })
+router.get('/:id/myprofile', csrfProtection, asyncHandler(async(req, res, next) => {
+  const pathId = parseInt(req.params.id, 10);
+  const { userId } = req.session.auth
+  if( pathId !== userId){
+    const err = new Error ('Unauthorized access.')
+    next(err);
+  } else {
+    const user = await User.findByPk(pathId);
+    res.render('my-profile', { user, title: 'My Profile', csrfToken: req.csrfToken()})
+  }
 }))
 
 
@@ -84,17 +90,32 @@ router.post("/login", csrfProtection, loginValidation, asyncHandler( async(req, 
     }
 }));
 
-/* PUT */
-// router.put('/signup', asyncHandler( async( (req, res) => {
-//   const { userId } = req.session.auth
-//   const { firstName, lastName, username, phone, email, password } = req.body
-//   const user = await User.findByPk(userId)
-  
-// })))
+router.post('/:id/myprofile', sanityCheck, csrfProtection, registerValidation, asyncHandler( async(req, res) => {
+  const { userId } = req.session.auth
+  console.log('THIS IS MY USER ID:', userId);
+  const { firstName, lastName, username, phone, email, password } = req.body
+  const user = await User.findByPk(userId);
 
-//Logout user
-router.post("/logout", async (req, res) => {
-  return logoutUser(req, res);
-});
+  const validationErrors = validationResult(req);
+  if(validationErrors.isEmpty()){
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.username = username;
+    user.phone = phone;
+    user.email = email;
+    user.hashedPassword = await bcrypt.hash(password, 10);
+    await user.save();
+    // res.redirect(`/users/${userId}/myprofile`)
+    res.redirect(`/`)
+  } else {
+    const errors = validationErrors.array().map(error => error.msg);
+    res.render('my-profile', {errors, title: 'My Profile', csrfToken: req.csrfToken(), user});
+  }
+}));
+
+  //Logout user
+  router.post("/logout", async (req, res) => {
+    return logoutUser(req, res);
+  });
 
 module.exports = router;
