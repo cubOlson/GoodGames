@@ -1,0 +1,56 @@
+.game-page-container {
+    margin: 10px auto 10px auto;
+    width: 1000px;
+    display: flex;
+    color: white;
+}
+.game-image {
+    width: 350px;
+}
+.game-image img{
+    width: 350px;
+    height: 550px;
+    margin-right: 5px;
+}
+.middleBox {
+    width: 450px;
+}
+.game-title-cat {
+    border: 1px solid white;
+    margin: 0 5px 5px 5px;
+    text-align: center;
+    padding: 10px;
+}
+.game-sum {
+    border: 1px solid white;
+    margin: 5px;
+    text-align: center;
+    padding: 10px;
+}
+.sideCard {
+    width: 200px;
+}
+.game-info {
+    border: 1px solid white;
+    margin: 0 0 5px 5px;
+    padding: 10px;
+}
+.game-rating {
+    border: 1px solid white;
+    margin: 5px 0 5px 5px;
+    text-align: center;
+    padding: 10px;
+
+}
+.categories-on-right {
+    border: 1px solid white;
+    margin: 5px 0 5px 5px;
+    padding: 10px;
+
+}
+.write-reviews {
+
+}
+.posted-reviews {
+
+}
