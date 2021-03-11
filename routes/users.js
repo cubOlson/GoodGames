@@ -113,9 +113,19 @@ router.post('/:id/myprofile', sanityCheck, csrfProtection, registerValidation, a
   }
 }));
 
+/* DELETE */
+
+router.post(`/:id/delete`, csrfProtection, asyncHandler( async(req, res) => {
+  const userId = parseInt(req.params.id, 10)
+  const user = await User.findByPk(userId)
+  delete req.session.auth;
+  await user.destroy()
+  res.redirect('/')
+}))
+
   //Logout user
-  router.post("/logout", async (req, res) => {
-    return logoutUser(req, res);
-  });
+router.post("/logout", async (req, res) => {
+  return logoutUser(req, res);
+});
 
 module.exports = router;
