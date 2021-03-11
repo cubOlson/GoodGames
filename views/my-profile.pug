@@ -42,4 +42,8 @@ block content
                     input(type="password", name="confirmPassword" class="form-control")
                 button(type="submit" class="login-signup-button") Update Profile
         br
-        button(type="submit" class="login-signup-button") Delete Account?
+        form(action=`/users/${user.id}/delete` method='post')
+            div
+                input(type="hidden", name="_csrf", value=csrfToken)
+            div
+                button(type="submit" class="login-signup-button" id="profileDeleteBtn" ) Delete Account?
