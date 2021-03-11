@@ -41,47 +41,29 @@ justify-content: space-between;
 background: linear-gradient(var(--blue), #6e003d);
 box-shadow: var(--blue);
 padding: 10px;
-color: var(--orange);
+/* color: var(--orange); */
 position: sticky;
 top: 0px;
 z-index: 3;
 
 }
 
+/* Contains the Logo as well as the Search Bar */
 .navBar__left {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: auto;
 }
-
-.navBar__right {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-
-}
-
-/* Contains the Logo as well as the Search Bar */
 .logo {
     max-width: 40px;
     margin-right: 10px;
 }
-
-
 .search-input {
     border: none;
     border-radius: 14px 14px;
     text-align: center;
     padding: 5px;
 }
-/* .search-button {
-    border-radius: 0 14px 14px 0;
-}
-.search-button-icon {
-    width: 1em;
-} */
 
 
 /* Contains the "My Games", "My Reviews", "My Profile", and Logout when logged in */
@@ -89,41 +71,25 @@ z-index: 3;
 .navBar__right {
     width: 50%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    margin: auto;
-
 }
-
-.navlinkbox {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-/* .right__attribute {
+.right__attribute {
     text-decoration: none;
     color: var(--orange);
-} */
-
-.navlink {
-    margin-left: 10px;
 }
-.navlinkbox {
-    color: white;
+.right-child {
+    padding: 0 10px 0 10px;
 }
-
-
-.navButton {
+.right-login-signup {
     text-decoration: none;
     color: var(--orange);
     border: 1px solid var(--orange);
     border-radius: 14px;
     text-align: center;
     padding: 2px 20px;
-    margin-right: 20px;
 }
+
 
 /* SVGS for the 3 categories */
 .gamepad {
@@ -146,7 +112,7 @@ z-index: 3;
 }
 
 /* Logout Button */
-/* .logoutButton {
+.logoutButton {
     border: 1px solid var(--orange);
     background: none;
     color: var(--orange);
@@ -154,7 +120,7 @@ z-index: 3;
     text-align: center;
     padding: 2px 20px;
 
-} */
+}
 
 /* .navBar__search {
     border: 1px solid #F9934C;
