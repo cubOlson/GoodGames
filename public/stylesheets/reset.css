@@ -1,3 +1,12 @@
+/* colors for the page */
+:root {
+  --darkpink: #bf0f70;
+  --pink: #d91193;
+  --blue: #1c0373;
+  --yellow: #f2ce1b;
+  --orange: #f2ae72;
+}
+
 body {
   padding: 50px;
   font: 14px ;
@@ -22,6 +31,12 @@ body, header, nav {
   padding: 0;
   outline: 0;
   font-weight: normal;
+}
+
+.title{
+  text-align: center;
+  padding-top: 10px;
+  color: var(--orange)
 }
 
 /* h1 {
