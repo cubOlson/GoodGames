@@ -16,31 +16,30 @@ html
         //- AUTHENTICATED AUTHENTICATED AUTHENTICATED AUTHENTICATED AUTHENTICATED
         if user
           div.navBar
-            //- Left Half of Nav Bar      
+            //- Left Half of Nav Bar
             div.navBar__left
               a(href="/")
                 img.logo(src="/images/ggLogo.gif")
               div.searchBar
                 form(action="/games", method="post")
                   input(type="search", name="searchBar" placeholder="Search" class="search-input")
-            //- Right Half of Nav Bar      
+            //- Right Half of Nav Bar
             div.navBar__right
-              form(action=`${rootPath}/users/${user.id}/mygames`,method="get")
-                button(type="submit") 
-                  .fas.fa-gamepad.navlink 
-                  .navlink My Games
-              
-              a.navlinkbox(href=`${rootPath}/users/${user.id}/mygames`) 
-                .fas.fa-gamepad.navlink 
+
+              a.navlinkbox(href=`${rootPath}/users/${user.id}/mygames`)
+                .fas.fa-gamepad.navlink
                 .navlink My Games
-                
-              
+
+
               div.navlink
-                a(href=`${rootPath}/users/${user.id}/myreviews`): i.fas.comment-box My Reviews
+                a(href=`${rootPath}/users/${user.id}/myreviews`) My Reviews
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="comment-alt" class="comment-box" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path fill="currentColor" d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 9.8 11.2 15.5 19.1 9.7L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"></path>
+                  </svg>
 
               //- div.navlink
               //-   a(href=`${rootPath}/users/${user.id}/myreviews` class="right__attribute") My Reviews
-                
+
               div.navlink
                 a(href=`${rootPath}/users/${user.id}/myprofile` class="right__attribute") My Profile
                   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user-astronaut" class="profile-button" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -63,4 +62,3 @@ html
                 a(href="/users/signup"): .navButton Sign Up
         .page-wrap
             block content
-      

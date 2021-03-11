@@ -45,7 +45,7 @@ background: linear-gradient(var(--blue), #6e003d);
 box-shadow: var(--blue);
 padding: 10px;
 color: var(--orange);
-position: sticky; 
+position: sticky;
 top: 0px;
 z-index: 3;
 
@@ -99,10 +99,10 @@ z-index: 3;
 }
 
 .navlinkbox {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 /* .right__attribute {
@@ -111,10 +111,9 @@ z-index: 3;
 } */
 
 .navlink {
-    /* color: var(--orange); */
     margin-left: 10px;
 }
-.navlinkbox: {
+.navlinkbox {
     color: white;
 }
 
@@ -157,7 +156,7 @@ z-index: 3;
     border-radius: 14px;
     text-align: center;
     padding: 2px 20px;
-    
+
 } */
 
 /* .navBar__search {
