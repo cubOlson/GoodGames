@@ -14,35 +14,20 @@
 
 /* all the games */
 .selected-category {
-    margin-left: 10px;
+    padding: 0 50px;
     width: 75%;
 }
-.category-games {
+.gameCards {
     display: inline-block;
-    margin: 5px 10px 5px 10px;
-    list-style: none;
-    color: white;
-    vertical-align: top;
-    text-align: center;
-    width: 120px;
-}
-.game-anchor {
-    text-decoration: none;
-}
-.fit {
-    width: 120px;
-    height: 150px;
 }
 
 /* The other categories */
 .categories-on-right {
     color: white;
-    margin: 5px 20px 5px 15px;
+    margin: 5px 30px 5px 15px;
     background-color: var(--blue);
     padding: 30px;
-    height: 300px;
     border-radius: 10px;
-    /* width: 800px; */
 }
 .other-categories {
     margin: 20px 0 20px 0;

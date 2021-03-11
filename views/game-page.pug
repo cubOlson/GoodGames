@@ -1,9 +1,13 @@
-extends layout 
-block content 
+extends layout
+
+append head
+  link(rel="stylesheet" href="/stylesheets/gamePage.css")
+
+block content
   h1= title
-  div   
+  div
     img(src=`${game.image}`, alt="")
-  div 
-    p This is where content goes 
-  div 
+  div
+    p This is where content goes
+  div
     p this is where reviews will go
