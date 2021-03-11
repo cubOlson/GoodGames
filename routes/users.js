@@ -31,6 +31,11 @@ router.get("/:id/myreviews", asyncHandler(async (req, res) => {
   res.render('my-games', {user, myGames, title: 'My Reviewed Games'})
 }))
 
+router.get('/:id/myprofile', asyncHandler(async(req, res) => {
+  const userId = parseInt(req.params.id, 10);
+  const user = await User.findByPk(userId);
+  res.render('my-profile', { user, title: 'My Profile' })
+}))
 
 
 /* POST */
