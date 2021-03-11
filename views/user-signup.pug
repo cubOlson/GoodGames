@@ -5,37 +5,38 @@ append head
 
 
 block content
+    //- Let's talk this one through.
     div.signup-form
         if errors
             div
                 each error in errors
                     div.errors: p= error
 
-        form(action="/users/signup", method="post").login-form
-            div
-                input(type="hidden", name="_csrf", value=csrfToken)
-            div
-                label(for="firstName" class="form-group") First Name
-                input(type="text", name="firstName" class="form-control")
-            div
-                label(for="lastName" class="form-group") Last Name
-                input(type="text", name="lastName" class="form-control")
-            div
-                label(for="username" class="form-group") Username
-                input(type="text", name="username" class="form-control")
-            div
-                label(for="phone" class="form-group") Phone
-                input(type="tel", name="phone" class="form-control")
-            div
-                label(for="email" class="form-group") Email
-                input(type="email", name="email" class="form-control")
-            div
-                label(for="password" class="form-group") Password
-                input(type="password", name="password" class="form-control")
-            div
-                label(for="confirmPassword" class="form-group") Confirm Password
-                input(type="password", name="confirmPassword" class="form-control")
-            button(type="submit" class="login-signup-button") Sign Up
-            br
-            div.need-have-account
-                a(href="/users/login") Already have an account? Login here!
+    form(action="/users/signup", method="post").login-form
+        div
+            input(type="hidden", name="_csrf", value=csrfToken)
+        div
+            label(for="firstName" class="form-group") First Name
+            input(type="text", name="firstName" class="form-control")
+        div
+            label(for="lastName" class="form-group") Last Name
+            input(type="text", name="lastName" class="form-control")
+        div
+            label(for="username" class="form-group") Username
+            input(type="text", name="username" class="form-control")
+        div
+            label(for="phone" class="form-group") Phone
+            input(type="tel", name="phone" class="form-control")
+        div
+            label(for="email" class="form-group") Email
+            input(type="email", name="email" class="form-control")
+        div
+            label(for="password" class="form-group") Password
+            input(type="password", name="password" class="form-control")
+        div
+            label(for="confirmPassword" class="form-group") Confirm Password
+            input(type="password", name="confirmPassword" class="form-control")
+        button(type="submit" class="login-signup-button") Sign Up
+        br
+        div.need-have-account
+            a(href="/users/login") Already have an account? Login here!

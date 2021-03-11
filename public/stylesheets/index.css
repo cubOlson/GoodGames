@@ -31,6 +31,8 @@
     padding: 30px;
     height: 300px;
     border-radius: 10px;
+    position: sticky;
+    top:80px
 }
 .other-categories {
     margin: 20px 0 20px 0;

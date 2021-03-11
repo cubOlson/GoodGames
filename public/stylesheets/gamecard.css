@@ -19,22 +19,29 @@
 }
 .gamecard__text-container {
     position: relative;
-    height: 96px;
+    height: 244px;
     width: 220px;
-    background: rgba(191,15,113,0.72);
-    margin-top: -96px;
+    background:linear-gradient(45deg, black, transparent);
+    margin-top: -244px;
     overflow: hidden;
     z-index: 1;
+    padding: 10px;
 }
 .gamecard__game-title {
-    font-size: 1em;
+  display: table-cell;
+  vertical-align: bottom;
+
+    font-size: 1.2em;
     font-weight: 600;
     color: white;
+    margin-top: 70%;
+    height: 180px;
+
 }
 .gamecard__dropdown-container {
-    width: 220px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
 }
 .gamecard__dropdown-form {
     width: 65%;
@@ -42,10 +49,12 @@
 .gamecard__rating-box{
     width: 25%;
     border: 2px solid white;
+    margin: 10px;
 }
 
 .gamecard__rating {
     font-weight: 600;
     font-size: 1.5em;
     color: white;
+    text-align: center;
 }
