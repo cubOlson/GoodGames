@@ -6,21 +6,12 @@
     --yellow: #f2ce1b;
     --orange: #f2ae72;
 }
-.fullNavBG {
-width: 100%;
-margin: auto;
-position: fixed;
-top: 0px;
-height: 71px;
-    background: linear-gradient(var(--blue), #6e003d);
-        margin: 0 auto;
-    padding: 0 10px;
-}
 
 .page-wrap {
     max-width: 1366px;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.973);
+
 }
 
 .bg {
@@ -28,12 +19,6 @@ height: 71px;
     background-position: center;
     background-size: cover;
 }
-
-/* .navWrap {
-    margin: auto;
-    width: 1000px;
-} */
-
 
 .navBar {
 display: flex;
@@ -45,7 +30,6 @@ padding: 10px;
 position: sticky;
 top: 0px;
 z-index: 3;
-
 }
 
 /* Contains the Logo as well as the Search Bar */
@@ -81,6 +65,12 @@ z-index: 3;
 .right-child {
     padding: 0 10px 0 10px;
 }
+.right-child a:hover {
+    color: var(--yellow);
+}
+.right-child-button {
+    padding: 0 10px 0 10px;
+}
 .right-login-signup {
     text-decoration: none;
     color: var(--orange);
@@ -88,6 +78,11 @@ z-index: 3;
     border-radius: 14px;
     text-align: center;
     padding: 2px 20px;
+    transition: all .2s ease-in-out;
+}
+.right-login-signup:hover {
+    color: white;
+    background-color: var(--orange);
 }
 
 
@@ -119,7 +114,15 @@ z-index: 3;
     border-radius: 14px;
     text-align: center;
     padding: 2px 20px;
-
+    transition: all .2s ease-in-out;
+}
+.logoutButton:hover {
+    color: white;
+    background-color: var(--orange);
+    cursor: pointer;
+}
+.logoutButton:focus {
+    outline: none;
 }
 
 /* .navBar__search {
@@ -132,13 +135,14 @@ z-index: 3;
     margin-right: 20px;
 } */
 
-
 .footer {
     color: white;
     display: flex;
     justify-content: space-around;
     background: linear-gradient(rgba(191, 15, 112, 0), rgba(191, 15, 112,0.6));
     padding: 10px;
+    z-index: 3;
+    flex-shrink: 0;
 }
 .footerChild {
     margin-left: 10px;
