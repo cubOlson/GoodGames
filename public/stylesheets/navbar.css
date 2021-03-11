@@ -1,4 +1,4 @@
-/* colors for the page */
+/* Site Color Swatches*/
 :root {
     --darkpink: #bf0f70;
     --pink: #d91193;
@@ -6,16 +6,65 @@
     --yellow: #f2ce1b;
     --orange: #f2ae72;
 }
+.fullNavBG {
+width: 100%;
+margin: auto;
+position: fixed;
+top: 0px;
+height: 71px;
+    background: linear-gradient(var(--blue), #6e003d);
+        margin: 0 auto;
+    padding: 0 10px;
+}
+
+.page-wrap {
+    max-width: 1366px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.973);
+}
+
+
+
+.bg {
+    background-image:url('../images/wp4041942.jpg');
+    background-position: center;
+background-size: cover;
+
+}
+
+/* .navWrap {
+    margin: auto;
+    width: 1000px;
+} */
 
 
 .navBar {
 display: flex;
 justify-content: space-between;
-background: linear-gradient(var(--blue), var(--darkpink));
+background: linear-gradient(var(--blue), #6e003d);
+box-shadow: var(--blue);
 padding: 10px;
+color: var(--orange);
+position: sticky; 
+top: 0px;
+z-index: 3;
 
 }
 
+.navBar__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.navBar__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+
+}
 
 /* Contains the Logo as well as the Search Bar */
 .logo {
@@ -23,11 +72,6 @@ padding: 10px;
     margin-right: 10px;
 }
 
-.navBar__left {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .search-input {
     border: none;
@@ -48,26 +92,41 @@ padding: 10px;
 .navBar__right {
     width: 50%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+    margin: auto;
 
 }
-.right__attribute {
+
+.navlinkbox {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+/* .right__attribute {
     text-decoration: none;
     color: var(--orange);
+} */
+
+.navlink {
+    /* color: var(--orange); */
+    margin-left: 10px;
+}
+.navlinkbox: {
+    color: white;
 }
 
-.right-child {
-    padding: 0 10px 0 10px;
-}
 
-.right-login-signup {
+.navButton {
     text-decoration: none;
     color: var(--orange);
     border: 1px solid var(--orange);
     border-radius: 14px;
     text-align: center;
     padding: 2px 20px;
+    margin-right: 20px;
 }
 
 /* SVGS for the 3 categories */
@@ -91,15 +150,15 @@ padding: 10px;
 }
 
 /* Logout Button */
-.logoutButton {
+/* .logoutButton {
     border: 1px solid var(--orange);
     background: none;
     color: var(--orange);
     border-radius: 14px;
     text-align: center;
     padding: 2px 20px;
-    margin-right: 20px;
-}
+    
+} */
 
 /* .navBar__search {
     border: 1px solid #F9934C;
@@ -110,3 +169,9 @@ padding: 10px;
     padding: 2px 20px 2px 2px;
     margin-right: 20px;
 } */
+
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+}
