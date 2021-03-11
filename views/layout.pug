@@ -25,6 +25,7 @@ html
                   input(type="search", name="searchBar" placeholder="Search" class="search-input")
             //- Right Half of Nav Bar      
             div.navBar__right
+              
               form(action=`${rootPath}/users/${user.id}/mygames`,method="get")
                 button(type="submit") 
                   .fas.fa-gamepad.navlink 
