@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     status: {
       allowNull: false,
+      default: 'Not Played',
       type: DataTypes.STRING(50)
     },
     reviewed: {
