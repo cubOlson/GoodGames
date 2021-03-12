@@ -6,7 +6,7 @@ const { Op } = require('sequelize');
 
 const router = express.Router();
 
-router.get('/:search', requireAuth, asyncHandler(async (req, res) => {
+router.get('/:search', asyncHandler(async (req, res) => {
     const searching = await db.Game.findAll({
         where: {
             [Op.or]: {
