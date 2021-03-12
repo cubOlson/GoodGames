@@ -1,0 +1,48 @@
+extends layout
+
+mixin gameCard(game, indexPos, domain, playStatus)
+    div.gamecard__container
+      img.gamecard__image(src=game.image)
+      div.gamecard__text-container
+        a(href=`/games/${game.id}`): .gamecard__game-title= game.title
+        .gamecard__dropdown-container
+          .gamecard__dropdown-form
+            form(action=`/users/${formSubmitId}/mygames`, method="post")
+              input(type="hidden" name='_csrf' value=csrfToken)
+              input(type="hidden" name='gameId' value=game.id)
+              select(name="status" onchange='this.form.submit()' value=playStatus)
+                option(value='Not played' selected=playStatus==='Not Played' ? true : false) Not Played
+                option(value='Want to Play' selected=playStatus==='Want to Play' ? true : false) Want to Play
+                option(value="Playing" selected=playStatus==='Playing' ? true : false) Playing
+                option(value="Played" selected=playStatus==='Played' ? true : false) Played
+          .gamecard__rating-box
+              .gamecard__rating= game.likesCount
+
+
+append head
+  link(rel="stylesheet" href="/stylesheets/search.css")
+  link(rel="stylesheet" href="/stylesheets/gamecard.css")
+
+block content
+    h1.results Search Results
+        if searching.length > 0
+            h2.found Games Found Matching Your Search:
+            each game  in searching
+                div.games
+                    div.gameCards
+                        a(href=`/games/${game.id}`)
+                            div.gamecard__container
+                                //- Image
+                                img.gamecard__image(src=game.image)
+                                //- Overlay Text
+                                div.gamecard__text-container
+                                    .gamecard__game-title=game.title
+                                    //- Placeholder for div mini form
+                                    .gamecard__dropdown-container
+                                        .gamecard__dropdown-form
+                                    //- Rating Box using likesCount
+                                    .gamecard__rating-box
+                                        .gamecard__rating= game.likesCount
+
+        else if searching.length === 0
+            h2(class="search-result") No results :(
