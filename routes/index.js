@@ -14,14 +14,15 @@ router.get('/', asyncHandler(async (req, res, next) => {
   const popularGames = await Game.findAll({ order: [['likesCount','DESC']], limit: 4 })
 
 
+  const gameStatuses = {};
+
   if(req.session.auth) {
     const { userId } = req.session.auth
     const user = await User.findByPk(userId);
 
-    const gameStatuses = {};
     const myGames = games.forEach(game => {
-      if(game.Users.find(user => user.id===1)){
-        gameStatuses[game.title] = game.Users.find(user => user.id===1).UserGame.dataValues.status
+    if(game.Users.find(user => user.id === userId)){
+        gameStatuses[game.title] = game.Users.find(user => user.id === userId).UserGame.dataValues.status
       }});
 
     return res.render("index", {
