@@ -10,7 +10,8 @@
 .page-wrap {
     max-width: 1366px;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.973);
+    /* background-color: rgba(0, 0, 0, 0.973); */
+    background-color: rgba(0, 0, 0, 0.35);
 
 }
 

@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 const { Game, User, UserGame, Category } = require('../db/models');
-const { asyncHandler } = require('./utils');
+const { asyncHandler, csrfProtection } = require('./utils');
 
 /* GET home page. */
-router.get('/', asyncHandler(async (req, res, next) => {
+router.get('/', csrfProtection, asyncHandler(async (req, res, next) => {
   const games = await Game.findAll({include: [Category, User]})
   const actionGames = games.filter(game => game.Category.category === 'Action & Adventure');
   const strategyGames = games.filter(game => game.Category.category === 'Strategy & RTS');
@@ -13,12 +13,13 @@ router.get('/', asyncHandler(async (req, res, next) => {
   const mmoGames = games.filter(game => game.Category.category === 'Role Playing & MMO');
   const popularGames = await Game.findAll({ order: [['likesCount','DESC']], limit: 4 })
 
-
+  let formSubmitId = -1; // allows logged in users to still view game cards
   const gameStatuses = {};
 
   if(req.session.auth) {
     const { userId } = req.session.auth
-    const user = await User.findByPk(userId);
+    user = await User.findByPk(userId);
+    formSubmitId = userId; // allows logged in users to add to library
 
     const myGames = games.forEach(game => {
     if(game.Users.find(user => user.id === userId)){
@@ -26,13 +27,11 @@ router.get('/', asyncHandler(async (req, res, next) => {
       }});
 
     return res.render("index", {
-      title: "GoodGames - The #1 App Academy Game Project Database",
-      user, games, actionGames, strategyGames, casualGames, sportsGames, mmoGames, popularGames, gameStatuses });
-  }
-
+      title: "GoodGames - The #1 App Academy Game Project Database", formSubmitId, user, games, actionGames, strategyGames, casualGames, sportsGames, mmoGames, popularGames, gameStatuses, csrfToken: req.csrfToken()});
+  } else {
   res.render('index', {
-    title: 'GoodGames - The #1 App Academy Game Project Database',
-    games, actionGames, strategyGames, casualGames, sportsGames, mmoGames, popularGames, gameStatuses })
+    title: 'GoodGames - The #1 App Academy Game Project Database', formSubmitId, games, actionGames, strategyGames, casualGames, sportsGames, mmoGames, popularGames, gameStatuses, csrfToken: req.csrfToken()})
+  }
 }));
 
 module.exports = router;
