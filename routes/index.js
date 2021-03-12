@@ -13,24 +13,22 @@ router.get('/', csrfProtection, asyncHandler(async (req, res, next) => {
   const mmoGames = games.filter(game => game.Category.category === 'Role Playing & MMO');
   const popularGames = await Game.findAll({ order: [['likesCount','DESC']], limit: 4 })
 
-  let formSubmitId = -1; // allows logged in users to still view game cards
   const gameStatuses = {};
 
   if(req.session.auth) {
     const { userId } = req.session.auth
     user = await User.findByPk(userId);
-    formSubmitId = userId; // allows logged in users to add to library
-
-    const myGames = games.forEach(game => {
-    if(game.Users.find(user => user.id === userId)){
-        gameStatuses[game.title] = game.Users.find(user => user.id === userId).UserGame.dataValues.status
-      }});
-
+    const records = await UserGame.findAll( {where: { userId }})
+    records.forEach( record => {
+      const { gameId, userId, status, reviewed } = record;
+      gameStatuses[gameId] = status // add key/value to gameStatuses obj for mixin
+    })
+    console.log('GAME STATUSES:', gameStatuses)
     return res.render("index", {
-      title: "GoodGames - The #1 App Academy Game Project Database", formSubmitId, user, games, actionGames, strategyGames, casualGames, sportsGames, mmoGames, popularGames, gameStatuses, csrfToken: req.csrfToken()});
+      title: "GoodGames - The #1 App Academy Game Project Database", user, games, actionGames, strategyGames, casualGames, sportsGames, mmoGames, popularGames, gameStatuses, csrfToken: req.csrfToken()});
   } else {
   res.render('index', {
-    title: 'GoodGames - The #1 App Academy Game Project Database', formSubmitId, games, actionGames, strategyGames, casualGames, sportsGames, mmoGames, popularGames, gameStatuses, csrfToken: req.csrfToken()})
+    title: 'GoodGames - The #1 App Academy Game Project Database', games, actionGames, strategyGames, casualGames, sportsGames, mmoGames, popularGames, gameStatuses, csrfToken: req.csrfToken()})
   }
 }));
 

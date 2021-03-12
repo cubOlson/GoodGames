@@ -69,4 +69,5 @@ module.exports = {
     loginValidation,
     registerValidation,
     sanityCheck,
+    reviewValidation,
 }
