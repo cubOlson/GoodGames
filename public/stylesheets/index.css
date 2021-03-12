@@ -27,7 +27,7 @@
     margin: 5px 20px 5px 15px;
     background-color: var(--blue);
     padding: 30px;
-    height: 300px;
+    /* height: 300px; */
     border-radius: 10px;
     position: sticky;
     top:80px
