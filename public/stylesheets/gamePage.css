@@ -1,39 +1,45 @@
 /* The main div that wraps everything */
 .game-page-container {
     margin: 10px auto 10px auto;
-    width: 1000px;
+    width: 745px;
     display: flex;
     color: white;
-    height: 550px;
+    /* height: 550px; */
+    height: auto;
 }
 
 /* Contains the Image */
 .game-image {
-    width: 350px;
+    margin-right: 5px;
 }
 .game-image img{
-    width: 350px;
-    height: 550px;
+    width: 305px;
+    height: 420px;
     margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
 }
 
 /* Contains the Title, Category, and Summary */
 .middleBox {
     width: 450px;
+    margin-left: 5px;
 }
 .game-title-cat {
-    border: 1px solid black;
-    background-color: var(--orange);
-    color: black;
-    margin: 0 5px 5px 5px;
+    border: 3px solid var(--blue);
+    background-color: rgb(36, 36, 36) ;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
     text-align: center;
     padding: 10px;
 }
 .game-sum {
-    border: 1px solid black;
-    background-color: var(--orange);
-    color: black;
-    margin: 5px 0 5px 5px;
+    border: 3px solid var(--blue);
+    background-color: rgb(36, 36, 36) ;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
     text-align: center;
     padding: 10px;
     max-height: 436px;
@@ -57,12 +63,23 @@ background: var(--pink);
 /* Contains the Developer, Date, PurchaseLink, Ratings, and Category sidebar */
 .sideCard {
     width: 200px;
+    display: flex;
+    margin-top: 5px;
 }
 .game-info {
-    background-color: var(--orange);
-    color: black;
-    margin: 0 0 5px 5px;
+    border: 3px solid var(--blue);
+    background-color: rgb(36, 36, 36) ;
+    color: white;
+    border-radius: 10px;
+    margin-right: 10px;
     padding: 10px;
+    min-width: 175px;
+    min-height: 125px;
+}
+#release {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: var(--pink);
 }
 .purchase {
     background-color: var(--blue);
@@ -77,28 +94,14 @@ background: var(--pink);
     border: 1px solid white;
 }
 .game-rating {
-    background-color: var(--orange);
-    color: black;
-    margin: 5px 0 5px 5px;
+    border: 3px solid var(--blue);
+    background-color: rgb(36, 36, 36) ;
+    color: white;
+    border-radius: 10px;
     text-align: center;
     padding: 10px;
-
-}
-.categories-on-right {
-    background-color: var(--blue);
-    color: white;
-    margin: 5px 0 5px 5px;
-    padding: 10px;
-
-}
-.categories-on-right h3 {
-    border-bottom: 1px solid white;
-}
-.other-categories {
-    margin: 20px 0 20px 0;
-}
-.other-categories a {
-    text-decoration: none;
+    min-width: 120px;
+    min-height: 125px;
 }
 
 /* Contains the written reviews and the posted reviews */
@@ -107,36 +110,13 @@ background: var(--pink);
     margin: 5px auto 5px auto;
     text-align: center;
     color: white;
-
-}
-
-/* styling for the form */
-.formDiv {
-    padding: 10px 50px;
-    /* background: linear-gradient(var(--darkpink), var(--blue)); */
-    background-color: var(--blue);
-}
-.review-label {
-    font-size: 20px;
-    padding: 7px;
-}
-.review-input {
-    border: 1px solid;
-    border-radius: 10px 10px;
-    box-sizing: border-box;
-    border-style: none;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    background-color: #e7d3f3;
-    font-size: 20px;
-    width: 100%;
 }
 .review-button {
     background-color: var(--pink);
     color: white;
     padding: 10px;
     border-radius: 5px 5px;
-    margin: 0 10px 0 10px;
+    margin: auto 10px auto 10px;
     border: none;
     font-size: 15px;
     font-weight: bold;
@@ -147,8 +127,26 @@ background: var(--pink);
 }
 
 /* styling for the posted comments */
+.review-container {
+    width: 800px;
+    margin: 0 auto 15px auto;
+    border-radius: 10px;
+    color: white;
+}
 .posted-reviews {
-    background-color: var(--blue);
+    width: 800px;
+    margin: 5px auto 5px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(28, 3, 115, 0.6);
+    color: white;
     text-align: left;
-    padding: 10px;
+    padding: 20px;
+}
+#reviewTitle {
+    /* color: var(--pink); */
+    background-color: var(--darkpink);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5px;
 }
