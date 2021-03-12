@@ -16,27 +16,26 @@ router.get( "/signup", csrfProtection, asyncHandler(async (req, res) => {
 }));
 
 // Load the user's library
-router.get("/:id/mygames", asyncHandler(async (req, res) => {
+router.get("/:id/mygames", csrfProtection, asyncHandler(async (req, res) => {
   const userId = parseInt(req.params.id, 10)
   const user = await User.findByPk(userId, { include: Game })
   const myGames = user.Games
-  res.render('my-games', {user, myGames, title: 'My Games'})
+  res.render('my-games', {user, myGames, title: 'My Games', csrfToken: req.csrfToken()})
 }))
 
 // Load a list of the users reviewed games
-router.get("/:id/myreviews", asyncHandler(async (req, res) => {
+router.get("/:id/myreviews", csrfProtection, asyncHandler(async (req, res) => {
   const userId = parseInt(req.params.id, 10)
   const user = await User.findByPk(userId, { include: Game })
   const myGames = user.Games.filter(game => game.UserGame.reviewed === true)
-  res.render('my-games', {user, myGames, title: 'My Reviewed Games'})
+  res.render('my-games', {user, myGames, title: 'My Reviewed Games', csrfToken: req.csrfToken()})
 }))
 
 router.get('/:id/myprofile', csrfProtection, asyncHandler(async(req, res, next) => {
   const pathId = parseInt(req.params.id, 10);
   const { userId } = req.session.auth
   if( pathId !== userId){
-    const err = new Error ('Unauthorized access.')
-    next(err);
+    res.redirect('/')
   } else {
     const user = await User.findByPk(pathId);
     res.render('my-profile', { user, title: 'My Profile', csrfToken: req.csrfToken()})

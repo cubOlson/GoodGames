@@ -4,7 +4,7 @@ mixin gameCard(gamesArray, indexPos, domain, playStatus)
     div.gamecard__container
       img.gamecard__image(src=gamesArray[indexPos].image)
       div.gamecard__text-container
-        a(href=`${domain}/games/${gamesArray[indexPos].id}`): .gamecard__game-title= gamesArray[indexPos].title
+        a(href=`/games/${gamesArray[indexPos].id}`): .gamecard__game-title= gamesArray[indexPos].title
         .gamecard__dropdown-container
           .gamecard__dropdown-form
             form(action=`/users/${formSubmitId}/mygames`, method="post")
@@ -26,7 +26,6 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-    - var domain = `http://localhost:8080`
 
     div.header-container
       img(src="/GGHeaderSketch.png" class="header")
