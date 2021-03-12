@@ -50,7 +50,7 @@ block content
         //- Strategy Games
         div
           a.games(href="/categories/3")
-            h1.strategy-games Strategy & RTS Games
+            h1.highest-games Strategy & RTS Games
         div.gameCards
           - for(var n = 0; n < 4; n++)
               - var playStatus = 'Not Played'
@@ -60,7 +60,7 @@ block content
         //- Casual Games
         div
           a.games(href="/categories/5")
-            h1.casual-games Casual & Simulation Games
+            h1.action-games Casual & Simulation Games
         div.gameCards
           - for(var n = 0; n < 4; n++)
               - var playStatus = 'Not Played'
@@ -88,7 +88,7 @@ block content
                 - playStatus=gameStatuses[mmoGames[n].title]
 
               +gameCard(mmoGames, n, playStatus)
-              
+
       div
         div.categories
           h1 Category Links

@@ -24,7 +24,7 @@
 /* Category box on the right */
 .categories {
     color: white;
-    margin: 5px 20px 5px 15px;
+    margin: 25px 20px 5px 15px;
     background-color: var(--blue);
     padding: 30px;
     /* height: 300px; */
@@ -84,47 +84,7 @@ height: 0px;
 border-left: 40px solid #1c0373;
 border-top: 55px solid transparent;
 }/* Styling for the H1 tags */
- .strategy-games{
-    position: relative;
-    color: white;
-    background: #f2ae72;
-    width: fit-content;
-    margin-top: 25px;
-    padding: 8px;
-    padding-left: 20px;
-    height: 55px;
-    text-shadow: 0px 1px 4px #02020279;
- }
- .strategy-games:before {
-content:"";
-position: absolute;
-right: -40px;
-bottom: 0;
-width: 0;
-height: 0px;
-border-left: 40px solid #f2ae72;
-border-top: 55px solid transparent;
-}/* Styling for the H1 tags */
-.casual-games{
-position: relative;
-    color: black;
-    background: #f2ce1b;
-    width: fit-content;
-    margin-top: 25px;
-    padding: 8px;
-    padding-left: 20px;
-    height: 55px
-}
- .casual-games:before {
-content:"";
-position: absolute;
-right: -40px;
-bottom: 0;
-width: 0;
-height: 0px;
-border-left: 40px solid #f2ce1b;
-border-top: 55px solid transparent;
- }
+
 /* Styling for the H1 tags */
 .racing-games{
     position: relative;
