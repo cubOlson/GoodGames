@@ -22,6 +22,16 @@ const loginValidation = [
         .withMessage('Please provide a valid password.'),
 ]
 
+const reviewValidation = [
+    check('title')
+        .exists({checkFalsy: true})
+        .withMessage('Please provide a valid email.'),
+    check('content')
+        .exists({checkFalsy: true})
+        .withMessage('Please provide a valid password.'),
+]
+
+
 // registration validation for new user sign up
 const registerValidation = [
     check('firstName')
