@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { asyncHandler, sanityCheck, csrfProtection } = require('./utils')
+const { asyncHandler, sanityCheck, csrfProtection, reviewValidation } = require('./utils')
 const { Game, Category, User, Review, UserGame } = require('../db/models')
 
 /* GET */
@@ -23,7 +23,7 @@ router.get('/:id/review', csrfProtection, asyncHandler( async (req, res) => {
 }))
 
 /* Post */
-router.post('/:id/review', csrfProtection, asyncHandler(async (req, res) => {
+router.post('/:id/review', csrfProtection, reviewValidation, asyncHandler(async (req, res) => {
   const { title, content, likedStatus } = req.body
   const gameId = parseInt(req.params.id, 10)
   const { userId } = req.session.auth
