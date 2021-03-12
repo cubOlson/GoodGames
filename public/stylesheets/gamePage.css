@@ -4,6 +4,7 @@
     width: 1000px;
     display: flex;
     color: white;
+    height: 550px;
 }
 
 /* Contains the Image */
@@ -21,16 +22,32 @@
     width: 450px;
 }
 .game-title-cat {
-    border: 1px solid white;
+    border: 1px solid black;
+    background-color: var(--orange);
+    color: black;
     margin: 0 5px 5px 5px;
     text-align: center;
     padding: 10px;
 }
 .game-sum {
-    border: 1px solid white;
-    margin: 5px;
+    border: 1px solid black;
+    background-color: var(--orange);
+    color: black;
+    margin: 5px 0 5px 5px;
     text-align: center;
     padding: 10px;
+    max-height: 436px;
+    overflow-y: scroll;
+}
+.game-sum::-webkit-scrollbar {
+    width: 0.25rem;
+}
+.game-sum::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+.game-sum::-webkit-scrollbar-thumb {
+background: var(--pink);
 }
 .game-sum p {
     line-height: 2;
@@ -42,22 +59,40 @@
     width: 200px;
 }
 .game-info {
-    border: 1px solid white;
+    background-color: var(--orange);
+    color: black;
     margin: 0 0 5px 5px;
     padding: 10px;
 }
-.game-rating {
+.purchase {
+    background-color: var(--blue);
+    color: white;
+    padding: 5px;
+    border-radius: 14px;
+}
+.purchase:hover {
+    background-color: var(--darkpink);
+}
+.purchase:active {
     border: 1px solid white;
+}
+.game-rating {
+    background-color: var(--orange);
+    color: black;
     margin: 5px 0 5px 5px;
     text-align: center;
     padding: 10px;
 
 }
 .categories-on-right {
-    border: 1px solid white;
+    background-color: var(--blue);
+    color: white;
     margin: 5px 0 5px 5px;
     padding: 10px;
 
+}
+.categories-on-right h3 {
+    border-bottom: 1px solid white;
 }
 .other-categories {
     margin: 20px 0 20px 0;
@@ -77,8 +112,9 @@
 
 /* styling for the form */
 .formDiv {
-    border: 1px solid white;
     padding: 10px 50px;
+    /* background: linear-gradient(var(--darkpink), var(--blue)); */
+    background-color: var(--blue);
 }
 .review-label {
     font-size: 20px;
@@ -112,7 +148,7 @@
 
 /* styling for the posted comments */
 .posted-reviews {
-    border: 1px solid white;
+    background-color: var(--blue);
     text-align: left;
     padding: 10px;
 }
