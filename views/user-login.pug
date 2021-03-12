@@ -1,7 +1,7 @@
 extends layout
 
 append head
-  link(rel="stylesheet" href="/stylesheets/login-signup.css")
+  link(rel="stylesheet" href="/stylesheets/login-signup-review.css")
 
 block content
     div.login-form
@@ -20,6 +20,7 @@ block content
                 label(for="password" class="form-group") Password
                 input(type="password", name="password" class="form-control")
             button(type="submit" class="login-signup-button") Login
+            button(type="submit" id="demoUserBtn") Demo
             br
             div.need-have-account
                 a(href="/users/signup") Need an account? Sign up here!

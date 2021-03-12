@@ -2,12 +2,20 @@ extends layout
 
 append head
   link(rel="stylesheet" href="/stylesheets/gamePage.css")
-  link(rel="stylesheet" href="/stylesheets/login-signup.css")
 
 block content
   div.game-page-container
     div.game-image
       img(src=`${game.image}`, alt="")
+      div.sideCard
+        div.game-info
+          h4= game.developer
+          h4(id="release")= game.releaseDate
+          a(href=`${game.purchase}` class="purchase") Purchase Now
+        div.game-rating
+          h2 Ratings
+          br
+          h3= game.likesCount
     div.middleBox
       div.game-title-cat
         h1= title
@@ -15,37 +23,16 @@ block content
         h2= game.Category.category
       div.game-sum
         p= game.summary
-    div.sideCard
-      div.game-info
-        h4= game.developer
-        br
-        h4= game.releaseDate
-        br
-        a(href=`${game.purchase}`) Purchase Now
-      div.game-rating
-        h2 Ratings
-        br
-        h3= game.likesCount
-      div.categories-on-right
-            h3 Category Links
-            div
-              div.other-categories
-                a(href='/categories/1') Action & Adventure
-              div.other-categories
-                a(href='/categories/2') RPG & MMO
-              div.other-categories
-                a(href='/categories/3') Strategy & RTS
-              div.other-categories
-                a(href='/categories/4') Sports & Racing
-              div.other-categories
-                a(href='/categories/5') Casual & Simulation
+  br
   div.write-reviews
-    div 
-      button(class='login-signup-button')
+    div
+      button(class='review-button')
         a(href=`/games/${game.id}/review`) Add Review!
       //- each review in reviews
-    div
-      each review in gameReviews
-        div.posted-reviews
-          h3= review.title
-          p= review.content
+    br
+  div.review-container
+    each review in gameReviews
+      div.posted-reviews
+        h3(id="reviewTitle")= review.title
+        hr
+        p= review.content

@@ -1,14 +1,14 @@
-extends layout 
+extends layout
 
 append head
-  link(rel="stylesheet" href="/stylesheets/login-signup.css")
+  link(rel="stylesheet" href="/stylesheets/login-signup-review.css")
 
-block content 
+block content
       div.signup-form
-        if errors 
+        if errors
           div
-            each error in errors 
-              .errors: p=error 
+            each error in errors
+              div.errors: p=error
         form(action=`/games/${game.id}/review` method='post')
           input(type='hidden' name='_csrf' value= csrfToken)
           div
@@ -16,9 +16,9 @@ block content
             input.review-input(type='text' name='title' class='form-control')
           div
             label.review-label(for='content' class='form-group') Review
-            textarea.review-input(name='content')
-          div   
-            select(name='likedStatus' id='likedSelect' class='form-control')
-              option(value='liked' class='form-group') Liked
+            textarea.review-text(name='content')
+          div
+            select(name='likedStatus' id='likedSelect' class='like-dislike')
+              option(value='liked') Liked
               option(value='disliked') Disliked
-          button.review-button(type='submit' class='form-control') Add Review
+          button.review-button(type='submit') Add Review

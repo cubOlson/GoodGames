@@ -1,7 +1,7 @@
 extends layout
 
 append head
-  link(rel="stylesheet" href="/stylesheets/login-signup.css")
+  link(rel="stylesheet" href="/stylesheets/login-signup-review.css")
   link(rel="stylesheet" href="/stylesheets/reset.css")
 
 block content
@@ -13,9 +13,8 @@ block content
                     div.errors: p= error
         if message
             div
-                p= message
                 h3= message
-
+            br
         form(action=`/users/${user.id}/myprofile`, method="post")
                 div
                     input(type="hidden", name="_csrf", value=csrfToken)

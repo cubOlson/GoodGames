@@ -17,6 +17,17 @@ const requireAuth = (req, res, next) => {
     return next()
 }
 
+const requireAuthorized = (req, res, next) => {
+    const { userId } = req.session.auth // identifies which user is logged in
+    const path = res.locals.path
+    const pathId = parseInt(path.split('/')[2], 10)
+    if(userId === pathId){
+        next()
+    } else {
+        res.redirect('/users/login')
+    }
+}
+
 const restoreUser = async(req, res, next) => {
     console.log(req.session);
         if (req.session.auth) {
@@ -26,6 +37,8 @@ const restoreUser = async(req, res, next) => {
                 if (user) {
                     res.locals.authenticated = true;
                     res.locals.user = user;
+                    res.locals.userId = user.id
+                    res.locals.path = req.path
                     next();
                 }
             }
@@ -43,5 +56,6 @@ module.exports = {
     loginUser,
     logoutUser,
     requireAuth,
-    restoreUser
+    restoreUser,
+    requireAuthorized
 };
