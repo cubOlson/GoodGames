@@ -90,6 +90,27 @@ router.post("/login", csrfProtection, loginValidation, asyncHandler( async(req, 
     }
 }));
 
+// Add Game to User Library
+router.post('/:id/mygames', csrfProtection, asyncHandler(async(req, res) => {
+    const { status, gameId } = req.body
+    console.log(`=================`)
+    console.log(`HERE IS THE STATUS`, status)
+    console.log(`HERE IS THE GAME ID`, gameId)
+    console.log(`=================`)
+    if(req.session.auth){
+      const { userId } = req.session.auth
+      await UserGame.create({gameId, userId, status, reviewed: false })
+      res.redirect(`/users/${userId}/mygames`)
+    } else {
+      res.redirect('/users/login')
+    }
+}))
+
+
+
+
+
+
 router.post('/:id/myprofile', sanityCheck, csrfProtection, registerValidation, asyncHandler( async(req, res) => {
   const { userId } = req.session.auth
   console.log('THIS IS MY USER ID:', userId);

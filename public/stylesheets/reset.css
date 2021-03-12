@@ -17,6 +17,8 @@ body {
   background-image:url('../images/wp4041942.jpg');
     background-position: center;
     background-size: cover;
+  background-color: rgb(80, 16, 51);
+  background-blend-mode:darken
   /* height: 100vh; */
 }
 

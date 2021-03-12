@@ -7,8 +7,10 @@ mixin gameCard(gamesArray, indexPos, domain, playStatus)
         a(href=`${domain}/games/${gamesArray[indexPos].id}`): .gamecard__game-title= gamesArray[indexPos].title
         .gamecard__dropdown-container
           .gamecard__dropdown-form
-            form(action="/users/signup", method="get")
-              select(name="played" onchange='this.form.submit()' value=playStatus)
+            form(action=`/users/${formSubmitId}/mygames`, method="post")
+              input(type="hidden" name='_csrf' value=csrfToken)
+              input(type="hidden" name='gameId' value=gamesArray[indexPos].id)
+              select(name="status" onchange='this.form.submit()' value=playStatus)
                 option(value='Not played' selected=playStatus==='Not Played' ? true : false) Not Played
                 option(value='Want to Play' selected=playStatus==='Want to Play' ? true : false) Want to Play
                 option(value="Playing" selected=playStatus==='Playing' ? true : false) Playing
