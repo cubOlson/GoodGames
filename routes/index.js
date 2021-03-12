@@ -34,4 +34,10 @@ router.get('/', csrfProtection, asyncHandler(async (req, res, next) => {
   }
 }));
 
+router.post('/', (req, res) => {
+  console.log(req.body);
+  const { search } = req.body;
+  res.redirect(`/search/${search}`);
+});
+
 module.exports = router;

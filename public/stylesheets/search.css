@@ -1,0 +1,22 @@
+.results {
+    text-align: center;
+    color: white;
+    padding: 20px 0 20px 0;
+    font-size: 50px;
+    background: linear-gradient(rgba(191, 15, 112, 0.6), rgba(191, 15, 112,0));
+}
+.found {
+    color: white;
+    border-bottom: 1px solid white;
+    padding: 10px;
+}
+.games {
+    display: inline-block;
+}
+.nothing-found {
+    text-align: center;
+    color: white;
+    padding: 20px 0 20px 0;
+    font-size: 50px;
+    background: linear-gradient(rgba(191, 15, 112, 0.6), rgba(191, 15, 112,0));
+}
