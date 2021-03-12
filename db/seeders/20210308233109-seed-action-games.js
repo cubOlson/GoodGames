@@ -15,7 +15,7 @@ module.exports = {
           title: "God of War",
           image:
             "https://image.api.playstation.com/vulcan/img/rnd/202010/2217/KAmUQWQ5V9QF3XDzmty1VkKj.png?w=1920&thumb=false",
-          likesCount: 0,
+          likesCount: 21,
           releaseDate: "April 20, 2018",
           developer: "Santa Monica Studio",
           summary:
