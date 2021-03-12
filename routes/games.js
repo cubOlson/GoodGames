@@ -8,20 +8,20 @@ router.get('/:id', csrfProtection, asyncHandler( async (req, res) => {
   const gameId = parseInt(req.params.id, 10)
   const { userId } = req.session.auth
   const game = await Game.findByPk(gameId, {include: Category})
-  const gameReviews = await Review.findAll({where: {gameId}, limit:10})
-  if (userId) {
-    const user = await User.findByPk(userId, {include: [Game, Review]})
-    const userReviewed = user.Games.find(game => game.id === gameId).UserGame.dataValues.reviewed
-    const playedStatus = user.Games.find(game => game.id === gameId).UserGame.dataValues.status
-    console.log(playedStatus)
-    if (userReviewed) {
-      const userReview = await Review.findOne({where: userId})
-      return res.render('game-page', { title: `${game.title}`, game, gameReviews, userReview, playedStatus, csrfToken: req.csrfToken()})
-    }
-  }
+  const gameReviews = await Review.findAll({where: {gameId}, limit:10, order: [['updatedAt', 'DESC']]})
   
   res.render('game-page', { title: `${game.title}`, game, gameReviews, csrfToken: req.csrfToken()})
 }));
+
+router.get('/:id/review', csrfProtection, asyncHandler( async (req, res) => {
+  const gameId = parseInt(req.params.id, 10)
+  const { userId } = req.session.auth
+  const game = await Game.findByPk(gameId, {include: Category})
+  const user = await User.findByPk(userId) 
+
+  await UserGame.create({gameId, userId, status: 'Played', reviewed: false })
+  res.render('review-page', { game, csrfToken: req.csrfToken(), user })
+}))
 
 /* Post */
 router.post('/:id/review', csrfProtection, asyncHandler(async (req, res) => {
@@ -37,8 +37,12 @@ router.post('/:id/review', csrfProtection, asyncHandler(async (req, res) => {
     liked: likedStatus === 'liked' ? true : false
   })
 
-  await userGameStatus[0].save()
-  res.redirect(`http://localhost:8080/games/${gameId}`)
+  const record = await UserGame.findOne({where: {userId, gameId}})
+  record.reviewed = true
+  await record.save()
+
+  res.redirect(`/games/${gameId}`)
 }))
+
 
 module.exports = router

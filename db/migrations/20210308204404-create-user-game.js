@@ -20,7 +20,6 @@ module.exports = {
       },
       status: {
         allowNull: false,
-        default: 'Not Played',
         type: Sequelize.STRING(50)
       },
       reviewed: {

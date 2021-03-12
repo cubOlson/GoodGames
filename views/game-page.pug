@@ -2,6 +2,7 @@ extends layout
 
 append head
   link(rel="stylesheet" href="/stylesheets/gamePage.css")
+  link(rel="stylesheet" href="/stylesheets/login-signup.css")
 
 block content
   div.game-page-container
@@ -39,22 +40,11 @@ block content
               div.other-categories
                 a(href='/categories/5') Casual & Simulation
   div.write-reviews
-    if (playedStatus !== 'Not Played')
-      div.formDiv
-        form(action=`/games/${game.id}/review` method='post')
-          input(type='hidden' name='_csrf' value= csrfToken)
-          div
-            label.review-label(for='title') Title
-            input.review-input(type='text' name='title')
-          div
-            label.review-label(for='content') Review
-            textarea.review-input(name='content')
-          div   
-            select(name='likedStatus' id='likedSelect')
-              option(value='liked') Liked
-              option(value='disliked') Disliked
-          button.review-button(type='submit') Add Review
+    div 
+      button(class='login-signup-button')
+        a(href=`/games/${game.id}/review`) Add Review!
       //- each review in reviews
+    div
       each review in gameReviews
         div.posted-reviews
           h3= review.title
