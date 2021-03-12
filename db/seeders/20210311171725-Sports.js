@@ -51,7 +51,7 @@ module.exports = {
           title: "Street Fighter 5",
           image:
             "https://www.mobygames.com/images/covers/s/384417-street-fighter-v-playstation-4-front-cover.jpg",
-          likesCount: 045,
+          likesCount: 45,
           releaseDate: "February 16, 2016",
           developer: "Capcom",
           summary:
