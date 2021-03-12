@@ -1,8 +1,8 @@
 extends layout
 
 append head
-  link(rel="stylesheet" href="/stylesheets/login-signup.css")
-
+    link(rel="stylesheet" href="/stylesheets/login-signup-review.css")
+    script(src="/javascripts/index.js" type="module" defer)
 block content
     div.login-form
         if errors
@@ -15,11 +15,17 @@ block content
                 input(type="hidden", name="_csrf", value=csrfToken)
             div
                 label(for="email" class="form-group") Email
-                input(type="email", name="email" class="form-control")
+                input(type="email", name="email" class="form-control" id='login-email')
             div
                 label(for="password" class="form-group") Password
-                input(type="password", name="password" class="form-control")
+                input(type="password", name="password" class="form-control" id='login-password')
             button(type="submit" class="login-signup-button") Login
+            br
+            br
+            br
+            br
+            button(id='demoUserBtn') Enter Demo User Info
             br
             div.need-have-account
                 a(href="/users/signup") Need an account? Sign up here!
+            .need-have-account  

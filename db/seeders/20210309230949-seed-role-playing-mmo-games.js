@@ -7,7 +7,7 @@ module.exports = {
         title: "Black Desert Online",
         image:
           "https://www.mobygames.com/images/covers/l/545077-black-desert-online-xbox-one-front-cover.png",
-        likesCount: 0,
+        likesCount: 93,
         releaseDate: "May 24, 2017",
         developer: "Pearl Abyss",
         summary:
@@ -21,8 +21,8 @@ module.exports = {
       {
         title: "Elite Dangerous",
         image:
-          "https://www.mobygames.com/images/covers/s/412074-elite-dangerous-playstation-4-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/412074-elite-dangerous-playstation-4-front-cover.jpg",
+        likesCount: 124,
         releaseDate: "April 02, 2015",
         developer: "Frontier Developments plc",
         summary:
@@ -36,8 +36,8 @@ module.exports = {
       {
         title: "Guild Wars 2",
         image:
-          "https://www.mobygames.com/images/covers/s/619300-guild-wars-2-windows-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/271717-guild-wars-2-windows-front-cover.jpg",
+        likesCount: 84,
         releaseDate: "August 28, 2012",
         developer: "ArenaNet, LLC",
         summary:
@@ -52,7 +52,7 @@ module.exports = {
         title: "Rune Scape",
         image:
           "https://www.mobygames.com/images/covers/l/719264-runescape-ipad-front-cover.png",
-        likesCount: 0,
+        likesCount: 27,
         releaseDate: "2001",
         developer: "Jagex Ltd.",
         summary:
@@ -67,7 +67,7 @@ module.exports = {
         title: "Destiny 2",
         image:
           "https://www.mobygames.com/images/covers/l/425032-destiny-2-playstation-4-front-cover.png",
-        likesCount: 0,
+        likesCount: 56,
         releaseDate: "September 06, 2017",
         developer: "Bungie, LLC",
         summary:
@@ -82,7 +82,7 @@ module.exports = {
         title: "Destiny",
         image:
           "https://www.mobygames.com/images/covers/l/290440-destiny-playstation-3-front-cover.jpg",
-        likesCount: 0,
+        likesCount: 37,
         releaseDate: "September 09, 2014",
         developer: "Bungie, LLC",
         summary:
@@ -96,8 +96,8 @@ module.exports = {
       {
         title: "Fallout 76",
         image:
-          "https://www.mobygames.com/images/covers/s/516725-fallout-76-playstation-4-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/516725-fallout-76-playstation-4-front-cover.png",
+        likesCount: 285,
         releaseDate: "October 23, 2018",
         developer: "Bethesda Game Studios",
         summary:
@@ -111,8 +111,8 @@ module.exports = {
       {
         title: "Elder Scrolls Online",
         image:
-          "https://www.mobygames.com/images/covers/s/282553-the-elder-scrolls-online-macintosh-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/487032-the-elder-scrolls-online-summerset-playstation-4-front-cover.jpg",
+        likesCount: 75,
         releaseDate: "April 04, 2014",
         developer: "ZeniMax Online Studios, LLC",
         summary:
@@ -126,8 +126,8 @@ module.exports = {
       {
         title: "Defiance",
         image:
-          "https://www.mobygames.com/images/covers/s/354520-defiance-windows-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/470029-defiance-playstation-3-front-cover.jpg",
+        likesCount: 38,
         releaseDate: "April 02, 2013",
         developer: "Trion Worlds, Inc.",
         summary:
@@ -141,8 +141,8 @@ module.exports = {
       {
         title: "Blade and Soul",
         image:
-          "https://www.mobygames.com/images/covers/s/374800-blade-soul-windows-front-cover.jpg",
-        likesCount: 0,
+          "https://e.snmc.io/lk/l/x/4b7ae222b2ff98f5b5b2dfbb34ac8e4d/7756102",
+        likesCount: 65,
         releaseDate: "January 19, 2016",
         developer: "Team Bloodlust",
         summary:
@@ -156,8 +156,8 @@ module.exports = {
       {
         title: "Rift",
         image:
-          "https://www.mobygames.com/images/covers/s/213782-rift-windows-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/233183-rift-windows-front-cover.jpg",
+        likesCount: 9,
         releaseDate: "March 01, 2011",
         developer: "Trion Worlds, Inc.",
         summary:
@@ -171,8 +171,8 @@ module.exports = {
       {
         title: "Trove",
         image:
-          "https://www.mobygames.com/images/covers/s/393403-trove-playstation-4-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/393403-trove-playstation-4-front-cover.jpg",
+        likesCount: 326,
         releaseDate: "July 09, 2015",
         developer: "Trion Worlds, Inc.",
         summary:
@@ -186,8 +186,8 @@ module.exports = {
       {
         title: "Tera",
         image:
-          "https://www.mobygames.com/images/covers/s/464508-tera-playstation-4-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/572832-tera-playstation-4-front-cover.jpg",
+        likesCount: 136,
         releaseDate: "January 25, 2011",
         developer: "Bluehole Studio, Inc.",
         summary:
@@ -201,8 +201,8 @@ module.exports = {
       {
         title: "World of Warcraft",
         image:
-          "https://www.mobygames.com/images/covers/s/38593-world-of-warcraft-macintosh-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/90545-world-of-warcraft-macintosh-front-cover.jpg",
+        likesCount: 123,
         releaseDate: "November 23, 2004",
         developer: "Blizzard Entertainment Inc.",
         summary:
@@ -216,8 +216,8 @@ module.exports = {
       {
         title: "Pokemon Go",
         image:
-          "https://www.mobygames.com/images/covers/s/349515-pokemon-go-android-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/349556-pokemon-go-ipad-front-cover.png",
+        likesCount: 287,
         releaseDate: "March 29, 2016",
         developer: "Niantic, Inc., Nintendo Co., Ltd., Pokémon Company, The",
         summary:
@@ -231,8 +231,8 @@ module.exports = {
       {
         title: "PlanetSide 2",
         image:
-          "https://www.mobygames.com/images/covers/s/306461-planetside-2-playstation-4-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/306461-planetside-2-playstation-4-front-cover.jpg",
+        likesCount: 167,
         releaseDate: "November 20, 2012",
         developer: "Sony Online Entertainment Inc.",
         summary:
@@ -246,8 +246,8 @@ module.exports = {
       {
         title: "Star Wars: The Old Republic",
         image:
-          "https://www.mobygames.com/images/covers/s/444254-star-wars-the-old-republic-windows-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/244818-star-wars-the-old-republic-windows-front-cover.jpg",
+        likesCount: 66,
         releaseDate: "December 20, 2011",
         developer: "BioWare Austin, LLC",
         summary:
@@ -262,7 +262,7 @@ module.exports = {
         title: "Final Fantasy 14 Online",
         image:
           "https://preview.redd.it/yszbjtd1i9021.jpg?width=1500&format=pjpg&auto=webp&s=58ddad397eea154c8594de118d15e236002a29b3",
-        likesCount: 0,
+        likesCount: 57,
         releaseDate: "September 30, 2010",
         developer: "Square Enix Co., Ltd.",
         summary:
@@ -276,8 +276,8 @@ module.exports = {
       {
         title: "Club Penguin Rewritten",
         image:
-          "https://static.wikia.nocookie.net/cppsworld/images/0/05/Julyimage.jpg/revision/latest?cb=20171220173601",
-        likesCount: 0,
+          "https://i.redd.it/r20dtqp5mq321.jpg",
+        likesCount: 32,
         releaseDate: "March 29, 2017",
         developer: "Disney Canada, Inc.",
         summary:
@@ -291,8 +291,8 @@ module.exports = {
       {
         title: "NeverWinter",
         image:
-          "https://www.mobygames.com/images/covers/s/353047-neverwinter-playstation-4-front-cover.jpg",
-        likesCount: 0,
+          "https://www.mobygames.com/images/covers/l/353047-neverwinter-playstation-4-front-cover.jpg",
+        likesCount: 87,
         releaseDate: "June 20, 2013",
         developer: "Cryptic Studios, Inc.",
         summary:

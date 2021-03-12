@@ -144,6 +144,9 @@ z-index: 3;
     padding: 10px;
     z-index: 3;
     flex-shrink: 0;
+    position: fixed;
+    bottom: 0;
+    width: 1366px;
 }
 .footerChild {
     margin-left: 10px;

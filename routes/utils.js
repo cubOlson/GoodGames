@@ -22,6 +22,7 @@ const loginValidation = [
         .withMessage('Please provide a valid password.'),
 ]
 
+// check that review content is not null when submitting review
 const reviewValidation = [
     check('title')
         .exists({checkFalsy: true})
@@ -30,7 +31,6 @@ const reviewValidation = [
         .exists({checkFalsy: true})
         .withMessage('Please provide a valid password.'),
 ]
-
 
 // registration validation for new user sign up
 const registerValidation = [
@@ -53,12 +53,12 @@ const registerValidation = [
         .withMessage('Password must have one digit, one lower-case, one upper-case, and one special character.'),
     check('confirmPassword')
         .custom((value, { req }) => {
-            if (value !== req.body.password) {
-                throw new Error('Confirm Password does not match Password');
-            }
+            if (value !== req.body.password) throw new Error('Confirm Password does not match Password');
             return true;
         }),
 ]
+
+// handle javscript errors
 
 module.exports = {
     asyncHandler,
