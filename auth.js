@@ -2,11 +2,13 @@ const db = require('./db/models');
 
 const loginUser = (req, res, user) => {
     req.session.auth = { userId: user.id }
+    res.locals.user = true;
     req.session.save(() => { res.redirect('/') })
 }
 
 const logoutUser = (req, res) => {
     delete req.session.auth;
+    res.locals.user = false;
     req.session.save( () => { res.redirect('/') })
 }
 
