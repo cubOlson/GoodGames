@@ -14,8 +14,8 @@ module.exports = {
         {
           title: "God of War",
           image:
-            "https://image.api.playstation.com/vulcan/img/rnd/202010/2217/KAmUQWQ5V9QF3XDzmty1VkKj.png?w=1920&thumb=false",
-          likesCount: 21,
+            "https://www.mobygames.com/images/covers/l/474768-god-of-war-playstation-4-front-cover.jpg",
+          likesCount: 999,
           releaseDate: "April 20, 2018",
           developer: "Santa Monica Studio",
           summary:
@@ -28,8 +28,8 @@ module.exports = {
         },
         {
           title: "Grand Theft Auto",
-          image: "https://i.ytimg.com/vi/VjZ5tgjPVfU/maxresdefault.jpg",
-          likesCount: 43,
+          image: "https://www.gtabase.com/igallery/501-600/GTA_V_Official_Cover_Art-524-1920.jpg",
+          likesCount: 846,
           releaseDate: "September 17, 2013",
           developer: "Rock Star Games",
           summary:
@@ -43,8 +43,8 @@ module.exports = {
         {
           title: "Call of Duty: Modern Warfare",
           image:
-            "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcpygamestorrent.com%2Fwp-content%2Fuploads%2F2019%2F09%2Fcall-of-duty-modern-warfare-download-crack-pc-cover.jpg&f=1&nofb=1",
-          likesCount: 54,
+            "https://www.mobygames.com/images/covers/l/602324-call-of-duty-modern-warfare-xbox-one-front-cover.jpg",
+          likesCount: 765,
           releaseDate: "October 25, 2019",
           developer: "ACTIVISION",
           summary:
@@ -58,8 +58,8 @@ module.exports = {
         {
           title: "Call of Duty: Warzone",
           image:
-            "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2020/03/call-of-duty-warzone-box-art.jpg",
-          likesCount: 2,
+            "https://static.wikia.nocookie.net/vgost/images/8/80/Call-of-duty-warzone-box-art-01-ps4-10mar20-en-us.jpg/revision/latest?cb=20201221181745",
+          likesCount: 500,
           releaseDate: "March 10, 2020",
           developer: "ACTIVISION",
           summary:
@@ -71,7 +71,7 @@ module.exports = {
         },
         {
           title: "Apex Legends",
-          image: "https://coverfiles.alphacoders.com/101/101971.jpg",
+          image: "https://www.mobygames.com/images/covers/l/538006-apex-legends-xbox-one-front-cover.jpg",
           likesCount: 345,
           releaseDate: "February 4, 2019",
           developer: "EA Games",
@@ -85,8 +85,8 @@ module.exports = {
         {
           title: "Overwatch",
           image:
-            "https://images.pushsquare.com/news/2016/05/play_overwatch_early_and_win_the_game_on_the_ps4/attachment/0/original.jpg",
-          likesCount: 23,
+            "https://pbs.twimg.com/media/CpjMPyyWcAAXQP1.jpg",
+          likesCount: 670,
           releaseDate: "May 24, 2016",
           developer: "Blizzard Entertainment",
           summary:
@@ -116,7 +116,7 @@ module.exports = {
           title: "Star Wars Jedi: Fallen Order",
           image:
             "https://www.mobygames.com/images/covers/l/612695-star-wars-jedi-fallen-order-deluxe-upgrade-xbox-one-front-cover.png",
-          likesCount: 7,
+          likesCount: 30,
           releaseDate: "November 15, 2019",
           developer: "EA Games",
           summary:
@@ -131,7 +131,7 @@ module.exports = {
           title: "Super Mario Odyssey",
           image:
             "https://www.mobygames.com/images/covers/l/435360-super-mario-odyssey-nintendo-switch-front-cover.jpg",
-          likesCount: 35,
+          likesCount: 335,
           releaseDate: "October 27, 2017",
           developer: "Nintendo",
           summary:
@@ -161,7 +161,7 @@ module.exports = {
           title: "Resident Evil 3",
           image:
             "https://d2skuhm0vrry40.cloudfront.net/2019/articles/2019-12-03-13-42/re1.png/EG11/resize/512x-1/quality/75/format/jpg",
-          likesCount: 3,
+          likesCount: 13,
           releaseDate: "April 3, 2020",
           developer: "CAPCOM",
           summary:
@@ -191,7 +191,7 @@ module.exports = {
           title: "Super Smash Bros. Ultimate",
           image:
             "https://www.mobygames.com/images/covers/l/548925-super-smash-bros-ultimate-nintendo-switch-front-cover.jpg",
-          likesCount: 6,
+          likesCount: 768,
           releaseDate: "December 7, 2018",
           developer: "Nintendo",
           summary: `Super Smash Bros. Ultimate for the Nintendo Switch brings back every fighter in the history of the series, adds newcomers and over 100 stages, and introduces a new adventure mode called "World of Light"`,
@@ -205,7 +205,7 @@ module.exports = {
           title: "Legend of Zelda: Breath of the Wild",
           image:
             "https://d1x7zurbps6occ.cloudfront.net/product/xlarge/635177-176831.jpg",
-          likesCount: 244,
+          likesCount: 544,
           releaseDate: "March 3, 2017",
           developer: "Nintendo",
           summary:
@@ -220,7 +220,7 @@ module.exports = {
           title: "Witcher 3: Wild Hunt",
           image:
             "https://www.mobygames.com/images/covers/l/392214-the-witcher-3-wild-hunt-xbox-one-front-cover.png",
-          likesCount: 65,
+          likesCount: 465,
           releaseDate: "May 19, 2015",
           developer: "CD Projekt Red",
           summary:
@@ -261,8 +261,8 @@ module.exports = {
         },
         {
           title: "Mortal Kombat 11",
-          image: "https://www.amazon.com/s?k=mortal+kombat+11&ref=nb_sb_noss_1",
-          likesCount: 3,
+          image: "https://i.pinimg.com/736x/72/7e/d6/727ed6a54171f02633681c050867c6b1.jpg",
+          likesCount: 134,
           releaseDate: "April 23, 2019",
           developer: "NetherRealm Studios",
           summary:
@@ -292,7 +292,7 @@ module.exports = {
           title: "Sekiro: Shadows Die Twice",
           image:
             "https://www.mobygames.com/images/covers/l/547413-sekiro-shadows-die-twice-xbox-one-front-cover.jpg",
-          likesCount: 67,
+          likesCount: 167,
           releaseDate: "March 22, 2019",
           developer: "FromSoftware",
           summary:

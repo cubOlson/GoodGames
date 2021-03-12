@@ -6,7 +6,7 @@ module.exports = {
       {
         title: "Stardew Valley",
         image:
-          "https://www.mobygames.com/images/covers/s/372092-stardew-valley-playstation-4-front-cover.jpg",
+          "https://www.mobygames.com/images/covers/l/450739-stardew-valley-nintendo-switch-front-cover.jpg",
         likesCount: 87,
         releaseDate: "Febuary 26, 2016",
         developer: "ConcernedApe LLC",
@@ -22,7 +22,7 @@ module.exports = {
         title: "Animal Corssing New Horizon",
         image:
           "https://i.imgur.com/fb3gEHr.jpg",
-        likesCount: 48,
+        likesCount: 248,
         releaseDate: "March 20, 2020",
         developer: "Nintendo EPD",
         summary:
@@ -36,7 +36,7 @@ module.exports = {
       {
         title: "Goat Simulator",
         image:
-          "https://www.mobygames.com/images/covers/s/308998-goat-simulator-playstation-3-front-cover.jpg",
+          "https://www.mobygames.com/images/covers/l/308998-goat-simulator-playstation-3-front-cover.jpg",
         likesCount: 67,
         releaseDate: "April 01, 2014",
         developer: "Coffee Stain Studios AB",
@@ -51,7 +51,7 @@ module.exports = {
       {
         title: "Kerbal Space Program",
         image:
-          "https://www.mobygames.com/images/covers/s/351388-kerbal-space-program-playstation-4-front-cover.jpg",
+          "https://www.mobygames.com/images/covers/l/351388-kerbal-space-program-playstation-4-front-cover.jpg",
         likesCount: 98,
         releaseDate: "June 24, 2011",
         developer: "Squad",
@@ -81,7 +81,7 @@ module.exports = {
       {
         title: "The Sims 4",
         image:
-          "https://www.mobygames.com/images/covers/s/328555-the-sims-4-macintosh-front-cover.jpg",
+          "https://www.mobygames.com/images/covers/l/460166-the-sims-4-playstation-4-front-cover.jpg",
         likesCount: 67,
         releaseDate: "September 02, 2014",
         developer: "The Sims Studio",
@@ -111,7 +111,7 @@ module.exports = {
       {
         title: "Microsoft Flight Simulator",
         image:
-          "https://www.mobygames.com/images/covers/s/678796-microsoft-flight-simulator-windows-apps-front-cover.jpg",
+          "https://www.mobygames.com/images/covers/l/678796-microsoft-flight-simulator-windows-apps-front-cover.jpg",
         likesCount: 478,
         releaseDate: "August 18, 2020",
         developer: "Asobo Studio S.A.R.L.",
@@ -126,8 +126,8 @@ module.exports = {
       {
         title: "Surgeon Simulator",
         image:
-          "https://www.mobygames.com/images/covers/s/289124-surgeon-simulator-ipad-front-cover.jpg",
-        likesCount: 47,
+          "https://www.mobygames.com/images/covers/l/630664-surgeon-simulator-2013-macintosh-front-cover.png",
+        likesCount: 147,
         releaseDate: "March 12, 2014",
         developer: "Bossa Studios Ltd.",
         summary:
@@ -141,7 +141,7 @@ module.exports = {
       {
         title: "Beyond Blue",
         image:
-          "https://www.mobygames.com/images/covers/s/666689-beyond-blue-playstation-4-front-cover.jpg",
+          "https://www.mobygames.com/images/covers/l/666689-beyond-blue-playstation-4-front-cover.jpg",
         likesCount: 98,
         releaseDate: "April 17, 2020",
         developer: "E-Line Media",
@@ -156,8 +156,8 @@ module.exports = {
       {
         title: "No Mans Sky",
         image:
-          "https://www.mobygames.com/images/covers/s/357930-no-man-s-sky-playstation-4-front-cover.jpg",
-        likesCount: 76,
+          "https://www.mobygames.com/images/covers/l/485099-no-man-s-sky-playstation-4-front-cover.jpg",
+        likesCount: 276,
         releaseDate: "August 09, 2016",
         developer: "Hello Games Ltd.",
         summary:
@@ -171,7 +171,7 @@ module.exports = {
       {
         title: "The Sims 3",
         image:
-          "https://www.mobygames.com/images/covers/s/178884-the-sims-3-iphone-front-cover.jpg",
+          "https://www.mobygames.com/images/covers/l/153852-the-sims-3-macintosh-front-cover.jpg",
         likesCount: 98,
         releaseDate: "June 02, 2009",
         developer: "IronMonkey Studios Pty Ltd.",
@@ -201,7 +201,7 @@ module.exports = {
       {
         title: "Car Mechanic Simulator",
         image:
-          "https://www.mobygames.com/images/covers/s/572731-car-mechanic-simulator-2018-playstation-4-front-cover.jpg",
+          "https://www.mobygames.com/images/covers/l/695465-car-mechanic-simulator-2018-nintendo-switch-front-cover.jpg",
         likesCount: 35,
         releaseDate: "July 21, 2017",
         developer: "Red Dot Games",
@@ -216,7 +216,7 @@ module.exports = {
       {
         title: "Farming Simulator 19",
         image:
-          "https://www.mobygames.com/images/covers/s/538459-farming-simulator-19-playstation-4-front-cover.jpg",
+          "https://www.mobygames.com/images/covers/l/538458-farming-simulator-19-playstation-4-front-cover.jpg",
         likesCount: 87,
         releaseDate: "November 19, 2018",
         developer: "GIANTS Software GmbH",
@@ -246,8 +246,8 @@ module.exports = {
       {
         title: "War Thunder",
         image:
-          "https://www.mobygames.com/images/covers/s/307359-war-thunder-playstation-4-front-cover.jpg",
-        likesCount: 56,
+          "https://www.mobygames.com/images/covers/l/307359-war-thunder-playstation-4-front-cover.jpg",
+        likesCount: 156,
         releaseDate: "August 12, 2012",
         developer: "Gaijin Entertainment Corporation",
         summary:
@@ -291,7 +291,7 @@ module.exports = {
       {
         title: "Surgeon Simulator 2",
         image:
-          "https://www.mobygames.com/images/covers/s/680047-surgeon-simulator-2-windows-front-cover.jpg",
+          "https://www.mobygames.com/images/covers/l/680047-surgeon-simulator-2-windows-front-cover.jpg",
         likesCount: 42,
         releaseDate: "August 21, 2020",
         developer: "Bossa Studios Ltd.",

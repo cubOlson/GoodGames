@@ -6,8 +6,8 @@ module.exports = {
       return queryInterface.bulkInsert("Games", [
         {
           title: "Forza Horizon 4",
-          image: "https://www.mobygames.com/images/covers/s/518449-forza-horizon-4-windows-apps-front-cover.jpg",
-          likesCount: 23,
+          image: "https://www.mobygames.com/images/covers/l/518449-forza-horizon-4-windows-apps-front-cover.png",
+          likesCount: 223,
           releaseDate: "March 9, 2021",
           developer: "Playground Games",
           summary:
@@ -20,7 +20,7 @@ module.exports = {
         },
         {
           title: "Beat Saber",
-          image: "https://www.mobygames.com/game/beat-saber/cover-art/gameCoverId,540683/",
+          image: "https://www.mobygames.com/images/covers/l/540683-beat-saber-playstation-4-front-cover.jpg",
           likesCount: 678,
           releaseDate: "May 21, 2019",
           developer: "Beat Games",
@@ -35,7 +35,7 @@ module.exports = {
         {
           title: "Dragon Ball FighterZ",
           image:
-            "https://www.mobygames.com/images/covers/s/452368-dragon-ball-fighterz-playstation-4-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/490961-dragon-ball-fighterz-nintendo-switch-front-cover.jpg",
           likesCount: 543,
           releaseDate: "January 26, 2018",
           developer: "Arc System Works",
@@ -50,8 +50,8 @@ module.exports = {
         {
           title: "Street Fighter 5",
           image:
-            "https://www.mobygames.com/images/covers/s/384417-street-fighter-v-playstation-4-front-cover.jpg",
-          likesCount: 45,
+            "https://www.mobygames.com/images/covers/l/384417-street-fighter-v-playstation-4-front-cover.jpg",
+          likesCount: 145,
           releaseDate: "February 16, 2016",
           developer: "Capcom",
           summary:
@@ -63,7 +63,7 @@ module.exports = {
         },
         {
           title: "Wreckfest",
-          image: "https://www.mobygames.com/images/covers/s/587310-wreckfest-playstation-4-front-cover.jpg",
+          image: "https://www.mobygames.com/images/covers/l/587310-wreckfest-playstation-4-front-cover.jpg",
           likesCount: 456,
           releaseDate: "June 14, 2018",
           developer: "Bugbear",
@@ -77,7 +77,7 @@ module.exports = {
         {
           title: "Sausage Sports Club",
           image:
-            "https://www.mobygames.com/images/covers/s/494879-sausage-sports-club-nintendo-switch-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/494881-sausage-sports-club-nintendo-switch-front-cover.jpg",
           likesCount: 76,
           releaseDate: "July 19, 2018",
           developer: "Chris Wade",
@@ -92,7 +92,7 @@ module.exports = {
         {
           title: "FIFA 18",
           image:
-            "https://www.mobygames.com/images/covers/s/432452-fifa-18-nintendo-switch-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/429370-fifa-18-playstation-4-front-cover.png",
           likesCount: 35,
           releaseDate: "September 29, 2017",
           developer: "Electronic Arts, Inc.",
@@ -107,7 +107,7 @@ module.exports = {
         {
           title: "FIFA 15",
           image:
-            "https://www.mobygames.com/images/shots/s/1011640-fifa-15-j2me-screenshot-title-screen.jpg",
+            "https://www.mobygames.com/images/covers/l/291492-fifa-15-playstation-4-front-cover.jpg",
           likesCount: 23,
           releaseDate: "November 15, 2015",
           developer: "Electronic Arts, Inc.",
@@ -122,7 +122,7 @@ module.exports = {
         {
           title: "FIFA 12",
           image:
-            "https://www.mobygames.com/images/covers/s/252750-fifa-12-android-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/270761-fifa-soccer-12-playstation-3-front-cover.jpg",
           likesCount: 7,
           releaseDate: "September 28, 2011",
           developer: "Electronic Arts, Inc.",
@@ -137,7 +137,7 @@ module.exports = {
         {
           title: "Madden NFL 2003",
           image:
-            "https://www.mobygames.com/images/covers/s/126102-madden-nfl-2003-windows-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/233931-madden-nfl-2003-playstation-front-cover.jpg",
           likesCount: 4,
           releaseDate: "January 16, 2002",
           developer: "Electronic Arts, Inc.",
@@ -152,7 +152,7 @@ module.exports = {
         {
           title: "Madden NFL 2002",
           image:
-            "https://www.mobygames.com/images/covers/s/85266-madden-nfl-2002-xbox-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/47919-madden-nfl-2002-windows-front-cover.jpg",
           likesCount: 2,
           releaseDate: "April 3, 2001",
           developer: "Electronic Arts, Inc.",
@@ -167,7 +167,7 @@ module.exports = {
         {
           title: "Madden NFL 2001",
           image:
-            "https://www.mobygames.com/images/covers/s/86765-madden-nfl-2001-windows-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/202324-madden-nfl-2001-playstation-front-cover.png",
           likesCount: 1,
           releaseDate: "August 25, 2000",
           developer: "Electronic Arts, Inc.",
@@ -182,7 +182,7 @@ module.exports = {
         {
           title: "Madden NFL 2000",
           image:
-            "https://www.mobygames.com/images/covers/s/22061-madden-nfl-2000-playstation-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/22061-madden-nfl-2000-playstation-front-cover.jpg",
           likesCount: 6,
           releaseDate: "August 17, 1999",
           developer: "EA Tiburon",
@@ -196,7 +196,7 @@ module.exports = {
         {
           title: "Major League Baseball 2006",
           image:
-            "https://www.mobygames.com/images/covers/s/139405-major-league-baseball-2k6-psp-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/261707-major-league-baseball-2k6-playstation-2-front-cover.jpg",
           likesCount: 45,
           releaseDate: "April 18, 2006",
           developer: "Kush Games, Inc.",
@@ -211,7 +211,7 @@ module.exports = {
         {
           title: "Major League Baseball 2005",
           image:
-            "https://www.mobygames.com/images/covers/s/176365-major-league-baseball-2k5-playstation-2-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/176365-major-league-baseball-2k5-playstation-2-front-cover.png",
           likesCount: 4,
           releaseDate: "February 24, 2005",
           developer: "Kush Games, Inc.",
@@ -226,7 +226,7 @@ module.exports = {
         {
           title: "MLB 2004",
           image:
-            "https://www.amazon.com/Playstation-2-MLB-2004/dp/B00008DHNS",
+            "https://www.mobygames.com/images/covers/l/236319-mlb-2004-playstation-2-front-cover.jpg",
           likesCount: 0,
           releaseDate: "Aril 15, 2003",
           developer: "Sony Computer Entertainment America, Inc.",
@@ -240,7 +240,7 @@ module.exports = {
         {
           title: "NBA 08",
           image:
-            "https://www.mobygames.com/images/covers/s/139419-nba-08-psp-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/236474-nba-08-playstation-2-front-cover.jpg",
           likesCount: 56,
           releaseDate: "October 02, 2007",
           developer: "SCE Studios San Diego",
@@ -253,7 +253,7 @@ module.exports = {
         },
         {
           title: "NBA 07",
-          image: "https://www.mobygames.com/images/covers/s/154019-nba-07-playstation-3-front-cover.jpg",
+          image: "https://www.mobygames.com/images/covers/l/154019-nba-07-playstation-3-front-cover.jpg",
           likesCount: 4,
           releaseDate: "November 17, 2006",
           developer: "SCE Studios San Diego",
@@ -268,7 +268,7 @@ module.exports = {
         {
           title: "NBA 06",
           image:
-            "https://www.mobygames.com/images/covers/s/139418-nba-06-psp-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/194000-nba-06-playstation-2-front-cover.png",
           likesCount: 5,
           releaseDate: "October 04, 2005",
           developer: "SCE Studios San Diego",
@@ -283,7 +283,7 @@ module.exports = {
         {
           title: "Sports Party",
           image:
-            "https://www.mobygames.com/images/covers/s/562361-sports-party-nintendo-switch-front-cover.jpg",
+            "https://www.mobygames.com/images/covers/l/562360-sports-party-nintendo-switch-front-cover.jpg",
           likesCount: 0,
           releaseDate: "October 30, 2018",
           developer: "Magic Pockets SAS",

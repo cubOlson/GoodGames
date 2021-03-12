@@ -7,7 +7,7 @@ module.exports = {
         title: "Dark Souls Remastered",
         image:
           "https://www.mobygames.com/images/covers/l/483065-dark-souls-remastered-xbox-one-front-cover.jpg",
-        likesCount: 76,
+        likesCount: 276,
         releaseDate: "May 23, 2018",
         developer: "From Software",
         summary:
@@ -21,8 +21,8 @@ module.exports = {
       {
         title: "Counter Strike Global Offensive",
         image:
-          "https://static.wikia.nocookie.net/cswikia/images/1/1e/Csgo_steam_store_header_latest.jpg/revision/latest?cb=20170630034202",
-        likesCount: 3,
+          "https://www.mobygames.com/images/covers/l/501538-counter-strike-global-offensive-playstation-3-front-cover.jpg",
+        likesCount: 113,
         releaseDate: "August 21, 2012",
         developer: "Valve, Hidden Path Entertainment",
         summary:
@@ -37,7 +37,7 @@ module.exports = {
         title: "Minecraft",
         image:
           "https://www.mobygames.com/images/covers/l/672322-minecraft-playstation-4-front-cover.jpg",
-        likesCount: 45,
+        likesCount: 445,
         releaseDate: "November 18, 2011",
         developer: "Mojang",
         summary:
@@ -67,7 +67,7 @@ module.exports = {
         title: "Dark Souls 2",
         image:
           "https://howlongtobeat.com/games/Dark_Souls_II_cover.jpg",
-        likesCount: 3,
+        likesCount: 123,
         releaseDate: "March 11, 2014",
         developer: "From Software",
         summary:
@@ -82,7 +82,7 @@ module.exports = {
         title: "Dark Souls 3",
         image:
           "https://www.mobygames.com/images/covers/l/438915-dark-souls-iii-deluxe-edition-xbox-one-front-cover.jpg",
-        likesCount: 76,
+        likesCount: 376,
         releaseDate: "March 24, 2016",
         developer: "From Software",
         summary:
@@ -97,7 +97,7 @@ module.exports = {
         title: "Bloodborne",
         image:
           "https://www.mobygames.com/images/covers/l/476119-bloodborne-playstation-4-front-cover.jpg",
-        likesCount: 45,
+        likesCount: 245,
         releaseDate: "March 24, 2015",
         developer: "From Software",
         summary:
@@ -111,8 +111,8 @@ module.exports = {
       {
         title: "Demon Souls",
         image:
-          "https://www.mobygames.com/images/covers/s/696239-demon-s-souls-playstation-5-front-cover.jpg",
-        likesCount: 3,
+          "https://assets-prd.ignimgs.com/2020/09/12/demons-souls-button-sep2020-1599871782337.jpg",
+        likesCount: 483,
         releaseDate: "November 12, 2020",
         developer: "Bluepoint Games",
         summary:
@@ -126,8 +126,8 @@ module.exports = {
       {
         title: "Terraria",
         image:
-          "https://www.mobygames.com/images/covers/s/274541-terraria-playstation-3-front-cover.jpg",
-        likesCount: 45,
+          "https://s3.gaming-cdn.com/images/products/932/orig/terraria-cover.jpg",
+        likesCount: 145,
         releaseDate: "May 16, 2011",
         developer: "Re-Logic",
         summary:
@@ -142,7 +142,7 @@ module.exports = {
         title: "Hades",
         image:
           "https://www.rpgfan.com/wp-content/uploads/2020/08/Hades-Cover-Art.jpg",
-        likesCount: 67,
+        likesCount: 167,
         releaseDate: "December 06, 2018",
         developer: "Supergiant Games",
         summary:
@@ -157,7 +157,7 @@ module.exports = {
         title: "Hyper Light Drifter",
         image:
           "https://www.mobygames.com/images/covers/l/354283-hyper-light-drifter-playstation-4-front-cover.jpg",
-        likesCount: 8,
+        likesCount: 103,
         releaseDate: "March 31, 2016",
         developer: "Heart Machine LLC",
         summary:
@@ -171,8 +171,8 @@ module.exports = {
       {
         title: "Cuphead",
         image:
-          "https://www.mobygames.com/images/covers/s/674786-cuphead-playstation-4-front-cover.jpg",
-        likesCount: 67,
+          "https://www.mobygames.com/images/covers/l/429819-cuphead-windows-apps-front-cover.jpg",
+        likesCount: 167,
         releaseDate: "September 29, 2017",
         developer: "StudioMDHR Entertainment",
         summary:
@@ -202,7 +202,7 @@ module.exports = {
         title: "Tom Clancy's Rainbow Six Siege",
         image:
           "https://www.mobygames.com/images/covers/l/318975-tom-clancy-s-rainbow-six-siege-playstation-4-front-cover.jpg",
-        likesCount: 6,
+        likesCount: 256,
         releaseDate: "December 01, 2015",
         developer: "Ubisoft Divertissements Inc.",
         summary:
@@ -216,7 +216,7 @@ module.exports = {
       {
         title: "Playerunknown Battlegrounds",
         image:
-          "https://www.mobygames.com/images/covers/s/551888-playerunknown-s-battlegrounds-playstation-4-front-cover.jpg",
+          "https://www.gamerids.com/pics/game/playstation-4_playerunknowns-battlegrounds.jpg",
         likesCount: 87,
         releaseDate: "March 23, 2017",
         developer: "PUBG Corporation",
@@ -231,8 +231,8 @@ module.exports = {
       {
         title: "Monster Hunter World",
         image:
-          "https://www.mobygames.com/images/covers/s/452375-monster-hunter-world-playstation-4-front-cover.jpg",
-        likesCount: 99,
+          "https://www.mobygames.com/images/covers/l/452375-monster-hunter-world-playstation-4-front-cover.png",
+        likesCount: 199,
         releaseDate: "January 26, 2018",
         developer: "Capcom Co.",
         summary:
@@ -246,8 +246,8 @@ module.exports = {
       {
         title: "Stranded Deep",
         image:
-          "https://www.mobygames.com/images/covers/s/659968-stranded-deep-playstation-4-front-cover.jpg",
-        likesCount: 876,
+          "https://www.mobygames.com/images/covers/l/651708-stranded-deep-playstation-4-front-cover.jpg",
+        likesCount: 76,
         releaseDate: "January 23, 2015",
         developer: "Beam Team Pty Ltd",
         summary:
@@ -261,7 +261,7 @@ module.exports = {
       {
         title: "Darkest Dungeon",
         image:
-          "https://www.mobygames.com/images/covers/s/364538-darkest-dungeon-playstation-4-front-cover.jpg",
+          "https://www.mobygames.com/images/covers/l/476906-darkest-dungeon-xbox-one-front-cover.jpg",
         likesCount: 89,
         releaseDate: "Febuary 04, 2015",
         developer: "Red Hook Studios Inc.",
@@ -291,7 +291,7 @@ module.exports = {
       {
         title: "The Escapists",
         image:
-          "https://www.mobygames.com/images/covers/s/305532-the-escapists-playstation-4-front-cover.jpg",
+          "https://www.mobygames.com/images/covers/l/305532-the-escapists-playstation-4-front-cover.jpg",
         likesCount: 78,
         releaseDate: "Febuary 13, 2015",
         developer: "Mouldy Toof Studios",
