@@ -1,38 +1,32 @@
 extends layout
-
-mixin gameCard(gamesArray, indexPos, domain, playStatus)
+mixin gameCard(gamesArray, indexPos, playStatus)
     div.gamecard__container
       img.gamecard__image(src=gamesArray[indexPos].image)
       div.gamecard__text-container
         a(href=`/games/${gamesArray[indexPos].id}`): .gamecard__game-title= gamesArray[indexPos].title
         .gamecard__dropdown-container
           .gamecard__dropdown-form
-            form(action=`/users/${formSubmitId}/mygames`, method="post")
+            form()
               input(type="hidden" name='_csrf' value=csrfToken)
               input(type="hidden" name='gameId' value=gamesArray[indexPos].id)
-              select(name="status" onchange='this.form.submit()' value=playStatus)
+              select(name="status" value=playStatus)
                 option(value='Not played' selected=playStatus==='Not Played' ? true : false) Not Played
                 option(value='Want to Play' selected=playStatus==='Want to Play' ? true : false) Want to Play
                 option(value="Playing" selected=playStatus==='Playing' ? true : false) Playing
                 option(value="Played" selected=playStatus==='Played' ? true : false) Played
           .gamecard__rating-box
               .gamecard__rating= gamesArray[indexPos].likesCount
-
 append head
   //- add page specific styles by appending to the head
   link(rel="stylesheet" href="/stylesheets/index.css")
   link(rel="stylesheet" href="/stylesheets/gamecard.css")
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
-
 block content
-
     div.header-container
       img(src="/GGHeaderSketch.png" class="header")
       h1.header-context GoodGames
-
     div.games-container
-
       //- Popular Games
       div.games
         div
@@ -40,11 +34,9 @@ block content
         div.gameCards
           - for(var n = 0; n < 4; n++)
               - var playStatus = 'Not Played'
-              if (gameStatuses[popularGames[n].title] !== undefined)
-                - playStatus=gameStatuses[popularGames[n].title]
-              +gameCard(popularGames, n, domain, playStatus)
-
-
+              if (gameStatuses[popularGames[n].id] !== undefined)
+                - playStatus=gameStatuses[popularGames[n].id]
+              +gameCard(popularGames, n, playStatus)
         //- Action Games
         div
           a.games(href="/categories/1")
@@ -52,10 +44,9 @@ block content
         div.gameCards
           - for(var n = 0; n < 4; n++)
               - var playStatus = 'Not Played'
-              if (gameStatuses[actionGames[n].title] !== undefined)
-                - playStatus=gameStatuses[actionGames[n].title]
-              +gameCard(actionGames, n, domain, playStatus)
-
+              if (gameStatuses[actionGames[n].id] !== undefined)
+                - playStatus=gameStatuses[actionGames[n].id]
+              +gameCard(actionGames, n, playStatus)
         //- Strategy Games
         div
           a.games(href="/categories/3")
@@ -63,10 +54,9 @@ block content
         div.gameCards
           - for(var n = 0; n < 4; n++)
               - var playStatus = 'Not Played'
-              if (gameStatuses[strategyGames[n].title] !== undefined)
-                - playStatus=gameStatuses[strategyGames[n].title]
-              +gameCard(strategyGames, n, domain, playStatus)
-
+              if (gameStatuses[strategyGames[n].id] !== undefined)
+                - playStatus=gameStatuses[strategyGames[n].id]
+              +gameCard(strategyGames, n, playStatus)
         //- Casual Games
         div
           a.games(href="/categories/5")
@@ -74,10 +64,9 @@ block content
         div.gameCards
           - for(var n = 0; n < 4; n++)
               - var playStatus = 'Not Played'
-              if (gameStatuses[casualGames[n].title] !== undefined)
-                - playStatus=gameStatuses[casualGames[n].title]
-              +gameCard(casualGames, n, domain, playStatus)
-
+              if (gameStatuses[casualGames[n].id] !== undefined)
+                - playStatus=gameStatuses[casualGames[n].id]
+              +gameCard(casualGames, n, playStatus)
         //- Sports Games
         div
           a.games(href="/categories/4")
@@ -85,10 +74,9 @@ block content
         div.gameCards
           - for(var n = 0; n < 4; n++)
               - var playStatus = 'Not Played'
-              if (gameStatuses[sportsGames[n].title] !== undefined)
-                - playStatus=gameStatuses[sportsGames[n].title]
-              +gameCard(sportsGames, n, domain, playStatus)
-
+              if (gameStatuses[sportsGames[n].id] !== undefined)
+                - playStatus=gameStatuses[sportsGames[n].id]
+              +gameCard(sportsGames, n, playStatus)
         //- MMO Games
         div
           a.games(href="/categories/2")
@@ -98,8 +86,9 @@ block content
               - var playStatus = 'Not Played'
               if (gameStatuses[mmoGames[n].title] !== undefined)
                 - playStatus=gameStatuses[mmoGames[n].title]
-              +gameCard(mmoGames, n, domain, playStatus)
 
+              +gameCard(mmoGames, n, playStatus)
+              
       div
         div.categories
           h1 Category Links

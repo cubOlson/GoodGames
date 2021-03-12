@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { loginUser, logoutUser, requireAuthorized } = require("../auth");
+const { loginUser, logoutUser} = require("../auth");
 const { User, UserGame, Game } = require("../db/models/");
 const {  asyncHandler,  csrfProtection,  bcrypt,  check,  validationResult,  loginValidation,  registerValidation, sanityCheck } = require("./utils");
 
@@ -16,24 +16,24 @@ router.get( "/signup", csrfProtection, asyncHandler(async (req, res) => {
 }));
 
 // Load the user's library
-router.get("/:id/mygames", requireAuthorized, csrfProtection, asyncHandler(async (req, res) => {
-  const userId = parseInt(req.params.id, 10)
+router.get("/mygames", csrfProtection, asyncHandler(async (req, res) => {
+  const { userId } = req.session.auth
   const user = await User.findByPk(userId, { include: Game })
   const myGames = user.Games
   res.render('my-games', {user, myGames, title: 'My Games', csrfToken: req.csrfToken()})
 }))
 
 // Load a list of the users reviewed games
-router.get("/:id/myreviews", requireAuthorized, csrfProtection, asyncHandler(async (req, res) => {
-  const userId = parseInt(req.params.id, 10)
+router.get("/myreviews", csrfProtection, asyncHandler(async (req, res) => {
+  const { userId } = req.session.auth
   const user = await User.findByPk(userId, { include: Game })
   const myGames = user.Games.filter(game => game.UserGame.reviewed === true)
   res.render('my-games', {user, myGames, title: 'My Reviewed Games', csrfToken: req.csrfToken()})
 }))
 
 // Load users profile settings page
-router.get('/:id/myprofile', requireAuthorized, csrfProtection, asyncHandler(async(req, res, next) => {
-  const userId = parseInt(req.params.id, 10);
+router.get('/myprofile', csrfProtection, asyncHandler(async(req, res, next) => {
+  const { userId } = req.session.auth
   const user = await User.findByPk(userId);
   res.render('my-profile', { user, title: 'My Profile', csrfToken: req.csrfToken()})
   }))
@@ -86,23 +86,20 @@ router.post("/login", csrfProtection, loginValidation, asyncHandler( async(req, 
 }));
 
 // Add game to User Library
-router.post('/:id/mygames', requireAuthorized, csrfProtection, asyncHandler(async(req, res) => {
+router.post('/mygames', csrfProtection, asyncHandler(async(req, res) => {
     const { status, gameId } = req.body
-    console.log(`=================`)
-    console.log(`HERE IS THE STATUS`, status)
-    console.log(`HERE IS THE GAME ID`, gameId)
-    console.log(`=================`)
-    if(req.session.auth){
-      const { userId } = req.session.auth
-      await UserGame.create({gameId, userId, status, reviewed: false })
-      res.redirect(`/users/${userId}/mygames`)
+    const { userId } = req.session.auth
+    const findGame = await UserGame.findOne({where: {userId, gameId}})
+    if(findGame){
+        findGame.status = status
+        await findGame.save()
     } else {
-      res.redirect('/users/login')
+      await UserGame.create({gameId, userId, status, reviewed: false });
     }
 }))
 
 // Update user profile info
-router.post('/:id/myprofile', requireAuthorized, csrfProtection, registerValidation, asyncHandler( async(req, res) => {
+router.post('/myprofile', csrfProtection, registerValidation, asyncHandler( async(req, res) => {
   const { userId } = req.session.auth
   const { firstName, lastName, username, phone, email, password } = req.body
   const user = await User.findByPk(userId);
@@ -125,8 +122,8 @@ router.post('/:id/myprofile', requireAuthorized, csrfProtection, registerValidat
 
 /* DELETE */
 // Delete user profile
-router.post(`/:id/delete`, requireAuthorized, csrfProtection, asyncHandler( async(req, res) => {
-  const userId = parseInt(req.params.id, 10)
+router.post(`/delete`, csrfProtection, asyncHandler( async(req, res) => {
+  const { userId } = req.session.auth
   const user = await User.findByPk(userId)
   delete req.session.auth;
   await user.destroy()
