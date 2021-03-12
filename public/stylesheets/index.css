@@ -4,17 +4,8 @@
 }
 .header {
     width: 100%;
-    max-height: 500px;
-    opacity: 40%;
-}
-.header-context {
-    /* transform-origin: center; */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 50px;
+    max-height: 400px;
+    opacity: 80%;
 }
 /* Main div for all the games, categores, and category box */
 .games-container {
