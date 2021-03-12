@@ -19,8 +19,8 @@ html
             a(href="/")
               img.logo(src="/images/ggLogo.gif")
             div.searchBar
-              form(action="/games", method="post")
-                input(type="search", name="searchBar" placeholder="Search" class="search-input")
+              form(action="/", method="post")
+                input(type="search", name="search" placeholder="Search" class="search-input")
           //- Right Half of Nav Bar
           div.navBar__right
             div.right-child
@@ -47,14 +47,14 @@ html
             a(href="/")
               img.logo(src="/images/ggLogo.gif")
             div.searchBar
-              form(action="/games", method="post")
-                input(type="search", name="searchBar" placeholder="Search" class="search-input")
+              form(action="/", method="post")
+                input(type="search", name="search" placeholder="Search" class="search-input")
           div.navBar__right
             div.right-child-button
               a(href="/users/login" class="right-login-signup") Log In
             div.right-child-button
               a(href="/users/signup" class="right-login-signup") Sign Up
-    .page-wrap
+      .page-wrap
           block content
           block foot
             div.footer

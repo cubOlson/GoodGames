@@ -86,7 +86,9 @@ block content
               - var playStatus = 'Not Played'
               if (gameStatuses[mmoGames[n].title] !== undefined)
                 - playStatus=gameStatuses[mmoGames[n].title]
-              +gameCard(casualGames, n, playStatus)
+
+              +gameCard(mmoGames, n, playStatus)
+              
       div
         div.categories
           h1 Category Links
