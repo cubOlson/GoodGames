@@ -10,7 +10,7 @@
 .category-container {
     display: flex;
     justify-content: space-between;
-    
+
 }
 
 /* all the games */
@@ -28,7 +28,9 @@
     margin: 5px 30px 5px 15px;
     background-color: var(--blue);
     padding: 30px;
+    position: sticky;
     border-radius: 10px;
+    top:80px
 }
 .other-categories {
     margin: 20px 0 20px 0;
