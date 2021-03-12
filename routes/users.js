@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { loginUser, logoutUser } = require("../auth");
+const { loginUser, logoutUser, requireAuthorized } = require("../auth");
 const { User, UserGame, Game } = require("../db/models/");
 const {  asyncHandler,  csrfProtection,  bcrypt,  check,  validationResult,  loginValidation,  registerValidation, sanityCheck } = require("./utils");
 
@@ -16,7 +16,7 @@ router.get( "/signup", csrfProtection, asyncHandler(async (req, res) => {
 }));
 
 // Load the user's library
-router.get("/:id/mygames", csrfProtection, asyncHandler(async (req, res) => {
+router.get("/:id/mygames", requireAuthorized, csrfProtection, asyncHandler(async (req, res) => {
   const userId = parseInt(req.params.id, 10)
   const user = await User.findByPk(userId, { include: Game })
   const myGames = user.Games
@@ -24,23 +24,19 @@ router.get("/:id/mygames", csrfProtection, asyncHandler(async (req, res) => {
 }))
 
 // Load a list of the users reviewed games
-router.get("/:id/myreviews", csrfProtection, asyncHandler(async (req, res) => {
+router.get("/:id/myreviews", requireAuthorized, csrfProtection, asyncHandler(async (req, res) => {
   const userId = parseInt(req.params.id, 10)
   const user = await User.findByPk(userId, { include: Game })
   const myGames = user.Games.filter(game => game.UserGame.reviewed === true)
   res.render('my-games', {user, myGames, title: 'My Reviewed Games', csrfToken: req.csrfToken()})
 }))
 
-router.get('/:id/myprofile', csrfProtection, asyncHandler(async(req, res, next) => {
-  const pathId = parseInt(req.params.id, 10);
-  const { userId } = req.session.auth
-  if( pathId !== userId){
-    res.redirect('/')
-  } else {
-    const user = await User.findByPk(pathId);
-    res.render('my-profile', { user, title: 'My Profile', csrfToken: req.csrfToken()})
-  }
-}))
+// Load users profile settings page
+router.get('/:id/myprofile', requireAuthorized, csrfProtection, asyncHandler(async(req, res, next) => {
+  const userId = parseInt(req.params.id, 10);
+  const user = await User.findByPk(userId);
+  res.render('my-profile', { user, title: 'My Profile', csrfToken: req.csrfToken()})
+  }))
 
 
 /* POST */
@@ -89,8 +85,8 @@ router.post("/login", csrfProtection, loginValidation, asyncHandler( async(req, 
     }
 }));
 
-// Add Game to User Library
-router.post('/:id/mygames', csrfProtection, asyncHandler(async(req, res) => {
+// Add game to User Library
+router.post('/:id/mygames', requireAuthorized, csrfProtection, asyncHandler(async(req, res) => {
     const { status, gameId } = req.body
     console.log(`=================`)
     console.log(`HERE IS THE STATUS`, status)
@@ -105,14 +101,9 @@ router.post('/:id/mygames', csrfProtection, asyncHandler(async(req, res) => {
     }
 }))
 
-
-
-
-
-
-router.post('/:id/myprofile', sanityCheck, csrfProtection, registerValidation, asyncHandler( async(req, res) => {
+// Update user profile info
+router.post('/:id/myprofile', requireAuthorized, csrfProtection, registerValidation, asyncHandler( async(req, res) => {
   const { userId } = req.session.auth
-  console.log('THIS IS MY USER ID:', userId);
   const { firstName, lastName, username, phone, email, password } = req.body
   const user = await User.findByPk(userId);
 
@@ -125,8 +116,7 @@ router.post('/:id/myprofile', sanityCheck, csrfProtection, registerValidation, a
     user.email = email;
     user.hashedPassword = await bcrypt.hash(password, 10);
     await user.save();
-    // res.redirect(`/users/${userId}/myprofile`)
-    res.redirect(`/`)
+    res.render(`my-profile`, { title: 'My Profile', csrfToken: req.csrfToken(), user, message: 'Setting updated successfully!'})
   } else {
     const errors = validationErrors.array().map(error => error.msg);
     res.render('my-profile', {errors, title: 'My Profile', csrfToken: req.csrfToken(), user});
@@ -134,8 +124,8 @@ router.post('/:id/myprofile', sanityCheck, csrfProtection, registerValidation, a
 }));
 
 /* DELETE */
-
-router.post(`/:id/delete`, csrfProtection, asyncHandler( async(req, res) => {
+// Delete user profile
+router.post(`/:id/delete`, requireAuthorized, csrfProtection, asyncHandler( async(req, res) => {
   const userId = parseInt(req.params.id, 10)
   const user = await User.findByPk(userId)
   delete req.session.auth;
@@ -143,7 +133,7 @@ router.post(`/:id/delete`, csrfProtection, asyncHandler( async(req, res) => {
   res.redirect('/')
 }))
 
-  //Logout user
+// Logout user
 router.post("/logout", async (req, res) => {
   return logoutUser(req, res);
 });

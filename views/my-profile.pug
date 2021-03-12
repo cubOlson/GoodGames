@@ -13,9 +13,8 @@ block content
                     div.errors: p= error
         if message
             div
-                p= message
                 h3= message
-
+            br
         form(action=`/users/${user.id}/myprofile`, method="post")
                 div
                     input(type="hidden", name="_csrf", value=csrfToken)
