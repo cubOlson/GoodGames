@@ -58,6 +58,8 @@ const registerValidation = [
         }),
 ]
 
+// handle javscript errors
+
 module.exports = {
     asyncHandler,
     csrfProtection,
