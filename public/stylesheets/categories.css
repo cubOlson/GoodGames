@@ -10,7 +10,7 @@
 .category-container {
     display: flex;
     justify-content: space-between;
-
+    margin-bottom: 30px;
 }
 
 /* all the games */
