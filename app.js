@@ -29,7 +29,7 @@ const store = new SequelizeStore({ db: sequelize });
 
 app.use(session({ secret: 'superSecret', store, saveUninitialized: false, resave: false})
 );
-
+//Revert
 // create Session table if it doesn't already exist
 store.sync();
 
