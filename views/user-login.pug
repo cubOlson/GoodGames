@@ -6,8 +6,8 @@ append head
     script(src="/javascripts/demo-login.js" type="module" defer)
 
 block content
-    .form-container Login
-        //- h1.form-title Login
+    .form-container 
+        h1.form-title Login
         div.login-form.form-centered
             if errors
                 div
@@ -25,12 +25,8 @@ block content
                     label(for="password" class="form-group") Password
                     input(type="password", name="password" class="form-control" id='login-password')
                 button(type="submit" class="login-signup-button") Login
-                br
-                br
-                br
-                br
+                
                 button(id='demoUserBtn') Enter Demo User Info
-                br
                 div.need-have-account
                     a(href="/users/signup") Need an account? Sign up here!
                 .need-have-account

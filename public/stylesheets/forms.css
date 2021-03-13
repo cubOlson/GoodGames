@@ -3,39 +3,49 @@
 .form-container {
     text-align: center;
     height: 100vh;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom:300px ;
+
 }
 
 .form-title {
     text-align: center;
     color: white;
-    font-size: 2.5em;
-    margin: 5px;
-
-;
+    font-size: 3.5em;
+    font-weight: 500;
+    margin: 25px;
 }
 
 .form-centered {
  margin:0 auto;
- position:absolute;
- left:50%;
+ box-shadow: 0px 0px 10px black;
+ background: linear-gradient(#bf0f70b0, #1c0373c7);
+ color: white;
+text-align: center;
+border-radius: 10px;
+padding: 30px;
+ /* left:50%;
  top:50%;
  margin-left:-250px;
- margin-top:-250px;
+ margin-top:-250px; */
 }
 
-.login-form {
+/* .login-form {
     /* background: linear-gradient(to bottom right, var(--blue), var(--darkpink)); */
-    background: linear-gradient(var(--darkpink), var(--blue));
-    border: black solid 1px;
-    box-shadow: 5px 10px 8px #14161a;
+    
+    /* border: black solid 1px; */
+    
     /* color:  var(--orange); */
-    color: white;
-    text-align: center;
+    
     /* margin: 30px auto 30px auto; */
     /* width: 500px; */
-    border-radius: 10px;
+    
     /* padding: 20px; */
-}
+/* } */
 
 /* Style for the singup form */
 .signup-form {
