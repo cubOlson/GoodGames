@@ -20,7 +20,13 @@ router.get("/mygames", csrfProtection, asyncHandler(async (req, res) => {
   const { userId } = req.session.auth
   const user = await User.findByPk(userId, { include: Game })
   const myGames = user.Games
-  res.render('my-games', {user, myGames, title: 'My Games', csrfToken: req.csrfToken()})
+  const records = await UserGame.findAll( {where: { userId }})
+  const gameStatuses = {};
+  records.forEach( record => {
+      const { gameId, userId, status, reviewed } = record;
+      gameStatuses[gameId] = status // add key/value to gameStatuses obj for mixin
+    })
+  res.render('my-games', {user, myGames, title: 'My Games', csrfToken: req.csrfToken(), gameStatuses})
 }))
 
 // Load a list of the users reviewed games
@@ -28,7 +34,13 @@ router.get("/myreviews", csrfProtection, asyncHandler(async (req, res) => {
   const { userId } = req.session.auth
   const user = await User.findByPk(userId, { include: Game })
   const myGames = user.Games.filter(game => game.UserGame.reviewed === true)
-  res.render('my-games', {user, myGames, title: 'My Reviewed Games', csrfToken: req.csrfToken()})
+  const records = await UserGame.findAll( {where: { userId }})
+  const gameStatuses = {};
+  records.forEach( record => {
+      const { gameId, userId, status, reviewed } = record;
+      gameStatuses[gameId] = status // add key/value to gameStatuses obj for mixin
+    })
+  res.render('my-games', {user, myGames, title: 'My Reviewed Games', csrfToken: req.csrfToken(), gameStatuses})
 }))
 
 // Load users profile settings page
