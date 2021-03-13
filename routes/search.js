@@ -6,7 +6,7 @@ const { Op } = require('sequelize');
 
 const router = express.Router();
 
-router.get('/:search', asyncHandler(async (req, res) => {
+router.get('/:search', csrfProtection, asyncHandler(async (req, res) => {
 
     const searching = await db.Game.findAll({
         where: {
@@ -25,9 +25,9 @@ router.get('/:search', asyncHandler(async (req, res) => {
             const { gameId, userId, status, reviewed } = record;
             gameStatuses[gameId] = status // add key/value to gameStatuses obj for mixin
         })
-        res.render('search', {searching, gameStatuses});
+        res.render('search', {searching, gameStatuses, csrfToken: req.csrfToken()});
     } else {
-        res.render('search', {searching});
+        res.render('search', {searching, csrfToken: req.csrfToken()});
     }
 }))
 
