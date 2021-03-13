@@ -43,5 +43,4 @@ router.post('/:id/review', csrfProtection, reviewValidation, asyncHandler(async 
   res.redirect(`/games/${gameId}`)
 }))
 
-
 module.exports = router
