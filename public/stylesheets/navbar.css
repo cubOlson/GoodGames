@@ -87,10 +87,12 @@ z-index: 3;
     text-decoration: none;
     color: var(--orange);
     border: 1px solid var(--orange);
+    background-color: #f2ae7200;
     border-radius: 14px;
     text-align: center;
     padding: 2px 20px;
-    transition: all .2s ease-in-out;
+    transition: color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
 }
 .right-login-signup:hover {
     color: white;
@@ -121,12 +123,13 @@ z-index: 3;
 /* Logout Button */
 .logoutButton {
     border: 1px solid var(--orange);
-    background: none;
+    background-color: #f2ae7100;
     color: var(--orange);
     border-radius: 14px;
     text-align: center;
     padding: 2px 20px;
-    transition: all .2s ease-in-out;
+    transition: color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
 }
 .logoutButton:hover {
     color: white;
