@@ -2,30 +2,35 @@ extends layout
 
 append head
     link(rel="stylesheet" href="/stylesheets/login-signup-review.css")
+    link(rel="stylesheet" href="/stylesheets/forms.css")
     script(src="/javascripts/demo-login.js" type="module" defer)
-block content
-    div.login-form
-        if errors
-            div
-                each error in errors
-                    div.errors: p= error
 
-        form(action="/users/login", method="post" id='login-form')
-            div
-                input(type="hidden", name="_csrf", value=csrfToken)
-            div
-                label(for="email" class="form-group") Email
-                input(type="email", name="email" class="form-control" id='login-email')
-            div
-                label(for="password" class="form-group") Password
-                input(type="password", name="password" class="form-control" id='login-password')
-            button(type="submit" class="login-signup-button") Login
-            br
-            br
-            br
-            br
-            button(id='demoUserBtn') Enter Demo User Info
-            br
-            div.need-have-account
-                a(href="/users/signup") Need an account? Sign up here!
-            .need-have-account
+block content
+    .form-container Login
+        //- h1.form-title Login
+        div.login-form.form-centered
+            if errors
+                div
+                    each error in errors
+                        div.errors: p= error
+
+
+            form(action="/users/login", method="post" id='login-form')
+                div
+                    input(type="hidden", name="_csrf", value=csrfToken)
+                div
+                    label(for="email" class="form-group") Email
+                    input(type="email", name="email" class="form-control" id='login-email')
+                div
+                    label(for="password" class="form-group") Password
+                    input(type="password", name="password" class="form-control" id='login-password')
+                button(type="submit" class="login-signup-button") Login
+                br
+                br
+                br
+                br
+                button(id='demoUserBtn') Enter Demo User Info
+                br
+                div.need-have-account
+                    a(href="/users/signup") Need an account? Sign up here!
+                .need-have-account

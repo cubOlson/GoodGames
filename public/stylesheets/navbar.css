@@ -15,6 +15,16 @@
 
 }
 
+.full-width-nav {
+    position: fixed;
+    height: 64px;
+    background:linear-gradient(var(--blue), #6e003d);
+    content: "";
+    top: 0px;
+    left: 0px;
+    width: 100%
+}
+
 /* .bg {
     background-image:url('../images/wp4041942.jpg');
     background-position: center;

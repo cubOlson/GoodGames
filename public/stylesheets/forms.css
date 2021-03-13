@@ -1,0 +1,80 @@
+/* Style for the login page */
+
+.form-container {
+    text-align: center;
+    height: 100vh;
+}
+
+.form-title {
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    margin: 5px;
+
+;
+}
+
+.form-centered {
+ margin:0 auto;
+ position:absolute;
+ left:50%;
+ top:50%;
+ margin-left:-250px;
+ margin-top:-250px;
+}
+
+.login-form {
+    /* background: linear-gradient(to bottom right, var(--blue), var(--darkpink)); */
+    background: linear-gradient(var(--darkpink), var(--blue));
+    border: black solid 1px;
+    box-shadow: 5px 10px 8px #14161a;
+    /* color:  var(--orange); */
+    color: white;
+    text-align: center;
+    /* margin: 30px auto 30px auto; */
+    /* width: 500px; */
+    border-radius: 10px;
+    /* padding: 20px; */
+}
+
+/* Style for the singup form */
+.signup-form {
+    /* background: linear-gradient(to bottom right, var(--blue), var(--darkpink)); */
+    background: linear-gradient(var(--darkpink), var(--blue));
+    border: black solid 1px;
+    box-shadow: 5px 10px 8px #14161a;
+    /* color:  var(--orange); */
+    color: white;
+    text-align: center;
+    margin: 30px auto 30px auto;
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Styling for the label and inputs */
+.form-group {
+    font-size: 20px;
+    padding: 7px;
+    width: 60px;
+}
+
+/* Form Fields */
+.form-control {
+    border: 1px solid;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border-style: none;
+    font-family: "Montserrat";
+    text-align: center;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    background-color: #e7d3f3;
+    font-size: 20px;
+    width: 400p;
+    padding: 5px
+}
+
+.form-control:focus {
+    outline: none;
+}

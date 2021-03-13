@@ -10,6 +10,7 @@ html
         link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
 
   body
+    div.full-width-nav
     div.page-wrap
       //- AUTHENTICATED AUTHENTICATED AUTHENTICATED AUTHENTICATED AUTHENTICATED
       if locals.user
@@ -17,7 +18,7 @@ html
           //- Left Half of Nav Bar
           div.navBar__left
             a(href="/")
-              img.logo(src="/images/ggLogo.gif")
+              img.logo(src="/images/GIF-white.gif")
             div.searchBar
               form(action="/", method="post")
                 input(type="search", name="search" placeholder="Search" class="search-input")
@@ -45,7 +46,7 @@ html
         div.navBar
           div.navBar__left
             a(href="/")
-              img.logo(src="/images/ggLogo.gif")
+              img.logo(src="/images/GIF-white.gif")
             div.searchBar
               form(action="/", method="post")
                 input(type="search", name="search" placeholder="Search" class="search-input")
