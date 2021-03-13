@@ -147,4 +147,14 @@ router.post("/logout", async (req, res) => {
   return logoutUser(req, res);
 });
 
+// Delete game from user library
+router.post(`/mygames/delete`, sanityCheck, asyncHandler( async(req, res) => {
+  const { gameId } = req.body
+  const { userId } = req.session.auth
+  const record = await UserGame.findOne({where: { userId, gameId }})
+  await record.destroy()
+  res.status(200)
+  res.send()
+}))
+
 module.exports = router;
