@@ -1,9 +1,6 @@
 extends layout
-
 append head
   link(rel="stylesheet" href="/stylesheets/login-signup-review.css")
-
-
 block content
     //- Let's talk this one through.
     div.signup-form
@@ -11,7 +8,6 @@ block content
             div
                 each error in errors
                     div.errors: p= error
-
         form(action="/users/signup", method="post")
             div
                 input(type="hidden", name="_csrf", value=csrfToken)
