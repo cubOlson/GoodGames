@@ -5,6 +5,7 @@ const { Game, Category, User, Review, UserGame } = require('../db/models')
 const { Op } = require('sequelize');
 
 
+
 /* GET */
 router.get('/:id', csrfProtection, asyncHandler( async (req, res) => {
   const gameId = parseInt(req.params.id, 10)
@@ -71,7 +72,6 @@ router.post('/:id/review', csrfProtection, reviewValidation, asyncHandler(async 
     const errors = validationErrors.array().map( error => error.msg)
     res.render('review-page', { game, errors, csrfToken: req.csrfToken() })
   }
-
 }))
 
 module.exports = router
