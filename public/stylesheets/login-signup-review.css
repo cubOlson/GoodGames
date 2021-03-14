@@ -1,39 +1,4 @@
 
-/* Styling for the button and the anchor tag */
-/* .login-signup-button {
-    background-color: var(--orange);
-    color: black;
-    padding: 10px;
-    border-radius: 5px 5px;
-    margin: 0 10px 0 10px;
-    border: none;
-    font-size: 15px;
-    font-weight: bold;
-}
-.login-signup-button:hover {
-    background-color: var(--yellow);
-    cursor: pointer;
-    color: white;
-}
-#demoUserBtn {
-    background-color: var(--orange);
-    color: black;
-    padding: 10px;
-    border-radius: 5px 5px;
-    margin: 0 10px 0 10px;
-    border: none;
-    font-size: 15px;
-    font-weight: bold;
-}
-#demoUserBtn:hover {
-    background-color: var(--yellow);
-    cursor: pointer;
-    color: white;
-}
-.need-have-account {
-    margin-top: 10px;
-} */
-
 .write-reviews {
     background: linear-gradient(var(--darkpink), var(--blue));
     border: black solid 1px;

@@ -26,19 +26,12 @@
     width: 100%
 }
 
-/* .bg {
-    background-image:url('../images/wp4041942.jpg');
-    background-position: center;
-    background-size: cover;
-} */
-
 .navBar {
 display: flex;
 justify-content: space-between;
 background: linear-gradient(var(--blue), #6e003d);
 box-shadow: var(--blue);
 padding: 10px;
-/* color: var(--orange); */
 position: sticky;
 top: 0px;
 z-index: 3;
@@ -54,7 +47,7 @@ z-index: 3;
     max-width: 40px;
     margin-right: 10px;
 }
-.search-input {
+.search__input {
     border: none;
     border-radius: 14px 14px;
     text-align: center;
@@ -73,30 +66,6 @@ z-index: 3;
 .right__attribute {
     text-decoration: none;
     color: var(--orange);
-}
-.right-child {
-    padding: 0 10px 0 10px;
-}
-.right-child a:hover {
-    color: var(--yellow);
-}
-.right-child-button {
-    padding: 0 10px 0 10px;
-}
-.right-login-signup {
-    text-decoration: none;
-    color: var(--orange);
-    border: 1px solid var(--orange);
-    background-color: #f2ae7200;
-    border-radius: 14px;
-    text-align: center;
-    padding: 2px 20px;
-    transition: color .2s ease-in-out;
-    transition: background-color .2s ease-in-out;
-}
-.right-login-signup:hover {
-    color: white;
-    background-color: var(--orange);
 }
 
 
@@ -120,25 +89,6 @@ z-index: 3;
     padding-right: 5px ;
 }
 
-/* Logout Button */
-.logoutButton {
-    border: 1px solid var(--orange);
-    background-color: #f2ae7100;
-    color: var(--orange);
-    border-radius: 14px;
-    text-align: center;
-    padding: 2px 20px;
-    transition: color .2s ease-in-out;
-    transition: background-color .2s ease-in-out;
-}
-.logoutButton:hover {
-    color: white;
-    background-color: var(--orange);
-    cursor: pointer;
-}
-.logoutButton:focus {
-    outline: none;
-}
 
 /* .navBar__search {
     border: 1px solid #F9934C;
@@ -162,13 +112,14 @@ z-index: 3;
     bottom: 0;
     width: 1366px;
 }
-.footerChild {
-    margin-left: 10px;
-    margin-right: 10px;
+
+.footer__row {
+    font-size: 1.2em;
 }
-.github {
+
+/* .github {
     width: 1.5rem;
     float: left;
     padding-top: 2px;
     padding-right: 5px ;
-}
+} */
