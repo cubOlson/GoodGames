@@ -1,9 +1,7 @@
 extends layout
-
 append head
   link(rel="stylesheet" href="/stylesheets/gamePage.css")
   link(rel="stylesheet" href="/stylesheets/forms.css")
-
 block content
   .game-page-container
     .game-image
@@ -38,7 +36,6 @@ block content
         hr
         hr
         p= userReview.content
-
     each review in gameReviews
       div.posted-reviews
         h3(id="reviewTitle")= review.title
