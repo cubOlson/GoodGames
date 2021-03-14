@@ -9,7 +9,7 @@ router.get('/:id', csrfProtection, asyncHandler( async (req, res) => {
   const gameId = parseInt(req.params.id, 10)
   const game = await Game.findByPk(gameId, {include: Category})
   let gameReviews = await Review.findAll({where: {gameId}, limit:10, order: [['updatedAt', 'DESC']]})
-
+  console.log('right session')
   //Cub
   if (req.session.auth) {
     const { userId } = req.session.auth
