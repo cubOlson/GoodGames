@@ -2,13 +2,27 @@ const express = require('express')
 const router = express.Router()
 const { asyncHandler, sanityCheck, csrfProtection, reviewValidation } = require('./utils')
 const { Game, Category, User, Review, UserGame } = require('../db/models')
+const { Op } = require('sequelize');
 
 /* GET */
 router.get('/:id', csrfProtection, asyncHandler( async (req, res) => {
   const gameId = parseInt(req.params.id, 10)
   const game = await Game.findByPk(gameId, {include: Category})
-  const gameReviews = await Review.findAll({where: {gameId}, limit:10, order: [['updatedAt', 'DESC']]})
+  let gameReviews = await Review.findAll({where: {gameId}, limit:10, order: [['updatedAt', 'DESC']]})
 
+  //Cub
+  if (req.session.auth) {
+    const { userId } = req.session.auth
+    const user = await User.findByPk(userId)
+
+    const userReview = await Review.findOne({ where: {gameId, userId}})
+
+    if (userReview) {
+      gameReviews = await Review.findAll({where: { gameId, userId: { [Op.not]: userId} }, limit:10, order: [['updatedAt', 'DESC']]})
+      return res.render('game-page', { title: `${game.title}`, game, user, gameReviews, userReview, csrfToken: req.csrfToken()})
+    }
+  }
+  //Cub
   res.render('game-page', { title: `${game.title}`, game, gameReviews, csrfToken: req.csrfToken()})
 }));
 
@@ -18,12 +32,8 @@ router.get('/:id/review', csrfProtection, asyncHandler( async (req, res) => {
   const game = await Game.findByPk(gameId, {include: Category})
   const user = await User.findByPk(userId)
 
-  // Cub Edit
-
   await UserGame.create({gameId, userId, status: 'Played', reviewed: false })
   res.render('review-page', { game, csrfToken: req.csrfToken(), user })
-
-  // Cub Edit
 }))
 
 /* Post */

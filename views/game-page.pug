@@ -31,6 +31,14 @@ block content
       //- each review in reviews
     br
   div.review-container
+    if userReview
+      .posted-reviews 
+        h4= user.username 
+        h3(id="reviewTitle")= userReview.title
+        hr
+        hr
+        p= userReview.content
+
     each review in gameReviews
       div.posted-reviews
         h3(id="reviewTitle")= review.title
