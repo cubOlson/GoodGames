@@ -18,8 +18,12 @@ router.get('/:id/review', csrfProtection, asyncHandler( async (req, res) => {
   const game = await Game.findByPk(gameId, {include: Category})
   const user = await User.findByPk(userId)
 
+  // Cub Edit
+
   await UserGame.create({gameId, userId, status: 'Played', reviewed: false })
   res.render('review-page', { game, csrfToken: req.csrfToken(), user })
+
+  // Cub Edit
 }))
 
 /* Post */
