@@ -7,6 +7,7 @@
     /* height: 550px; */
     height: auto;
 }
+
 /* Contains the Image */
 .game-image {
     margin-right: 5px;
@@ -18,6 +19,7 @@
     margin-bottom: 5px;
     border-radius: 10px;
 }
+
 /* Contains the Title, Category, and Summary */
 .middleBox {
     width: 450px;
@@ -49,6 +51,7 @@
 .game-sum::-webkit-scrollbar-track {
     background: #1e1e24;
 }
+
 .game-sum::-webkit-scrollbar-thumb {
 background: var(--pink);
 }
@@ -56,6 +59,7 @@ background: var(--pink);
     line-height: 2;
     text-align: left;
 }
+
 /* Contains the Developer, Date, PurchaseLink, Ratings, and Category sidebar */
 .sideCard {
     width: 200px;
@@ -99,6 +103,7 @@ background: var(--pink);
     min-width: 120px;
     min-height: 125px;
 }
+
 /* Contains the written reviews and the posted reviews */
 .write-reviews {
     width: 1000px;
@@ -120,6 +125,7 @@ background: var(--pink);
     cursor: pointer;
     background: linear-gradient(var(--blue), var(--darkpink));
 }
+
 /* styling for the posted comments */
 .review-container {
     width: 800px;

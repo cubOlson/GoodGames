@@ -6,25 +6,26 @@ append head
 
 
 block content
-  .game-page-container
-    .game-image
+  div.game-page-container
+    div.game-image
       img(src=`${game.image}`, alt="")
       div.sideCard
-  .game-info
-    h4= game.developer
-    h4(id="release")= game.releaseDate
-    a(href=`${game.purchase}` class="purchase") Purchase Now
-  .game-rating
-    h2 Ratings
-    br
-    h3= game.likesCount
-  div.middleBox
+        div.game-info
+          h4= game.developer
+          h4(id="release")= game.releaseDate
+          a(href=`${game.purchase}` class="purchase") Purchase Now
+        div.game-rating
+          h2 Ratings
+          br
+          h3= game.likesCount
+    div.middleBox
       div.game-title-cat
         h1= title
         br
         h2= game.Category.category
       div.game-sum
         p= game.summary
+  br
   div.write-reviews
     div
       button(class='review-button')
