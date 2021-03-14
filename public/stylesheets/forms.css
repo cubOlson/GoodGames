@@ -18,7 +18,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-bottom: 300px;
+  padding-top: 5%;
+  padding-bottom: 40px;
 }
 
 .form__title {
@@ -113,6 +114,30 @@
 .form__button:hover{
     background-color: #f2ae72;
     color: black;
+}
+.form__button--delete {
+  animation-fill-mode: none;
+/* animation-delay: 1s;   */
+  grid-area: button;
+    padding: 6px 15px;
+    border-radius: 20px;
+    border: none;
+    margin: auto 10px;
+    font-size: 1em;
+    font-family: "Montserrat";
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #f2ae7200;
+    border: 2px solid #f2ce1b;
+    color: #f2ce1b;
+    /* transition: color .2s ease-in-out; */
+    transition: background-color .2s ease-in-out;
+}
+
+.form__button--delete:hover{
+    background-color: #ff0000;
+    border: 2px solid #ff0000;
+    color: white;
 }
 
 /* Redirect Links */

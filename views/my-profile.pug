@@ -6,44 +6,54 @@ append head
 
 
 block content
-    h1.title #{title}
-    div.signup-form
-        if errors
-            div
-                each error in errors
-                    div.errors: p= error
+    .form__container 
+        //- Title 
+        h1.form__title #{title}
+            //- Error Field
+            if errors
+                div.form__error-popup
+                    each error in errors
+                        p= error
         if message
-            div
-                h3= message
-            br
-        form(action=`/users/myprofile`, method="post")
-                div
-                    input(type="hidden", name="_csrf", value=csrfToken)
-                div
-                    label(for="firstName" class="form-group") First Name
-                    input(type="text", name="firstName" class="form-control" value=user.firstName)
-                div
-                    label(for="lastName" class="form-group") Last Name
-                    input(type="text", name="lastName" class="form-control" value=user.lastName)
-                div
-                    label(for="username" class="form-group") Username
-                    input(type="text", name="username" class="form-control" value=user.username)
-                div
-                    label(for="phone" class="form-group") Phone
-                    input(type="tel", name="phone" class="form-control" value=user.phone)
-                div
-                    label(for="email" class="form-group") Email
-                    input(type="email", name="email" class="form-control" value=user.email)
-                div
-                    label(for="password" class="form-group") Password
-                    input(type="password", name="password" class="form-control")
-                div
-                    label(for="confirmPassword" class="form-group") Confirm Password
-                    input(type="password", name="confirmPassword" class="form-control")
-                button(type="submit" class="login-signup-button") Update Profile
-        br
-        form(action=`/users/delete` method='post')
-            div
+            div.form__error-popup
+                p= message
+        .form__field-container
+            form(action=`/users/myprofile`, method="post")
+                //- CSRF
                 input(type="hidden", name="_csrf", value=csrfToken)
-            div
-                button(type="submit" class="login-signup-button" id="profileDeleteBtn" ) Delete Account?
+                //- First Name
+                .form__row 
+                    label.form__label(for="firstName") First Name
+                    input.form__input(type="text", name="firstName", value=user.firstName)
+                //- Last Name
+                .form__row 
+                    label.form__label(for="lastName") Last Name
+                    input.form__input(type="text", name="lastName", value=user.lastName)
+                //- Username
+                .form__row 
+                    label.form__label(for="username") Username
+                    input.form__input(type="text", name="username", value=user.username)
+                //- Phone
+                .form__row 
+                    label.form__label(for="phone") Phone
+                    input.form__input(type="tel", name="phone", value=user.phone)
+                //- Email
+                .form__row 
+                    label.form__label(for="email") Email
+                    input.form__input(type="email", name="email", value=user.email)
+                //- Password
+                .form__row 
+                    label.form__label(for="password") Password
+                    input.form__input(type="password", name="password")
+                //- Confirm Password
+                .form__row 
+                    label.form__label(for="confirmPassword") Confirm Password
+                    input.form__input(type="password", name="confirmPassword")
+                //- LOGIN BUTTON
+                .form__row-buttons 
+                    button.form__button(type="submit") Update Profile 
+                    form(action=`/users/delete` method='post')
+                        div
+                            input(type="hidden", name="_csrf", value=csrfToken)
+                        div
+                            button.form__button--delete(type="submit" class="login-signup-button" id="profileDeleteBtn" ) Delete Account?

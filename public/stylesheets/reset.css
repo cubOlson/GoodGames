@@ -15,10 +15,10 @@ body {
   background-size: cover;
   background-color: rgb(80, 16, 51);
   background-blend-mode: darken;
-    background-position-x: center;
-    background-position-y:top ;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {
