@@ -1,61 +1,58 @@
-.gamecard__container
-{
-    display: block;
-    width: 220px;
-    height: 240px;
-    box-shadow: 0 1px 13px 4px rgba(27,3,115,0.30);
-    border-radius: 13px;
-    overflow: hidden;
-
-    /* added 10px margin on all sides of game card to provide buffer with container */
-    margin: 20px;
+.gamecard__container {
+  display: block;
+  width: 220px;
+  height: 240px;
+  box-shadow: 0 1px 12px 6px rgba(27, 3, 115, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 20px;
 }
-.gamecard__image  {
-    position: relative;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+.gamecard__image {
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 .gamecard__text-container {
-    position: relative;
-    height: 244px;
-    width: 220px;
-    background:linear-gradient(45deg, black, transparent);
-    margin-top: -244px;
-    overflow: hidden;
-    z-index: 1;
-    padding: 10px;
+  position: relative;
+  height: 244px;
+  width: 220px;
+  background: linear-gradient(45deg, black, transparent);
+  margin-top: -248px;
+  overflow: hidden;
+  z-index: 1;
+  padding: 10px;
 }
 .gamecard__game-title {
   display: table-cell;
   vertical-align: bottom;
 
-    font-size: 1.2em;
-    font-weight: 600;
-    color: white;
-    margin-top: 70%;
-    height: 180px;
-    width: 200px;
-
+  font-size: 1.2em;
+  font-weight: 600;
+  color: white;
+  margin-top: 70%;
+  height: 180px;
+  width: 200px;
 }
 .gamecard__dropdown-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 .gamecard__dropdown-form {
-    width: 65%;
+  width: 65%;
 }
-.gamecard__rating-box{
-    width: 25%;
-    border: 2px solid white;
-    margin: 10px;
+.gamecard__rating-box {
+  width: 25%;
+  border: 2px solid white;
+  margin: 10px;
 }
 
 .gamecard__rating {
-    font-weight: 600;
-    font-size: 1.5em;
-    color: white;
-    text-align: center;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: white;
+  text-align: center;
+  padding: 2px;
 }
