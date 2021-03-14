@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { loginUser, logoutUser} = require("../auth");
-const { User, UserGame, Game } = require("../db/models/");
+const { User, UserGame, Game, Review } = require("../db/models/");
 const {  asyncHandler,  csrfProtection,  bcrypt,  check,  validationResult,  loginValidation,  registerValidation, sanityCheck } = require("./utils");
 
 /* GET */
@@ -20,15 +20,29 @@ router.get("/mygames", csrfProtection, asyncHandler(async (req, res) => {
   const { userId } = req.session.auth
   const user = await User.findByPk(userId, { include: Game })
   const myGames = user.Games
-  res.render('my-games', {user, myGames, title: 'My Games', csrfToken: req.csrfToken()})
+  const records = await UserGame.findAll( {where: { userId }})
+  const gameStatuses = {};
+  records.forEach( record => {
+      const { gameId, userId, status, reviewed } = record;
+      gameStatuses[gameId] = status // add key/value to gameStatuses obj for mixin
+    })
+  res.render('my-games', {user, myGames, title: 'My Games', csrfToken: req.csrfToken(), gameStatuses})
 }))
 
 // Load a list of the users reviewed games
 router.get("/myreviews", csrfProtection, asyncHandler(async (req, res) => {
   const { userId } = req.session.auth
   const user = await User.findByPk(userId, { include: Game })
-  const myGames = user.Games.filter(game => game.UserGame.reviewed === true)
-  res.render('my-games', {user, myGames, title: 'My Reviewed Games', csrfToken: req.csrfToken()})
+  const myReviews = await Review.findAll({where: {userId}, include: Game })
+  const reviewedGames = myReviews.map( review => review.Game)
+  console.log(reviewedGames)
+  const records = await UserGame.findAll( {where: { userId }})
+  const gameStatuses = {};
+  records.forEach( record => {
+      const { gameId, userId, status, reviewed } = record;
+      gameStatuses[gameId] = status // add key/value to gameStatuses obj for mixin
+    })
+  res.render('my-reviews', {user, reviewedGames, title: 'My Reviewed Games', csrfToken: req.csrfToken(), gameStatuses})
 }))
 
 // Load users profile settings page
@@ -134,5 +148,15 @@ router.post(`/delete`, csrfProtection, asyncHandler( async(req, res) => {
 router.post("/logout", async (req, res) => {
   return logoutUser(req, res);
 });
+
+// Delete game from user library
+router.post(`/mygames/delete`, sanityCheck, asyncHandler( async(req, res) => {
+  const { gameId } = req.body
+  const { userId } = req.session.auth
+  const record = await UserGame.findOne({where: { userId, gameId }})
+  await record.destroy()
+  res.status(200)
+  res.send()
+}))
 
 module.exports = router;

@@ -17,7 +17,6 @@ mixin gameCard(game, playStatus)
                 option(value="Played" selected=playStatus==='Played' ? true : false) Played
           .gamecard__rating-box
               .gamecard__rating= game.likesCount
-    button(id=`${game.id}` class='removeGameBtn') Remove From MyGames
 
 append head
   link(rel="stylesheet" href="/stylesheets/myGames-myReviews.css")
@@ -29,7 +28,7 @@ block content
   h1.title #{title}
   br
   div.gamesContainer
-    each game in myGames
+    each game in reviewedGames
         div.gameCards
               - playStatus=gameStatuses[game.id]
               +gameCard(game, playStatus)

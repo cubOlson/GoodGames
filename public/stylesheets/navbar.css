@@ -12,14 +12,20 @@
     margin: auto;
     /* background-color: rgba(0, 0, 0, 0.973); */
     background-color: rgba(0, 0, 0, 0.35);
+    margin-top: -64px;
+    /* height: 100vh; */
 
 }
 
-/* .bg {
-    background-image:url('../images/wp4041942.jpg');
-    background-position: center;
-    background-size: cover;
-} */
+.full-width-nav {
+    position: fixed;
+    height: 64px;
+    background:linear-gradient(var(--blue), #6e003d);
+    content: "";
+    top: 0px;
+    left: 0px;
+    width: 100%
+}
 
 .navBar {
 display: flex;
@@ -27,7 +33,6 @@ justify-content: space-between;
 background: linear-gradient(var(--blue), #6e003d);
 box-shadow: var(--blue);
 padding: 10px;
-/* color: var(--orange); */
 position: sticky;
 top: 0px;
 z-index: 3;
@@ -40,55 +45,57 @@ z-index: 3;
     align-items: center;
 }
 .logo {
-    max-width: 40px;
+    max-width: 56px;
     margin-right: 10px;
 }
-.search-input {
-    border: none;
-    border-radius: 14px 14px;
-    text-align: center;
-    padding: 5px;
-}
+
 
 
 /* Contains the "My Games", "My Reviews", "My Profile", and Logout when logged in */
 /* Contains the Login and Signup buttons when logged out */
 .navBar__right {
-    width: 50%;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navBar__right-unauth {
+    width: 40%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-.right__attribute {
-    text-decoration: none;
+
+
+.nav__link-container {
+color: var(--orange);
+}
+
+.nav__link-container:hover a{
+color: var(--yellow);
+}
+
+.nav__link-container:active a{
+opacity: 50%;
+}
+
+.nav__link {
     color: var(--orange);
 }
-.right-child {
-    padding: 0 10px 0 10px;
-}
-.right-child a:hover {
+
+.nav__link-:hover {
     color: var(--yellow);
 }
-.right-child-button {
-    padding: 0 10px 0 10px;
-}
-.right-login-signup {
+
+/* .right__attribute {
     text-decoration: none;
     color: var(--orange);
-    border: 1px solid var(--orange);
-    border-radius: 14px;
-    text-align: center;
-    padding: 2px 20px;
-    transition: all .2s ease-in-out;
-}
-.right-login-signup:hover {
-    color: white;
-    background-color: var(--orange);
-}
+} */
 
 
 /* SVGS for the 3 categories */
-.gamepad {
+/* .gamepad {
     width: 1.5rem;
     float: left;
     padding-top: 2px;
@@ -105,26 +112,8 @@ z-index: 3;
     float: left;
     padding-top: 2px;
     padding-right: 5px ;
-}
+} */
 
-/* Logout Button */
-.logoutButton {
-    border: 1px solid var(--orange);
-    background: none;
-    color: var(--orange);
-    border-radius: 14px;
-    text-align: center;
-    padding: 2px 20px;
-    transition: all .2s ease-in-out;
-}
-.logoutButton:hover {
-    color: white;
-    background-color: var(--orange);
-    cursor: pointer;
-}
-.logoutButton:focus {
-    outline: none;
-}
 
 /* .navBar__search {
     border: 1px solid #F9934C;
@@ -139,22 +128,30 @@ z-index: 3;
 .footer {
     color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     background: linear-gradient(rgba(191, 15, 112, 0), rgba(191, 15, 112,0.6));
     padding: 10px;
     z-index: 3;
-    flex-shrink: 0;
+    flex: auto;
     position: fixed;
     bottom: 0;
-    width: 1366px;
+    left: 0;
+    width: 100%;
 }
-.footerChild {
-    margin-left: 10px;
-    margin-right: 10px;
+
+.nav-footer__row {
+    font-size: 1.2em;
+    /* flex: auto; */
+    flex-grow: .07;
 }
-.github {
+
+.icon__spacer {
+    padding: 0 8px;
+}
+
+/* .github {
     width: 1.5rem;
     float: left;
     padding-top: 2px;
     padding-right: 5px ;
-}
+} */

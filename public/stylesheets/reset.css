@@ -7,39 +7,50 @@
   --orange: #f2ae72;
 }
 
-
-
 body {
-  padding: 50px;
-  font: 14px ;
-  font-family: "Montserrat",sans-serif;
-  /* background-color: rgb(37, 37, 37); */
-  background-image:url('../images/wp4041942.jpg');
-    background-position: center;
-    background-size: cover;
+  padding: 64px;
+  font: 14px;
+  font-family: "Montserrat", sans-serif;
+  background-image: url("../images/wp4041942.jpg");
+  background-size: cover;
   background-color: rgb(80, 16, 51);
-  background-blend-mode:darken
-  /* height: 100vh; */
+  background-blend-mode: darken;
+    background-position-x: center;
+    background-position-y:top ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
   /* Added no text decoration here... can take off everywhere else in document */
   text-decoration: none;
-
 }
 
 button:focus {
-    outline: none;
+  outline: none;
 }
-
+input:focus {
+  outline: none;
+}
 
 * {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, a, ol, li, span,
-body, header, nav {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+ol,
+li,
+span,
+body,
+header,
+nav {
   /* font-size: 1rem; */
   color: inherit;
   /* background-color: transparent; */
@@ -48,10 +59,6 @@ body, header, nav {
   outline: 0;
   font-weight: normal;
 }
-
-/* h1 {
-  font-size: 2rem;
-} */
 
 /* SCROLLBAR */
 body::-webkit-scrollbar {

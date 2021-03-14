@@ -2,30 +2,35 @@ extends layout
 
 append head
     link(rel="stylesheet" href="/stylesheets/login-signup-review.css")
+    link(rel="stylesheet" href="/stylesheets/forms.css")
     script(src="/javascripts/demo-login.js" type="module" defer)
-block content
-    div.login-form
-        if errors
-            div
-                each error in errors
-                    div.errors: p= error
 
-        form(action="/users/login", method="post" id='login-form')
-            div
+block content
+    .form__container 
+        //- Title 
+        h1.form__title Login
+            //- Error Field
+            if errors
+                div.form__error-popup
+                    each error in errors
+                        //- div: p= error
+                        p= error
+        .form__field-container
+            form(action="/users/login", method="post" id='login-form')
+                //- CSRF
                 input(type="hidden", name="_csrf", value=csrfToken)
-            div
-                label(for="email" class="form-group") Email
-                input(type="email", name="email" class="form-control" id='login-email')
-            div
-                label(for="password" class="form-group") Password
-                input(type="password", name="password" class="form-control" id='login-password')
-            button(type="submit" class="login-signup-button") Login
-            br
-            br
-            br
-            br
-            button(id='demoUserBtn') Enter Demo User Info
-            br
-            div.need-have-account
-                a(href="/users/signup") Need an account? Sign up here!
-            .need-have-account
+                //- EMAIL
+                .form__row 
+                    label.form__label(for="email") Email
+                    input.form__input(type="email", name="email"  id='login-email' autocomplete="off")
+                //- PASSWORD
+                .form__row 
+                    label.form__label(for="password") Password
+                    input.form__input(type="password", name="password"  id='login-password')
+                //- LOGIN BUTTON
+                .form__row-buttons 
+                    button.form__button(type="submit") Submit Login 
+                    button.form__button(id='demoUserBtn') Instant Demo Login
+        //- Redirect Link
+        .redirect__account-page
+            a(href="/users/signup") Need an account? Click here to sign up!

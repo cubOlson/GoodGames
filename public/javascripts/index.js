@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', event => {
                 headers: { "Content-Type": "application/json" },
               });
               if(!res.ok){
+                const pojo = await res.json()
+                console.log(pojo)
                 window.location.href = 'https://goodgames-appacademy.herokuapp.com/users/login'
               }
             } catch(err) {

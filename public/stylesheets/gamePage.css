@@ -1,11 +1,12 @@
 /* The main div that wraps everything */
 .game-page-container {
-    margin: 10px auto 10px auto;
+    /* margin: 10px auto 10px auto; */
+    margin: 70px auto 0px auto;
     width: 745px;
     display: flex;
     color: white;
     /* height: 550px; */
-    height: auto;
+    height: 100vh;
 }
 
 /* Contains the Image */
