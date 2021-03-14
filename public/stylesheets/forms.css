@@ -92,7 +92,9 @@
 }
 
 .form__button {
-    grid-area: button;
+  animation-fill-mode: none;
+/* animation-delay: 1s;   */
+  grid-area: button;
     padding: 6px 15px;
     border-radius: 20px;
     border: none;
@@ -104,7 +106,7 @@
     background-color: #f2ae7200;
     border: 2px solid #f2ae72;
     color: #f2ae72;
-    transition: color .2s ease-in-out;
+    /* transition: color .2s ease-in-out; */
     transition: background-color .2s ease-in-out;
 }
 
@@ -132,9 +134,10 @@
     box-sizing: border-box;
     border-style: none;
     font-family: "Montserrat";
-    text-align: center;
+    text-align: left;
     background-color: #e7d3f3;
     font-size: 1em;
     width: 200px;
     padding: 4px;
+    padding-left: 60px;
 }

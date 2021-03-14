@@ -23,82 +23,76 @@ append head
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
 block content
-    div.header-container
-      img(src="/HEADER-final.png" class="header")
-    div.games-container
-      //- Popular Games
-      div.games
-        div
-          h1.highest-games Highest Rated Games
-        div.gameCards
-          - for(var n = 0; n < 4; n++)
-              - var playStatus = 'Not Played'
-              if (gameStatuses[popularGames[n].id] !== undefined)
-                - playStatus=gameStatuses[popularGames[n].id]
-              +gameCard(popularGames, n, playStatus)
-        //- Action Games
-        div
-          a.games(href="/categories/1")
-            h1.action-games Action & Adventure Games
-        div.gameCards
-          - for(var n = 0; n < 4; n++)
-              - var playStatus = 'Not Played'
-              if (gameStatuses[actionGames[n].id] !== undefined)
-                - playStatus=gameStatuses[actionGames[n].id]
-              +gameCard(actionGames, n, playStatus)
-        //- Strategy Games
-        div
-          a.games(href="/categories/3")
-            h1.highest-games Strategy & RTS Games
-        div.gameCards
-          - for(var n = 0; n < 4; n++)
-              - var playStatus = 'Not Played'
-              if (gameStatuses[strategyGames[n].id] !== undefined)
-                - playStatus=gameStatuses[strategyGames[n].id]
-              +gameCard(strategyGames, n, playStatus)
-        //- Casual Games
-        div
-          a.games(href="/categories/5")
-            h1.action-games Casual & Simulation Games
-        div.gameCards
-          - for(var n = 0; n < 4; n++)
-              - var playStatus = 'Not Played'
-              if (gameStatuses[casualGames[n].id] !== undefined)
-                - playStatus=gameStatuses[casualGames[n].id]
-              +gameCard(casualGames, n, playStatus)
-        //- Sports Games
-        div
-          a.games(href="/categories/4")
-            h1.highest-games Sports & Racing Games
-        div.gameCards
-          - for(var n = 0; n < 4; n++)
-              - var playStatus = 'Not Played'
-              if (gameStatuses[sportsGames[n].id] !== undefined)
-                - playStatus=gameStatuses[sportsGames[n].id]
-              +gameCard(sportsGames, n, playStatus)
-        //- MMO Games
-        div
-          a.games(href="/categories/2")
-            h1.mmo-games MMO & RPG Games
-        div.gameCards
-          - for(var n = 0; n < 4; n++)
-              - var playStatus = 'Not Played'
-              if (gameStatuses[mmoGames[n].title] !== undefined)
-                - playStatus=gameStatuses[mmoGames[n].title]
-
-              +gameCard(mmoGames, n, playStatus)
-
+  img.header-container(src="/HEADER-final.png")
+  div.games-container
+    //- Popular Games
+    div.games
       div
-        div.categories
-          h1 Category Links
-          div
-            div.other-categories
-              a(href='/categories/1') Action & Adventure
-            div.other-categories
-              a(href='/categories/2') RPG & MMO
-            div.other-categories
-              a(href='/categories/3') Strategy & RTS
-            div.other-categories
-              a(href='/categories/4') Sports & Racing
-            div.other-categories
-              a(href='/categories/5') Casual & Simulation
+        h1.highest-games Highest Rated Games
+      div.gameCards
+        - for(var n = 0; n < 4; n++)
+            - var playStatus = 'Not Played'
+            if (gameStatuses[popularGames[n].id] !== undefined)
+              - playStatus=gameStatuses[popularGames[n].id]
+            +gameCard(popularGames, n, playStatus)
+      //- Action Games
+      div
+        a.games(href="/categories/1")
+          h1.action-games Action & Adventure Games
+      div.gameCards
+        - for(var n = 0; n < 4; n++)
+            - var playStatus = 'Not Played'
+            if (gameStatuses[actionGames[n].id] !== undefined)
+              - playStatus=gameStatuses[actionGames[n].id]
+            +gameCard(actionGames, n, playStatus)
+      //- Strategy Games
+      div
+        a.games(href="/categories/3")
+          h1.highest-games Strategy & RTS Games
+      div.gameCards
+        - for(var n = 0; n < 4; n++)
+            - var playStatus = 'Not Played'
+            if (gameStatuses[strategyGames[n].id] !== undefined)
+              - playStatus=gameStatuses[strategyGames[n].id]
+            +gameCard(strategyGames, n, playStatus)
+      //- Casual Games
+      div
+        a.games(href="/categories/5")
+          h1.action-games Casual & Simulation Games
+      div.gameCards
+        - for(var n = 0; n < 4; n++)
+            - var playStatus = 'Not Played'
+            if (gameStatuses[casualGames[n].id] !== undefined)
+              - playStatus=gameStatuses[casualGames[n].id]
+            +gameCard(casualGames, n, playStatus)
+      //- Sports Games
+      div
+        a.games(href="/categories/4")
+          h1.highest-games Sports & Racing Games
+      div.gameCards
+        - for(var n = 0; n < 4; n++)
+            - var playStatus = 'Not Played'
+            if (gameStatuses[sportsGames[n].id] !== undefined)
+              - playStatus=gameStatuses[sportsGames[n].id]
+            +gameCard(sportsGames, n, playStatus)
+      //- MMO Games
+      div
+        a.games(href="/categories/2")
+          h1.mmo-games MMO & RPG Games
+      div.gameCards
+        - for(var n = 0; n < 4; n++)
+            - var playStatus = 'Not Played'
+            if (gameStatuses[mmoGames[n].title] !== undefined)
+              - playStatus=gameStatuses[mmoGames[n].title]
+
+            +gameCard(mmoGames, n, playStatus)
+
+    div
+    .sidebar__category-title-box
+      h1 Categories
+      div.category-link-container
+          a.sidebar__category-links(href='/categories/1') Action & Adventure
+          a.sidebar__category-links(href='/categories/2') RPG & MMO
+          a.sidebar__category-links(href='/categories/3') Strategy & RTS
+          a.sidebar__category-links(href='/categories/4') Sports & Racing
+          a.sidebar__category-links(href='/categories/5') Casual & Simulation

@@ -12,7 +12,8 @@
     margin: auto;
     /* background-color: rgba(0, 0, 0, 0.973); */
     background-color: rgba(0, 0, 0, 0.35);
-    margin-top: -32px;
+    margin-top: -64px;
+    /* height: 100vh; */
 
 }
 
@@ -44,33 +45,57 @@ z-index: 3;
     align-items: center;
 }
 .logo {
-    max-width: 40px;
+    max-width: 56px;
     margin-right: 10px;
 }
-.search__input {
-    border: none;
-    border-radius: 14px 14px;
-    text-align: center;
-    padding: 5px;
-}
+
 
 
 /* Contains the "My Games", "My Reviews", "My Profile", and Logout when logged in */
 /* Contains the Login and Signup buttons when logged out */
 .navBar__right {
-    width: 50%;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navBar__right-unauth {
+    width: 40%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-.right__attribute {
-    text-decoration: none;
+
+
+.nav__link-container {
+color: var(--orange);
+}
+
+.nav__link-container:hover a{
+color: var(--yellow);
+}
+
+.nav__link-container:active a{
+opacity: 50%;
+}
+
+.nav__link {
     color: var(--orange);
 }
 
+.nav__link-:hover {
+    color: var(--yellow);
+}
+
+/* .right__attribute {
+    text-decoration: none;
+    color: var(--orange);
+} */
+
 
 /* SVGS for the 3 categories */
-.gamepad {
+/* .gamepad {
     width: 1.5rem;
     float: left;
     padding-top: 2px;
@@ -87,7 +112,7 @@ z-index: 3;
     float: left;
     padding-top: 2px;
     padding-right: 5px ;
-}
+} */
 
 
 /* .navBar__search {
@@ -103,18 +128,25 @@ z-index: 3;
 .footer {
     color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     background: linear-gradient(rgba(191, 15, 112, 0), rgba(191, 15, 112,0.6));
     padding: 10px;
     z-index: 3;
-    flex-shrink: 0;
+    flex: auto;
     position: fixed;
     bottom: 0;
-    width: 1366px;
+    left: 0;
+    width: 100%;
 }
 
-.footer__row {
+.nav-footer__row {
     font-size: 1.2em;
+    /* flex: auto; */
+    flex-grow: .07;
+}
+
+.icon__spacer {
+    padding: 0 8px;
 }
 
 /* .github {

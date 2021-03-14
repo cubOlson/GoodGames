@@ -8,13 +8,17 @@
 }
 
 body {
-  padding: 50px;
+  padding: 64px;
   font: 14px;
   font-family: "Montserrat", sans-serif;
   background-image: url("../images/wp4041942.jpg");
   background-size: cover;
   background-color: rgb(80, 16, 51);
   background-blend-mode: darken;
+    background-position-x: center;
+    background-position-y:top ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 a {
