@@ -1,76 +1,176 @@
 /* Style for the login page */
 
-.form-container {
-    text-align: center;
-    height: 100vh;
-    display: flex;
+.form__container {
+  text-align: center;
+  height: 100vh;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-bottom:300px ;
-
+  padding-bottom: 300px;
+  /* animation-duration: 1s;
+  animation-name: fadein; */
 }
 
-.form-title {
+.form__title {
+  text-align: center;
+  color: white;
+  font-size: 3.5em;
+  font-weight: 500;
+  margin: 25px;
+}
+
+.form__error-popup {
+  color: #f2ce1b;
+  font-weight: 500;
+  font-size: 0.3em;
+  max-width: 800px;
+  margin-bottom: -15px;
+}
+
+.form__field-container {
+  /* display: grid;
+  grid-template: auto; */
+  /* grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: auto; */
+  /* width: fit-content; */
+  /* grid-template-areas:
+    "label label input input input"
+    ". button . button ."; */
+  display: flex;
+    box-shadow: 0px 0px 10px black;
+  background: linear-gradient(#bf0f70b0, #1c0373c7);
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px;
+  
+  flex-direction: column;
+  width: 450px;
+}
+/* .login-grid-container {
+  display: flex;
+  /* grid-template-columns: 80px 80px 80px 80px 80px;
+  grid-template-rows: auto ; */
+  /* width: fit-content;*/
+  /* grid-template-areas: 
+    "label label input input input"
+    ". button . button ." */
+  /* box-shadow: 0px 0px 10px black;
+  background: linear-gradient(#bf0f70b0, #1c0373c7);
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  padding: 30px;
+  flex-direction: column; */
+
+.form__row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+}
+
+
+.form__label {
+    /* grid-area: label; */
+    font-size: 1.5em;
+    padding: 7px;
+    margin-right: 7px;
+    width: 140px;
+    text-align: right;
+    /* justify-self: end; */
+}
+.form__input {
+    /* grid-area: input; */
+    /* justify-self: start; */
+    border: 1px solid;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border-style: none;
+    font-family: "Montserrat";
     text-align: center;
-    color: white;
-    font-size: 3.5em;
-    font-weight: 500;
-    margin: 25px;
+    /* margin-top: 6px;
+    margin-bottom: 16px; */
+    background-color: #e7d3f3;
+    font-size: 20px;
+    width: 280px;
+    padding: 5px;
 }
 
-.form-centered {
- margin:0 auto;
- box-shadow: 0px 0px 10px black;
- background: linear-gradient(#bf0f70b0, #1c0373c7);
- color: white;
-text-align: center;
-border-radius: 10px;
-padding: 30px;
+.form__row-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.form__button {
+    grid-area: button;
+    padding: 6px 15px;
+    border-radius: 20px;
+    border: none;
+    margin: 0 10px 0 10px;
+    font-size: 1em;
+    font-family: "Montserrat";
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #f2ae7200;
+    border: 2px solid #f2ae72;
+    color: #f2ae72;
+    transition: color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+}
+
+.form__button:hover{
+    background-color: #f2ae72;
+    color: black;
+}
+
+/* .form-centered {
+ 
  /* left:50%;
  top:50%;
  margin-left:-250px;
- margin-top:-250px; */
-}
+ margin-top:-250px; }*/
 
 /* .login-form {
     /* background: linear-gradient(to bottom right, var(--blue), var(--darkpink)); */
-    
-    /* border: black solid 1px; */
-    
-    /* color:  var(--orange); */
-    
-    /* margin: 30px auto 30px auto; */
-    /* width: 500px; */
-    
-    /* padding: 20px; */
+
+/* border: black solid 1px; */
+
+/* color:  var(--orange); */
+
+/* margin: 30px auto 30px auto; */
+/* width: 500px; */
+
+/* padding: 20px; */
 /* } */
 
 /* Style for the singup form */
 .signup-form {
-    /* background: linear-gradient(to bottom right, var(--blue), var(--darkpink)); */
-    background: linear-gradient(var(--darkpink), var(--blue));
-    border: black solid 1px;
-    box-shadow: 5px 10px 8px #14161a;
-    /* color:  var(--orange); */
-    color: white;
-    text-align: center;
-    margin: 30px auto 30px auto;
-    width: 500px;
-    border-radius: 10px;
-    padding: 20px;
+  /* background: linear-gradient(to bottom right, var(--blue), var(--darkpink)); */
+  background: linear-gradient(var(--darkpink), var(--blue));
+  border: black solid 1px;
+  box-shadow: 5px 10px 8px #14161a;
+  /* color:  var(--orange); */
+  color: white;
+  text-align: center;
+  margin: 30px auto 30px auto;
+  width: 500px;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 /* Styling for the label and inputs */
-.form-group {
+/* .form-group {
     font-size: 20px;
     padding: 7px;
     width: 60px;
-}
+} */
 
 /* Form Fields */
-.form-control {
+/* .form-control {
     border: 1px solid;
     border-radius: 15px;
     box-sizing: border-box;
@@ -83,8 +183,52 @@ padding: 30px;
     font-size: 20px;
     width: 400p;
     padding: 5px
+} */
+
+.form-input:focus {
+  outline: none;
 }
 
-.form-control:focus {
-    outline: none;
+.redirect__account-page {
+  color: white;
+  padding: 20px;
 }
+.redirect__account-page:hover {
+  color: white;
+  padding: 20px;
+  text-decoration: underline;
+}
+
+/* .login-signup-button {
+    background-color: var(--orange);
+    color: black;
+    padding: 10px;
+    border-radius: 5px 5px;
+    margin: 0 10px 0 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+.login-signup-button:hover {
+    background-color: var(--yellow);
+    cursor: pointer;
+    color: white;
+}
+#demoUserBtn {
+    background-color: var(--orange);
+    color: black;
+    padding: 10px;
+    border-radius: 5px 5px;
+    margin: 0 10px 0 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+#demoUserBtn:hover {
+    background-color: var(--yellow);
+    cursor: pointer;
+    color: white;
+}
+.need-have-account {
+    margin-top: 10px;
+} */
