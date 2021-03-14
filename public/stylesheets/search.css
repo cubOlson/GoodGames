@@ -1,4 +1,5 @@
 .results {
+    margin-top: 70px;
     text-align: center;
     color: white;
     padding: 20px 0 20px 0;
@@ -14,6 +15,7 @@
     display: inline-block;
 }
 .nothing-found {
+    margin-top: 70px;
     text-align: center;
     color: white;
     padding: 20px 0 20px 0;

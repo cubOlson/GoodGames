@@ -33,7 +33,6 @@ router.get('/:id/review/:reviewId', csrfProtection, asyncHandler( async (req, re
   const game = await Game.findByPk(gameId, {include: Category})
   const reviewId = parseInt(req.params.reviewId, 10)
   const review = await Review.findOne({where: {id: reviewId}})
-  console.log(review.dataValues.content)
 
   res.render('edit-review', {review, game, csrfToken: req.csrfToken() })
 }))
@@ -101,7 +100,7 @@ router.put('/:id/review/:reviewId', csrfProtection, reviewValidation, asyncHandl
 }))
 
 /* DELETE */
-router.delete(`/:gameId/delete/:reviewId`, sanityCheck, asyncHandler(async (req, res) => {
+router.delete(`/:gameId/delete/:reviewId`, asyncHandler(async (req, res) => {
   const reviewId = parseInt(req.params.reviewId, 10)
   const review = await Review.findOne({where: {id: reviewId}})
   await review.destroy()
