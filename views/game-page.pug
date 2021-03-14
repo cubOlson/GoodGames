@@ -2,6 +2,9 @@ extends layout
 append head
   link(rel="stylesheet" href="/stylesheets/gamePage.css")
   link(rel="stylesheet" href="/stylesheets/forms.css")
+  script(src="/javascripts/delete-review.js" type="module" defer)
+
+
 block content
   .game-page-container
     .game-image
@@ -29,15 +32,11 @@ block content
       //- each review in reviews
     br
   div.review-container
-    if userReview
-      .posted-reviews 
-        h4= user.username 
-        h3(id="reviewTitle")= userReview.title
-        hr
-        hr
-        p= userReview.content
     each review in gameReviews
-      div.posted-reviews
+      div(class='posted-reviews' id=review.id)
         h3(id="reviewTitle")= review.title
         hr
         p= review.content
+        if (review.dataValues.userId === user.id)
+          button(class='review-button' id='deleteReviewBtn' value=`${review.id}` name=`${game.id}`) Delete
+          a(href=`/games/${game.id}/review/${review.id}`): button(class='review-button' id='editReviewBtn' value=`${review.id}` name=`${game.id}`) Edit
