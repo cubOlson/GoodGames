@@ -18,17 +18,19 @@ mixin gameCard(game, playStatus)
               .gamecard__rating= game.likesCount
               
 append head
+  link(rel="stylesheet" href="/stylesheets/myGames-myReviews.css")
   link(rel="stylesheet" href="/stylesheets/categories.css")
   link(rel="stylesheet" href="/stylesheets/gamecard.css")
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1.category-header= title
+  h1.title #{title}
   div.category-container
     div.selected-category
       each game in games
         div.gameCards
-          - playStatus=gameStatuses[game.id]
+          if locals.user
+            - playStatus=gameStatuses[game.id]
           +gameCard(game, playStatus)
 
     div
