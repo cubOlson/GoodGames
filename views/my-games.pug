@@ -1,43 +1,36 @@
 extends layout
+
+mixin gameCard(game, playStatus)
+    div.gamecard__container
+      img.gamecard__image(src=game.image)
+      div.gamecard__text-container
+        a(href=`/games/${game.id}`): .gamecard__game-title= game.title
+        .gamecard__dropdown-container
+          .gamecard__dropdown-form
+            form()
+              input(type="hidden" name='_csrf' value=csrfToken)
+              input(type="hidden" name='gameId' value=game.id)
+              select(name="status" value=playStatus)
+                option(value='Not played' selected=playStatus==='Not Played' ? true : false) Not Played
+                option(value='Want to Play' selected=playStatus==='Want to Play' ? true : false) Want to Play
+                option(value="Playing" selected=playStatus==='Playing' ? true : false) Playing
+                option(value="Played" selected=playStatus==='Played' ? true : false) Played
+          .gamecard__rating-box
+              .gamecard__rating= game.likesCount
+    button.form__button--delete(id=`${game.id}` class='removeGameBtn') Remove From MyGames
+
 append head
-  link(rel="stylesheet" href="/stylesheets/gamePage.css")
+  link(rel="stylesheet" href="/stylesheets/myGames-myReviews.css")
   link(rel="stylesheet" href="/stylesheets/forms.css")
+  link(rel="stylesheet" href="/stylesheets/gamecard.css")
+  script(src="/javascripts/index.js" type="module" defer)
+  script(src="/javascripts/remove-game-from-library.js" type="module" defer)
+
 block content
-  .game-page-container
-    .game-image
-      img(src=`${game.image}`, alt="")
-      div.sideCard
-  .game-info
-    h4= game.developer
-    h4(id="release")= game.releaseDate
-    a(href=`${game.purchase}` class="purchase") Purchase Now
-  .game-rating
-    h2 Ratings
-    br
-    h3= game.likesCount
-  div.middleBox
-      div.game-title-cat
-        h1= title
-        br
-        h2= game.Category.category
-      div.game-sum
-        p= game.summary
-  div.write-reviews
-    div
-      button(class='review-button')
-        a(href=`/games/${game.id}/review`) Add Review!
-      //- each review in reviews
-    br
-  div.review-container
-    if userReview
-      .posted-reviews 
-        h4= user.username 
-        h3(id="reviewTitle")= userReview.title
-        hr
-        hr
-        p= userReview.content
-    each review in gameReviews
-      div.posted-reviews
-        h3(id="reviewTitle")= review.title
-        hr
-        p= review.content
+  h1.title #{title}
+  br
+  div.gamesContainer
+    each game in myGames
+        div.gameCards
+              - playStatus=gameStatuses[game.id]
+              +gameCard(game, playStatus)
