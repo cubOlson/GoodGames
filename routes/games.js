@@ -4,27 +4,18 @@ const { validationResult, asyncHandler, sanityCheck, csrfProtection, reviewValid
 const { Game, Category, User, Review, UserGame } = require('../db/models')
 const { Op } = require('sequelize');
 
-
-
 /* GET */
 router.get('/:id', csrfProtection, asyncHandler( async (req, res) => {
   const gameId = parseInt(req.params.id, 10)
   const game = await Game.findByPk(gameId, {include: Category})
   let gameReviews = await Review.findAll({where: {gameId}, limit:10, order: [['updatedAt', 'DESC']]})
-  console.log('right session')
-  //Cub
+  
   if (req.session.auth) {
     const { userId } = req.session.auth
     const user = await User.findByPk(userId)
-
-    const userReview = await Review.findOne({ where: {gameId, userId}})
-
-    if (userReview) {
-      gameReviews = await Review.findAll({where: { gameId, userId: { [Op.not]: userId} }, limit:10, order: [['updatedAt', 'DESC']]})
-      return res.render('game-page', { title: `${game.title}`, game, user, gameReviews, userReview, csrfToken: req.csrfToken()})
-    }
+    return res.render('game-page', { title: `${game.title}`, game, user, gameReviews, csrfToken: req.csrfToken()})
   }
-  //Cub
+
   res.render('game-page', { title: `${game.title}`, game, gameReviews, csrfToken: req.csrfToken()})
 }));
 
@@ -72,6 +63,15 @@ router.post('/:id/review', csrfProtection, reviewValidation, asyncHandler(async 
     const errors = validationErrors.array().map( error => error.msg)
     res.render('review-page', { game, errors, csrfToken: req.csrfToken() })
   }
+}))
+
+/* DELETE */
+router.delete(`/:gameId/delete/:reviewId`, sanityCheck, asyncHandler(async (req, res) => {
+  const reviewId = parseInt(req.params.reviewId, 10)
+  const review = await Review.findOne({where: {id: reviewId}})
+  await review.destroy()
+  res.status(200)
+  res.send()
 }))
 
 module.exports = router
