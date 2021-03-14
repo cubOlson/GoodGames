@@ -54,7 +54,7 @@ z-index: 3;
 /* Contains the "My Games", "My Reviews", "My Profile", and Logout when logged in */
 /* Contains the Login and Signup buttons when logged out */
 .navBar__right {
-    width: 40%;
+    width: 550px;
     display: flex;
     justify-content: space-between;
     align-items: center;
