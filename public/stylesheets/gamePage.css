@@ -2,7 +2,7 @@
 .game-page-container {
     /* margin: 10px auto 10px auto; */
     margin: 70px auto 0px auto;
-    width: 745px;
+    width: 1366px;
     display: flex;
     color: white;
 }
@@ -13,61 +13,92 @@
 } */
 .game-image img{
     object-fit: cover;
-    width: 100%;
+    width: 1366px;
     height: 300px;
     margin: 10px 0;
     border-radius: 3px;
-    box-shadow: 0 2px 2px 6px white;
+    box-shadow: 0 0px 22px -1px black;
+    z-index: -1;
+    display:flex;
+    filter: brightness(.7);
+    position: relative;
+    
 }
 
 /* Contains the Title, Category, and Summary */
-.middleBox {
+/* .middleBox {
     width: 450px;
     margin-left: 5px;
-}
+} */
 .game-title-cat {
-    border: 3px solid var(--blue);
-    background-color: rgb(36, 36, 36) ;
+    position: relative;
+    /* background:linear-gradient(0deg, black, transparent); */
     color: white;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px black;
+    /* border-radius: 10px;
+    margin-bottom: 10px; */
     text-align: center;
-    padding: 10px;
+    padding: 7%;
+    font-size: 1.6em;
+    margin-top: -310px;
+    /* margin-top: -364px; */
+    /* padding: 20%; */
+    /* margin-bottom: -50% ; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+z-index: 1;
+    height: 300px;
+    /* align-content: center;
+    vertical-align: middle; */
 }
 .game-sum {
-    border: 3px solid var(--blue);
+    /* border: 3px solid var(--blue); */
     background-color: rgb(36, 36, 36) ;
     color: white;
     border-radius: 10px;
-    margin-top: 10px;
+    margin: 10px;
     text-align: center;
-    padding: 10px;
+    padding: 10px 15px;
     max-height: 436px;
-    overflow-y: scroll;
-}
-.game-sum::-webkit-scrollbar {
-    width: 0.25rem;
-}
-.game-sum::-webkit-scrollbar-track {
-    background: #1e1e24;
-}
-
-.game-sum::-webkit-scrollbar-thumb {
-background: var(--pink);
-}
-.game-sum p {
+    /* overflow-y: scroll; */
     line-height: 2;
     text-align: left;
+    vertical-align: middle;
+    height: fit-content;
+    width: 60%;
 }
+/* .game-sum::-webkit-scrollbar {
+    width: 0.25rem;
+} */
+/* .game-sum::-webkit-scrollbar-track {
+    background: #1e1e24;
+} */
+
+/* .game-sum::-webkit-scrollbar-thumb {
+background: var(--pink);
+} */
+
 
 /* Contains the Developer, Date, PurchaseLink, Ratings, and Category sidebar */
 .sideCard {
-    width: 200px;
+    /* width: 745px; */
+    /* align-items: top; */
+    justify-content: center;
     display: flex;
-    margin-top: 5px;
+    text-align: center;
+    align-items: top;
+    /* margin-top: 5px; */
 }
+
+.column-game {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
 .game-info {
-    border: 3px solid var(--blue);
     background-color: rgb(36, 36, 36) ;
     color: white;
     border-radius: 10px;
@@ -76,6 +107,7 @@ background: var(--pink);
     min-width: 175px;
     min-height: 125px;
     width: 200px;
+    margin: 5px;
 }
 #release {
     margin-top: 5px;
@@ -95,11 +127,11 @@ background: var(--pink);
     border: 1px solid white;
 }
 .game-rating {
-    border: 3px solid var(--blue);
     background-color: rgb(36, 36, 36) ;
     color: white;
     border-radius: 10px;
     text-align: center;
+    margin: 5px;
     padding: 10px;
     width: 200px;
 }

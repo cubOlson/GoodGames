@@ -17,10 +17,11 @@ mixin gameCard(game, playStatus)
                 option(value="Played" selected=playStatus==='Played' ? true : false) Played
           .gamecard__rating-box
               .gamecard__rating= game.likesCount
-    button(id=`${game.id}` class='removeGameBtn') Remove From MyGames
+    button.form__button--delete(id=`${game.id}` class='removeGameBtn') Remove From MyGames
 
 append head
   link(rel="stylesheet" href="/stylesheets/myGames-myReviews.css")
+  link(rel="stylesheet" href="/stylesheets/forms.css")
   link(rel="stylesheet" href="/stylesheets/gamecard.css")
   script(src="/javascripts/index.js" type="module" defer)
   script(src="/javascripts/remove-game-from-library.js" type="module" defer)

@@ -6,23 +6,25 @@ append head
 
 block content
   .game-page-container
-    .game-image
-      img(src=`${game.image}`, alt="")
-      div.sideCard
-  .game-info
-    h4= game.developer
-    h4(id="release")= game.releaseDate
-    a(href=`${game.purchase}` class="purchase") Purchase Now
-  .game-rating
-    h2 Ratings
-    br
-    h3= game.likesCount
-  div.middleBox
-      div.game-title-cat
-        h1= title
+    div 
+      .game-image
+        img(src=`${game.image}`, alt="")
+        div.game-title-cat
+          h1= title
+          br
+          h4= game.Category.category
+  
+  div.sideCard
+    div.column-game 
+      .game-info
+        h4= game.developer
+        h4(id="release")= game.releaseDate
+        a(href=`${game.purchase}` class="purchase") Purchase Now
+      .game-rating
+        h2 Ratings
         br
-        h2= game.Category.category
-      div.game-sum
+        h3= game.likesCount
+    .game-sum
         p= game.summary
   div.write-reviews
     div
@@ -39,8 +41,8 @@ block content
         hr
         p= userReview.content
 
-    each review in gameReviews
-      div.posted-reviews
-        h3(id="reviewTitle")= review.title
-        hr
-        p= review.content
+      each review in gameReviews
+        div.posted-reviews
+          h3(id="reviewTitle")= review.title
+          hr
+          p= review.content
