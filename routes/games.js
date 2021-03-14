@@ -28,6 +28,16 @@ router.get('/:id/review', csrfProtection, asyncHandler( async (req, res) => {
   res.render('review-page', { game, csrfToken: req.csrfToken() })
 }))
 
+router.get('/:id/review/:reviewId', csrfProtection, asyncHandler( async (req, res) => {
+  const gameId = parseInt(req.params.id, 10)
+  const game = await Game.findByPk(gameId, {include: Category})
+  const reviewId = parseInt(req.params.reviewId, 10)
+  const review = await Review.findOne({where: {id: reviewId}})
+  console.log(review.dataValues.content)
+
+  res.render('edit-review', {review, game, csrfToken: req.csrfToken() })
+}))
+
 /* Post */
 router.post('/:id/review', csrfProtection, reviewValidation, asyncHandler(async (req, res) => {
   const { title, content, likedStatus } = req.body
@@ -59,6 +69,31 @@ router.post('/:id/review', csrfProtection, reviewValidation, asyncHandler(async 
     }
     res.redirect(`/games/${gameId}`)
 
+  } else {
+    const errors = validationErrors.array().map( error => error.msg)
+    res.render('review-page', { game, errors, csrfToken: req.csrfToken() })
+  }
+}))
+
+
+/* PUT */
+router.put('/:id/review/:reviewId', csrfProtection, reviewValidation, asyncHandler(async (req, res) => {
+  const { title, content, likedStatus } = req.body
+  const gameId = parseInt(req.params.id, 10)
+  const { userId } = req.session.auth
+  const validationErrors = validationResult(req)
+  const game = await Game.findByPk(gameId)
+
+  if (validationErrors.isEmpty()) {
+    await Review.update({
+      gameId,
+      userId,
+      title,
+      content,
+      liked: likedStatus === 'liked' ? true : false
+    })
+    res.redirect(`/games/${gameId}`)
+    
   } else {
     const errors = validationErrors.array().map( error => error.msg)
     res.render('review-page', { game, errors, csrfToken: req.csrfToken() })
