@@ -1,14 +1,27 @@
+@keyframes fadein {
+  from {
+   transform : translateY(-6em)  ;
+  }
+  to {
+  transform : translateY(0em)  ;
+  }
+}
+
 .title{
     text-align: center;
     color: white;
-    padding: 20px 0 20px 0;
+    padding: 80px 0 20px 0;
     font-size: 50px;
-    background: linear-gradient(rgba(191, 15, 112, 0.6), rgba(191, 15, 112,0));
+    background: linear-gradient(rgba(191, 15, 112, 1), rgba(191, 15, 112,0));
+   animation-duration: 1s;
+  animation-name: fadein;
+    /* margin-top: 64px; */
 }
 
 
 .gamesContainer {
     margin: 0 20px 0 20px;
+    height: 100vh;
 }
 .gameCards {
     display: inline-block;

@@ -1,4 +1,14 @@
-/* Style for the login page */
+/* Animation Styles */
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+/* Form CSS */
 
 .form__container {
   text-align: center;
@@ -9,8 +19,6 @@
   align-items: center;
   text-align: center;
   padding-bottom: 300px;
-  /* animation-duration: 1s;
-  animation-name: fadein; */
 }
 
 .form__title {
@@ -19,6 +27,8 @@
   font-size: 3.5em;
   font-weight: 500;
   margin: 25px;
+  animation-duration: 1s;
+  animation-name: fadein;
 }
 
 .form__error-popup {
@@ -30,73 +40,24 @@
 }
 
 .form__field-container {
-  /* display: grid;
-  grid-template: auto; */
-  /* grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: auto; */
-  /* width: fit-content; */
-  /* grid-template-areas:
-    "label label input input input"
-    ". button . button ."; */
   display: flex;
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 15px black;
   background: linear-gradient(#bf0f70b0, #1c0373c7);
   color: white;
   text-align: center;
   border-radius: 10px;
   padding: 20px;
-  
   flex-direction: column;
-  width: 450px;
+  width: 560px;
+  animation-duration: 3s;
+  animation-name: fadein;
 }
-/* .login-grid-container {
-  display: flex;
-  /* grid-template-columns: 80px 80px 80px 80px 80px;
-  grid-template-rows: auto ; */
-  /* width: fit-content;*/
-  /* grid-template-areas: 
-    "label label input input input"
-    ". button . button ." */
-  /* box-shadow: 0px 0px 10px black;
-  background: linear-gradient(#bf0f70b0, #1c0373c7);
-  color: white;
-  text-align: center;
-  border-radius: 10px;
-  padding: 30px;
-  flex-direction: column; */
 
 .form__row {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 10px;
-}
-
-
-.form__label {
-    /* grid-area: label; */
-    font-size: 1.5em;
-    padding: 7px;
-    margin-right: 7px;
-    width: 140px;
-    text-align: right;
-    /* justify-self: end; */
-}
-.form__input {
-    /* grid-area: input; */
-    /* justify-self: start; */
-    border: 1px solid;
-    border-radius: 15px;
-    box-sizing: border-box;
-    border-style: none;
-    font-family: "Montserrat";
-    text-align: center;
-    /* margin-top: 6px;
-    margin-bottom: 16px; */
-    background-color: #e7d3f3;
-    font-size: 20px;
-    width: 280px;
-    padding: 5px;
+    margin: 13px;
 }
 
 .form__row-buttons {
@@ -105,12 +66,39 @@
     align-items: center;
     margin-top: 30px;
 }
+
+.form__label {
+    font-size: 1.5em;
+    padding: 7px;
+    margin-right: 7px;
+    width: 30%;
+    text-align: right;
+}
+.form__input {
+    border: 1px solid;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border-style: none;
+    font-family: "Montserrat";
+    text-align: center;
+    background-color: #e7d3f3;
+    font-size: 20px;
+    width: 280px;
+    padding: 5px;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
 .form__button {
-    grid-area: button;
+  animation-fill-mode: none;
+/* animation-delay: 1s;   */
+  grid-area: button;
     padding: 6px 15px;
     border-radius: 20px;
     border: none;
-    margin: 0 10px 0 10px;
+    margin: auto 10px;
     font-size: 1em;
     font-family: "Montserrat";
     font-weight: 500;
@@ -118,7 +106,7 @@
     background-color: #f2ae7200;
     border: 2px solid #f2ae72;
     color: #f2ae72;
-    transition: color .2s ease-in-out;
+    /* transition: color .2s ease-in-out; */
     transition: background-color .2s ease-in-out;
 }
 
@@ -127,108 +115,29 @@
     color: black;
 }
 
-/* .form-centered {
- 
- /* left:50%;
- top:50%;
- margin-left:-250px;
- margin-top:-250px; }*/
-
-/* .login-form {
-    /* background: linear-gradient(to bottom right, var(--blue), var(--darkpink)); */
-
-/* border: black solid 1px; */
-
-/* color:  var(--orange); */
-
-/* margin: 30px auto 30px auto; */
-/* width: 500px; */
-
-/* padding: 20px; */
-/* } */
-
-/* Style for the singup form */
-.signup-form {
-  /* background: linear-gradient(to bottom right, var(--blue), var(--darkpink)); */
-  background: linear-gradient(var(--darkpink), var(--blue));
-  border: black solid 1px;
-  box-shadow: 5px 10px 8px #14161a;
-  /* color:  var(--orange); */
-  color: white;
-  text-align: center;
-  margin: 30px auto 30px auto;
-  width: 500px;
-  border-radius: 10px;
-  padding: 20px;
-}
-
-/* Styling for the label and inputs */
-/* .form-group {
-    font-size: 20px;
-    padding: 7px;
-    width: 60px;
-} */
-
-/* Form Fields */
-/* .form-control {
-    border: 1px solid;
-    border-radius: 15px;
-    box-sizing: border-box;
-    border-style: none;
-    font-family: "Montserrat";
-    text-align: center;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    background-color: #e7d3f3;
-    font-size: 20px;
-    width: 400p;
-    padding: 5px
-} */
-
-.form-input:focus {
-  outline: none;
-}
-
+/* Redirect Links */
 .redirect__account-page {
   color: white;
   padding: 20px;
+  animation-duration: 3s;
+  animation-name: fadein;
 }
 .redirect__account-page:hover {
   color: white;
   padding: 20px;
   text-decoration: underline;
 }
-
-/* .login-signup-button {
-    background-color: var(--orange);
-    color: black;
-    padding: 10px;
-    border-radius: 5px 5px;
-    margin: 0 10px 0 10px;
-    border: none;
-    font-size: 15px;
-    font-weight: bold;
+/* Search Bar CSS */
+.search__input {
+    border: 1px solid;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border-style: none;
+    font-family: "Montserrat";
+    text-align: left;
+    background-color: #e7d3f3;
+    font-size: 1em;
+    width: 200px;
+    padding: 4px;
+    padding-left: 60px;
 }
-.login-signup-button:hover {
-    background-color: var(--yellow);
-    cursor: pointer;
-    color: white;
-}
-#demoUserBtn {
-    background-color: var(--orange);
-    color: black;
-    padding: 10px;
-    border-radius: 5px 5px;
-    margin: 0 10px 0 10px;
-    border: none;
-    font-size: 15px;
-    font-weight: bold;
-}
-#demoUserBtn:hover {
-    background-color: var(--yellow);
-    cursor: pointer;
-    color: white;
-}
-.need-have-account {
-    margin-top: 10px;
-} */
