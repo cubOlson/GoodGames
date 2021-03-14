@@ -1,6 +1,6 @@
 /* The main div that wraps everything */
 .game-page-container {
-    margin: 10px auto 10px auto;
+    margin: 70px auto 10px auto;
     width: 745px;
     display: flex;
     color: white;
@@ -9,6 +9,7 @@
 }
 /* Contains the Image */
 .game-image {
+    object-fit: cover;
     margin-right: 5px;
 }
 .game-image img{

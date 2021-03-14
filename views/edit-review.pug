@@ -2,23 +2,51 @@ extends layout
 
 append head
   link(rel="stylesheet" href="/stylesheets/login-signup-review.css")
+  link(rel="stylesheet" href="/stylesheets/forms.css")
 
 block content
+  .form__container 
       div.signup-form
+        h1.form__title Edit Review
         if errors
-          div
+          div.form__error-popup
             each error in errors
               div.errors: p=error
-        form(action=`/games/${game.id}/review` method='post')
-          input(type='hidden' name='_csrf' value= csrfToken)
-          div
-            label.review-label(for='title' class='form-group') Title
-            input.review-input(type='text' name='title' class='form-control' value=review.dataValues.title)
-          div
-            label.review-label(for='content' class='form-group') Review
-            textarea.review-text(name='content')=review.dataValues.content
-          div
-            select(name='likedStatus' id='likedSelect' class='like-dislike' value=review.dataValues.liked)
-              option(value='liked') Liked
-              option(value='disliked') Disliked
-          button.review-button(type='submit') Edit Review
+        .form__field-container
+            form(action=`/games/${game.id}/review` method='post')
+                //- CSRF
+                input(type='hidden', name='_csrf', value=csrfToken)
+                //- TITLE
+                .form__row 
+                    label.form__label(for='title') Title
+                    input.form__input(type='text', name='title' value=review.dataValues.title)
+                //- REVIEW CONTENT
+                .form__row 
+                    label.form__label(for='content') Review Content
+                    textarea.review-text(name='content' )=review.dataValues.content
+                //- LOGIN BUTTON
+                .form__row 
+                    select(name='likedStatus' id='likedSelect' class='like-dislike' value=review.dataValues.liked) Liked
+                      option(value='liked') Liked
+                      option(value='disliked') Disliked
+                .form__row-buttons 
+                    button.form__button(type='submit') Edit Review   
+
+      //- div.signup-form
+      //-   if errors
+      //-     div
+      //-       each error in errors
+      //-         div.errors: p=error
+      //-   form(action=`/games/${game.id}/review` method='post')
+      //-     input(type='hidden' name='_csrf' value= csrfToken)
+      //-     div
+      //-       label.review-label(for='title' class='form-group') Title
+      //-       input.review-input(type='text' name='title' class='form-control' value=review.dataValues.title)
+      //-     div
+      //-       label.review-label(for='content' class='form-group') Review
+      //-       textarea.review-text(name='content')=review.dataValues.content
+      //-     div
+      //-       select(name='likedStatus' id='likedSelect' class='like-dislike' value=review.dataValues.liked)
+      //-         option(value='liked') Liked
+      //-         option(value='disliked') Disliked
+      //-     button.review-button(type='submit') Edit Review
