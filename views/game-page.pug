@@ -25,18 +25,20 @@ block content
       div.game-sum
         p= game.summary
   br
-  div.write-reviews
-    div
-      button(class='review-button')
-        a(href=`/games/${game.id}/review`) Add Review!
-      //- each review in reviews
-    br
+  if (locals.user)
+    div.write-reviews
+      div
+        button(class='review-button')
+          a(href=`/games/${game.id}/review`) Add Review!
+        //- each review in reviews
+      br
   div.review-container
     each review in gameReviews
       div(class='posted-reviews' id=review.id)
         h3(id="reviewTitle")= review.title
         hr
         p= review.content
-        if (review.dataValues.userId === user.id)
-          button(class='review-button' id='deleteReviewBtn' value=`${review.id}` name=`${game.id}`) Delete
-          a(href=`/games/${game.id}/review/${review.id}`): button(class='review-button' id='editReviewBtn' value=`${review.id}` name=`${game.id}`) Edit
+        if (locals.user)
+          if (review.dataValues.userId === user.id)
+            button(class='review-button' id='deleteReviewBtn' value=`${review.id}` name=`${game.id}`) Delete
+            a(href=`/games/${game.id}/review/${review.id}`): button(class='review-button' id='editReviewBtn' value=`${review.id}` name=`${game.id}`) Edit

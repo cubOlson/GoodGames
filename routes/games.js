@@ -37,7 +37,7 @@ router.get('/:id/review/:reviewId', csrfProtection, asyncHandler( async (req, re
   res.render('edit-review', {review, game, csrfToken: req.csrfToken() })
 }))
 
-/* Post */
+/* POST */
 router.post('/:id/review', csrfProtection, reviewValidation, asyncHandler(async (req, res) => {
   const { title, content, likedStatus } = req.body
   const gameId = parseInt(req.params.id, 10)
@@ -74,23 +74,20 @@ router.post('/:id/review', csrfProtection, reviewValidation, asyncHandler(async 
   }
 }))
 
-
-/* PUT */
-router.put('/:id/review/:reviewId', csrfProtection, reviewValidation, asyncHandler(async (req, res) => {
+router.post('/:id/review/:reviewId', csrfProtection, reviewValidation, asyncHandler(async (req, res) => {
   const { title, content, likedStatus } = req.body
   const gameId = parseInt(req.params.id, 10)
+  const reviewId = parseInt(req.params.reviewId, 10)
   const { userId } = req.session.auth
   const validationErrors = validationResult(req)
   const game = await Game.findByPk(gameId)
 
   if (validationErrors.isEmpty()) {
-    await Review.update({
-      gameId,
-      userId,
-      title,
-      content,
-      liked: likedStatus === 'liked' ? true : false
-    })
+    const review = await Review.findOne({where : {id: reviewId}})
+    review.title = title
+    review.content = content
+    review.likedStatus = likedStatus
+    await review.save()
     res.redirect(`/games/${gameId}`)
     
   } else {
