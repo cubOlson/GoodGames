@@ -6,8 +6,8 @@ append head
 
 
 block content
-    .form__container 
-        //- Title 
+    .form__container
+        //- Title
         h1.form__title #{title}
             //- Error Field
             if errors
@@ -18,42 +18,40 @@ block content
             div.form__error-popup
                 p= message
         .form__field-container
-            form(action=`/users/myprofile`, method="post")
+            form(action=`/users/myprofile`, method="post" name='profile')
                 //- CSRF
                 input(type="hidden", name="_csrf", value=csrfToken)
                 //- First Name
-                .form__row 
+                .form__row
                     label.form__label(for="firstName") First Name
                     input.form__input(type="text", name="firstName", value=user.firstName)
                 //- Last Name
-                .form__row 
+                .form__row
                     label.form__label(for="lastName") Last Name
                     input.form__input(type="text", name="lastName", value=user.lastName)
                 //- Username
-                .form__row 
+                .form__row
                     label.form__label(for="username") Username
                     input.form__input(type="text", name="username", value=user.username)
                 //- Phone
-                .form__row 
+                .form__row
                     label.form__label(for="phone") Phone
                     input.form__input(type="tel", name="phone", value=user.phone)
                 //- Email
-                .form__row 
+                .form__row
                     label.form__label(for="email") Email
                     input.form__input(type="email", name="email", value=user.email)
                 //- Password
-                .form__row 
+                .form__row
                     label.form__label(for="password") Password
                     input.form__input(type="password", name="password")
                 //- Confirm Password
-                .form__row 
+                .form__row
                     label.form__label(for="confirmPassword") Confirm Password
                     input.form__input(type="password", name="confirmPassword")
                 //- LOGIN BUTTON
-                .form__row-buttons 
-                    button.form__button(type="submit") Update Profile 
+                .form__row-buttons
+                    button.form__button(type="submit") Update Profile
                     form(action=`/users/delete` method='post')
                         div
-                            input(type="hidden", name="_csrf", value=csrfToken)
-                        div
-                            button.form__button--delete(type="submit" class="login-signup-button" id="profileDeleteBtn" ) Delete Account?
+                            button.form__button--delete(for='profile' type="submit" class="login-signup-button" id="profileDeleteBtn" ) Delete Account?
