@@ -16,7 +16,7 @@ mixin gameCard(game, playStatus)
                 option(value="Played" selected=playStatus==='Played' ? true : false) Played
           .gamecard__rating-box
               .gamecard__rating= game.likesCount
-              
+
 append head
   link(rel="stylesheet" href="/stylesheets/myGames-myReviews.css")
   link(rel="stylesheet" href="/stylesheets/categories.css")
@@ -34,16 +34,11 @@ block content
           +gameCard(game, playStatus)
 
     div
-      div.categories-on-right
-        h1 Category Links
-        div
-          div.other-categories
-            a(href='/categories/1') Action & Adventure
-          div.other-categories
-            a(href='/categories/2') RPG & MMO
-          div.other-categories
-            a(href='/categories/3') Strategy & RTS
-          div.other-categories
-            a(href='/categories/4') Sports & Racing
-          div.other-categories
-            a(href='/categories/5') Casual & Simulation
+    .sidebar__category-title-box
+      h1 Categories
+      div.category-link-container
+          a.sidebar__category-links(href='/categories/1') Action & Adventure
+          a.sidebar__category-links(href='/categories/2') RPG & MMO
+          a.sidebar__category-links(href='/categories/3') Strategy & RTS
+          a.sidebar__category-links(href='/categories/4') Sports & Racing
+          a.sidebar__category-links(href='/categories/5') Casual & Simulation

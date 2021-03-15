@@ -28,11 +28,12 @@ block content
         if searching.length > 0
             h2.found Games Found Matching Your Search:
             each game in searching
-              div.gameCards
-                - var playStatus = 'Not Played'
-                if (gameStatuses[game.id] !== undefined)
-                  - playStatus=gameStatuses[game.id]
-                +gameCard(game, playStatus)
+              div.games
+                div.gameCards
+                  - var playStatus = 'Not Played'
+                  if (gameStatuses[game.id] !== undefined)
+                    - playStatus=gameStatuses[game.id]
+                  +gameCard(game, playStatus)
 
         else if searching.length === 0
             h2.nothing-found No results :(
