@@ -35,7 +35,7 @@ router.get("/myreviews", csrfProtection, asyncHandler(async (req, res) => {
   const user = await User.findByPk(userId, { include: Game })
   const myReviews = await Review.findAll({where: {userId}, include: Game })
   const reviewedGames = myReviews.map( review => review.Game)
-  console.log(reviewedGames)
+
   const records = await UserGame.findAll( {where: { userId }})
   const gameStatuses = {};
   records.forEach( record => {
