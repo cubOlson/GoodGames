@@ -22,19 +22,58 @@
     display: inline-block;
 }
 
-/* The other categories */
-.categories-on-right {
-    color: white;
-    margin: 5px 30px 5px 15px;
-    background-color: var(--blue);
-    padding: 30px;
-    position: sticky;
-    border-radius: 10px;
-    top:80px
-}
-.other-categories {
-    margin: 20px 0 20px 0;
-}
-.other-categories a {
-    text-decoration: none;
-}
+/* Category box on the right */
+.category-link-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    font-weight: 600;
+    justify-content: space-between;
+     color: white;
+     margin: 25px 11px 4px -20px;
+     background-color:#1c1c1dd0;
+     padding: 27px;
+     height: 330px;
+     /* border-radius: 15px; */
+     position: sticky;
+     top: 80px;
+     width: 250px;
+ }
+
+ .sidebar__category-links {
+     font-weight: 400;
+     font-size: 1.1em;
+ }
+
+ .sidebar__category-links:hover {
+     /* text-decoration: underline; */
+     color: var(--yellow);
+ }
+
+ .sidebar__category-title-box {
+  position: relative;
+     color: white;
+     background: #1c1c1dd0;
+     width: 210px;
+     padding: 8px;
+     padding-left: 20px;
+     height: 55px;
+     margin: 24px 80px 5px 0px;
+     /* background-color: var(--blue); */
+     /* padding: 30px; */
+     /* height: 300px; */
+     /* border-radius: 10px; */
+     position: sticky;
+     top:80px
+ }
+ .sidebar__category-title-box:before {
+ content:"";
+ position: absolute;
+ right: -40px;
+ bottom: 0;
+ /* width: 0; */
+ height: 0px;
+ border-left: 40px solid #1c1c1dd0;
+ ;
+ border-top: 55px solid transparent;
+ }
