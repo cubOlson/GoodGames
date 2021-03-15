@@ -17,7 +17,7 @@ mixin gameCard(game, playStatus)
                 option(value="Played" selected=playStatus==='Played' ? true : false) Played
           .gamecard__rating-box
               .gamecard__rating= game.likesCount
-    button.form__button--delete(id=`${game.id}` class='removeGameBtn') Remove From MyGames
+    button.form__button--delete(id=`${game.id}` class='removeGameBtn') Remove
 
 append head
   link(rel="stylesheet" href="/stylesheets/myGames-myReviews.css")

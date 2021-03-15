@@ -13,7 +13,7 @@ block content
             each error in errors
               div.errors: p=error
         .form__field-container
-            form(action=`/games/${game.id}/review` method='post')
+            form(action=`/games/${game.id}/review/${review.id}` method='post')
                 //- CSRF
                 input(type='hidden', name='_csrf', value=csrfToken)
                 //- TITLE

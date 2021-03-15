@@ -10,6 +10,7 @@ const loginUser = (req, res, user) => {
 const logoutUser = (req, res) => {
     delete req.session.auth;
     res.locals.user = false;
+    res.locals.userId = -1
     req.session.save( () => { res.redirect('/') })
 }
 
