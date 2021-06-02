@@ -5,8 +5,8 @@ window.addEventListener('DOMContentLoaded', event => {
     button.addEventListener('click', async (e) => {
       const gameId = e.target.name
       const reviewId = e.target.value
-      console.log(reviewId)
-      try { 
+      // console.log(reviewId)
+      try {
         const res = await fetch(`/games/${gameId}/delete/${reviewId}`, { method: 'DELETE' })
         if(res.ok) {
           const reviewDiv = document.getElementById(reviewId)
