@@ -1,5 +1,5 @@
 window.addEventListener("load", (event)=>{
-        console.log("hello from javascript!")
+        // console.log("hello from javascript!")
     })
 
 document.addEventListener('DOMContentLoaded', event => {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', event => {
             const gameId = button.id
             let body = { gameId }
             try {
-              console.log('ENTER THE TRY')
+              // console.log('ENTER THE TRY')
               const res = await fetch(`/users/mygames/delete`, {
                 method: 'post',
                 body: JSON.stringify(body),

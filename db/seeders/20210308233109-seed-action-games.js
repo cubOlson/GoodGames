@@ -58,7 +58,7 @@ module.exports = {
         {
           title: "Call of Duty: Warzone",
           image:
-            "https://static.wikia.nocookie.net/vgost/images/8/80/Call-of-duty-warzone-box-art-01-ps4-10mar20-en-us.jpg/revision/latest?cb=20201221181745",
+            "https://media.gamestop.com/i/gamestop/CoD_Warzone_nHeroM/call-of-duty-warzone.jpg?$POI$&w=768&aspect=1:1.2",
           likesCount: 500,
           releaseDate: "March 10, 2020",
           developer: "ACTIVISION",
@@ -175,7 +175,7 @@ module.exports = {
         {
           title: "Assassin's Creed: Valhalla",
           image:
-            "https://britgamer.s3.eu-west-1.amazonaws.com/styles/544_square_top/s3/2020-04/assassins-creed-valhalla-cover.jpg?itok=3aGe4E3H",
+            "https://image.api.playstation.com/vulcan/ap/rnd/202008/1318/8XGEPtD1xoasK0FYkYNcCn1z.png",
           likesCount: 23,
           releaseDate: "November 10, 2020",
           developer: "Ubisoft",

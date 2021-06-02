@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', event => {
 
     window.addEventListener("load", (event)=>{
-        console.log("hello from javascript!")
+        // console.log("hello from javascript!")
     })
 
     const forms = document.querySelectorAll('form')
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', event => {
                 body: JSON.stringify(body),
                 headers: { "Content-Type": "application/json" },
               });
+              console.log("this is the error")
               if(!res.ok){
                 const pojo = await res.json()
                 console.log(pojo)
