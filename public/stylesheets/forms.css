@@ -166,3 +166,26 @@
     padding: 4px;
     padding-left: 60px;
 }
+
+/* Review dropdown select button */
+.form_review_select {
+  border: 2px solid #fff;
+  font-family: inherit;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 5px 5px 6px 5px;
+  font-weight: 600;
+  background-color: rgb(141, 5, 82, .5);
+  color: #fff;
+  transition: background-color 300ms;
+}
+.form_review_select:hover {
+  background-color: rgb(141, 5, 82, 1);
+  color: #fff;
+}
+.form_review_select:focus {
+  background-color: #f2ae72;
+}
+.form_review_select:focus-visible {
+  outline: none;
+}
