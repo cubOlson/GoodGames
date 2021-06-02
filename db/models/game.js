@@ -41,12 +41,12 @@ module.exports = (sequelize, DataTypes) => {
     Game.belongsTo(models.Category, { foreignKey: 'categoryId'});
 
     // Many:Many Games <> Platform
-    const columnMapping = {
-      through: 'GamePlatform',
-      otherKey: 'platformId',
-      foreignKey: 'gameId'
-    }
-    Game.belongsToMany(models.Platform, columnMapping);
+    // const columnMapping = {
+    //   through: 'GamePlatform',
+    //   otherKey: 'platformId',
+    //   foreignKey: 'gameId'
+    // }
+    // Game.belongsToMany(models.Platform, columnMapping);
 
     //Many:Many Game <> User
     const columnMapping2 = {
