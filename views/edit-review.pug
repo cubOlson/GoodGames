@@ -5,7 +5,7 @@ append head
   link(rel="stylesheet" href="/stylesheets/forms.css")
 
 block content
-  .form__container 
+  .form__container
       div.signup-form
         h1.form__title Edit Review
         if errors
@@ -17,20 +17,20 @@ block content
                 //- CSRF
                 input(type='hidden', name='_csrf', value=csrfToken)
                 //- TITLE
-                .form__row 
+                .form__row
                     label.form__label(for='title') Title
                     input.form__input(type='text', name='title' value=review.dataValues.title)
                 //- REVIEW CONTENT
-                .form__row 
+                .form__row
                     label.form__label(for='content') Review Content
                     textarea.review-text(name='content' )=review.dataValues.content
                 //- LOGIN BUTTON
-                .form__row 
-                    select(name='likedStatus' id='likedSelect' class='like-dislike' value=review.dataValues.liked) Liked
+                .form__row
+                    select.form_review_select(name='likedStatus' id='likedSelect' value=review.dataValues.liked) Liked
                       option(value='liked') Liked
                       option(value='disliked') Disliked
-                .form__row-buttons 
-                    button.form__button(type='submit') Edit Review   
+                .form__row-buttons
+                    button.form__button(type='submit') Edit Review
 
       //- div.signup-form
       //-   if errors
