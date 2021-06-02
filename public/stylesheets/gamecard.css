@@ -40,19 +40,48 @@
   justify-content: flex-start;
   align-items: center;
 }
-.gamecard__dropdown-form {
-  width: 65%;
-}
+
 .gamecard__rating-box {
   width: 25%;
   border: 2px solid white;
+  border-radius: 5px;
   margin: 10px;
+  background-color: rgb(141, 5, 82, .5);
 }
 
 .gamecard__rating {
   font-weight: 600;
-  font-size: 1.2em;
+  font-size: 1em;
   color: white;
   text-align: center;
-  padding: 2px;
+  padding: 5px;
+}
+
+.gamecard__dropdown-form {
+  width: 65%;
+}
+
+select {
+  border: 2px solid #fff;
+  font-family: inherit;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 5px 5px 6px 5px;
+  font-weight: 600;
+  background-color: rgb(141, 5, 82, .5);
+  color: #fff;
+  transition: background-color 300ms;
+}
+
+select:hover {
+  background-color: rgb(141, 5, 82, 1);
+  color: #fff;
+}
+
+select:focus {
+  background-color: #f2ae72;
+}
+
+select:focus-visible {
+  outline: none;
 }
